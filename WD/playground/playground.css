@@ -184,3 +184,20 @@ main {
     right: -3%;
     bottom: -8%
 }
+
+.startscreen--fadeout {
+    animation: fadeout 0.3s linear 2s 1 forwards;
+}
+
+/* ------------------------------------------------
+    Animations
+------------------------------------------------ */
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
