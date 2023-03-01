@@ -5,7 +5,7 @@ import ProvideImage from './components/ProvideImage';
 const App = () => {
     return (
         <div className="App">
-            <SplashScreen />
+            <SplashScreen animationDelay={2000} />
             <main>
                 <h1>WasteWise</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto suscipit ex fugiat, esse obcaecati magni nemo eligendi similique. Recusandae enim odio cumque vero quo quisquam beatae rerum velit, obcaecati minima.</p>

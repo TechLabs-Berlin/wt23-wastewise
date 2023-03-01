@@ -148,10 +148,10 @@ main {
 }
 
 /* ------------------------------------------------
-    Component: startscreen
+    Component: SplashScreen
 ------------------------------------------------ */
 
-.startscreen {
+.splashscreen {
     position: absolute;
     top: 0;
     left: 0;
@@ -165,7 +165,7 @@ main {
     align-items: center;
 }
 
-.startscreen__logo-container {
+.splashscreen__logo-container {
     --dimensions: 62; /* width in % and height in vh – appending unit with calc trick */
     --ratio: 0.85;
     
@@ -182,7 +182,7 @@ main {
     align-items: center;
 }
 
-.startscreen__logo {
+.splashscreen__logo {
     height: 60%;
 
     position: relative;
@@ -190,8 +190,15 @@ main {
     bottom: -8%
 }
 
-.startscreen--fadeout {
-    animation: fadeout 0.3s linear 2s 1 forwards;
+.splashscreen--fadeout {
+    /* animation: fadeout 0.3s linear 2s 1 forwards; */
+    animation-name: fadeout;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    /* animation-delay: will be assigned by the React component */
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 /* ------------------------------------------------

@@ -191,7 +191,14 @@ main {
 }
 
 .splashscreen--fadeout {
-    animation: fadeout 0.3s linear 2s 1 forwards;
+    /* animation: fadeout 0.3s linear 2s 1 forwards; */
+    animation-name: fadeout;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    /* animation-delay: will be assigned by the React component */
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 /* ------------------------------------------------

@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 
-const SplashScreen = () => {
+const SplashScreen = ({ animationDelay }) => {
     
     const [visible, setVisible] = useState(true);
 
     setTimeout(() => {
-        setVisible(false);
-    }, 2300); // second argument depending on CSS → better make it a prop and set CSS inline → then durtation will only be set once
+            setVisible(false);
+        },
+        (animationDelay + 300) // animation-duration: 300ms set in app.css
+    );
 
     if (visible === true) {
         return (
-            <div className="splashscreen splashscreen--fadeout">
+            <div
+                className="splashscreen splashscreen--fadeout"
+                style={{'animation-delay': `${animationDelay}ms`}} 
+            >
                 <div className="splashscreen__logo-container">
                     <svg
-                        className="splashscreen__logo splashscreen--fadeout"
+                        className="splashscreen__logo"
                         xmlSpace="preserve"
                         style={{
                             fillRule: "evenodd",
