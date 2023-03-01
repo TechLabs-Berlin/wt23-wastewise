@@ -1,12 +1,20 @@
+import React from 'react';
+import SplashScreen from './components/SplashScreen';
+import ProvideImage from './components/ProvideImage';
+
 const App = () => {
     return (
-      <div className="App">
-        <h1>WasteWise</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestiae, sequi esse cum voluptas neque? Et impedit ut cumque voluptatum corporis similique laboriosam quo. Eveniet itaque officia incidunt aperiam explicabo?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestiae, sequi esse cum voluptas neque? Et impedit ut cumque voluptatum corporis similique laboriosam quo. Eveniet itaque officia incidunt aperiam explicabo?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum molestiae, sequi esse cum voluptas neque? Et impedit ut cumque voluptatum corporis similique laboriosam quo. Eveniet itaque officia incidunt aperiam explicabo?</p>
+        <div className="App">
+            <SplashScreen animationDelay={2000} />
+            <main>
+                <h1>WasteWise</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto suscipit ex fugiat, esse obcaecati magni nemo eligendi similique. Recusandae enim odio cumque vero quo quisquam beatae rerum velit, obcaecati minima.</p>
+                <p>Molestiae ipsa velit eligendi dicta ea nemo minus, magni accusamus odit possimus esse iusto cumque laboriosam omnis rerum optio, tempora doloremque incidunt aspernatur deleniti! Optio dolor unde quae iste obcaecati!</p>
+                <p>Quas quam animi esse mollitia ipsum in. Eius aspernatur voluptates, cumque quis neque amet tempora nemo in obcaecati id sequi non laudantium nesciunt fuga aperiam dicta voluptatibus autem blanditiis quos.</p>
+                <ProvideImage />
+            </main>
       </div>
     );
-  }
+}
   
-  export default App;
+export default App;
