@@ -10,10 +10,10 @@ const SplashScreen = () => {
 
     if (visible === true) {
         return (
-            <div className="startscreen startscreen--fadeout">
-                <div className="startscreen__logo-container">
+            <div className="splashscreen splashscreen--fadeout">
+                <div className="splashscreen__logo-container">
                     <svg
-                        className="startscreen__logo startscreen--fadeout"
+                        className="splashscreen__logo splashscreen--fadeout"
                         xmlSpace="preserve"
                         style={{
                             fillRule: "evenodd",
