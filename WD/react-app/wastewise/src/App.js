@@ -1,10 +1,12 @@
 import React from 'react';
 import SplashScreen from './components/SplashScreen';
 import ProvideImage from './components/ProvideImage';
+import NavBar from './components/NavBar';
 
 const App = () => {
     return (
         <div className="App">
+            <NavBar />
             <SplashScreen animationDelay={2000} />
             <main>
                 <h1>WasteWise</h1>

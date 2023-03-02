@@ -106,12 +106,12 @@ main {
 }
 
 /* ------------------------------------------------
-    Component: footer-nav
+    Component: NavBar
 ------------------------------------------------ */
 
 /* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container's ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
 
-.footer-nav {
+.navbar {
     position: fixed;
     bottom: 0;
 
@@ -125,7 +125,7 @@ main {
     justify-content: space-evenly;
 }
 
-.footer-nav__a {
+.navbar__a {
     background-color: var(--color-1);
     color: var(--color-2);
 
@@ -138,16 +138,16 @@ main {
     border-radius: 99999rem;
 }
 
-.footer-nav__a:hover {
+.navbar__a:hover {
     background-color: var(--color-bright);
     color: var(--color-3);
 }
 
-.footer-nav__icon {
+.navbar__icon {
     fill: currentColor;
 }
 
-.footer-nav__a--big {
+.navbar__a--big {
     --scale: 1.6;
     transform:
         scale(var(--scale))
