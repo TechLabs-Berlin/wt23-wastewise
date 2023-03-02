@@ -1,0 +1,937 @@
+,type_of_waste,country_name,percentage
+0,Organic,Angola,51.8
+1,Organic,Albania,51.4
+2,Organic,Andorra,31.2
+3,Organic,United Arab Emirates,39.0
+4,Organic,Argentina,38.74
+5,Organic,Armenia,57.0
+6,Organic,American Samoa,19.7
+7,Organic,Antigua and Barbuda,46.0
+8,Organic,Australia,48.44
+9,Organic,Austria,31.4
+10,Organic,Azerbaijan,45.19
+11,Organic,Burundi,81.0
+12,Organic,Belgium,14.18
+13,Organic,Benin,52.1
+14,Organic,Burkina Faso,21.0
+15,Organic,Bangladesh,80.57999999999998
+16,Organic,Bulgaria,24.35
+17,Organic,Bahrain,59.1
+18,Organic,Bahamas,46.0
+19,Organic,Belarus,30.0
+20,Organic,Belize,47.0
+21,Organic,Bermuda,17.0
+22,Organic,Bolivia,55.19691119691119
+23,Organic,Brazil,51.4
+24,Organic,Barbados,18.3
+25,Organic,Brunei Darussalam,36.0
+26,Organic,Bhutan,58.0
+27,Organic,Canada,24.0
+28,Organic,Switzerland,29.0
+29,Organic,Chile,53.3
+30,Organic,China,61.2
+31,Organic,Cameroon,83.4
+32,Organic,Colombia,59.58
+33,Organic,Comoros,50.0
+34,Organic,Costa Rica,58.0
+35,Organic,Cuba,68.9
+36,Organic,Cayman Islands,10.9
+37,Organic,Cyprus,41.47
+38,Organic,Czech Republic,62.3
+39,Organic,Germany,30.0
+40,Organic,Dominica,45.0
+41,Organic,Denmark,12.78
+42,Organic,Dominican Republic,51.0
+43,Organic,Algeria,54.4
+44,Organic,Ecuador,58.67
+45,Organic,Egypt,56.0
+46,Organic,Spain,49.0
+47,Organic,Estonia,36.7
+48,Organic,Ethiopia,87.6
+49,Organic,Finland,35.88
+50,Organic,Fiji,33.2
+51,Organic,France,32.0
+52,Organic,Micronesia,23.83
+53,Organic,United Kingdom,16.7
+54,Organic,Georgia,39.0
+55,Organic,Ghana,67.0
+56,Organic,Gibraltar,24.57
+57,Organic,Guinea,58.0
+58,Organic,Greece,40.0
+59,Organic,Grenada,27.1
+60,Organic,Greenland,42.8
+61,Organic,Guam,27.3
+62,Organic,Guyana,50.1
+63,Organic,Hong Kong,35.0
+64,Organic,Honduras,57.9
+65,Organic,Croatia,30.9
+66,Organic,Haiti,61.3
+67,Organic,Hungary,22.5
+68,Organic,Indonesia,53.8
+69,Organic,Ireland,16.6
+70,Organic,Iran,72.9
+71,Organic,Iraq,68.7
+72,Organic,Israel,34.0
+73,Organic,Italy,34.4
+74,Organic,Jamaica,62.22
+75,Organic,Jordan,50.0
+76,Organic,Japan,36.0
+77,Organic,Kazakhstan,30.0
+78,Organic,Kenya,57.0
+79,Organic,Cambodia,66.6
+80,Organic,Kiribati,43.6
+81,Organic,St. Kitts and Nevis,27.2
+82,Organic,Kuwait,45.0
+83,Organic,Lao People's Democratic Republic,16.9
+84,Organic,Lebanon,52.5
+85,Organic,Libya,70.1
+86,Organic,St. Lucia,45.0
+87,Organic,Liechtenstein,37.6
+88,Organic,Sri Lanka,62.0
+89,Organic,Lithuania,40.4
+90,Organic,Luxembourg,30.0
+91,Organic,Latvia,46.7
+92,Organic,Macao,3.1
+93,Organic,Morocco,60.0
+94,Organic,Moldova,55.0
+95,Organic,Mexico,52.4
+96,Organic,Marshall Islands,8.0
+97,Organic,North Macedonia,29.3
+98,Organic,Mali,17.5
+99,Organic,Malta,52.0
+100,Organic,Montenegro,33.82
+101,Organic,Northern Mariana Islands,43.6
+102,Organic,Mauritania,4.8
+103,Organic,Malaysia,46.0
+104,Organic,New Caledonia,43.6
+105,Organic,Netherlands,35.0
+106,Organic,Norway,15.49
+107,Organic,Nepal,52.39
+108,Organic,Nauru,43.6
+109,Organic,New Zealand,28.0
+110,Organic,Pakistan,30.0
+111,Organic,Panama,46.4
+112,Organic,Peru,50.43
+113,Organic,Philippines,52.31
+114,Organic,Palau,26.0
+115,Organic,Poland,37.27
+116,Organic,Puerto Rico,13.1
+117,Organic,Portugal,36.49
+118,Organic,"Palestine, State of",59.1
+119,Organic,French Polynesia,47.0
+120,Organic,Qatar,57.0
+121,Organic,Romania,56.26
+122,Organic,Russian Federation,28.41
+123,Organic,Saudi Arabia,45.5
+124,Organic,Sudan,51.4
+125,Organic,Senegal,12.0
+126,Organic,Singapore,10.51
+127,Organic,Solomon Islands,42.8
+128,Organic,El Salvador,65.0
+129,Organic,San Marino,5.35
+130,Organic,Serbia,37.62
+131,Organic,Slovak Republic,42.0
+132,Organic,Seychelles,48.5
+133,Organic,Syrian Arab Republic,57.0
+134,Organic,Turks and Caicos Islands,21.8
+135,Organic,Chad,70.0
+136,Organic,Togo,38.0
+137,Organic,Thailand,65.52
+138,Organic,Tonga,51.3
+139,Organic,Trinidad and Tobago,27.15
+140,Organic,Tunisia,68.0
+141,Organic,Turkey,64.0
+142,Organic,Tuvalu,43.6
+143,Organic,Uganda,74.5
+144,Organic,Ukraine,37.0
+145,Organic,Uruguay,53.5
+146,Organic,United States,14.9
+147,Organic,Uzbekistan,40.0
+148,Organic,Saint Vincent and the Grenadines,49.6
+149,Organic,British Virgin Islands,6.5
+150,Organic,Vietnam,61.9
+151,Organic,Vanuatu,73.4
+152,Organic,Samoa,42.6
+153,Organic,Yemen,65.0
+154,Organic,South Africa,16.381654627302726
+155,Organic,Zimbabwe,36.0
+156,Glass,Angola,6.7
+157,Glass,Albania,4.5
+158,Glass,Andorra,8.2
+159,Glass,United Arab Emirates,4.0
+160,Glass,Argentina,3.16
+161,Glass,Armenia,3.2
+162,Glass,American Samoa,3.4
+163,Glass,Antigua and Barbuda,7.0
+164,Glass,Australia,3.81
+165,Glass,Austria,7.0
+166,Glass,Azerbaijan,5.28
+167,Glass,Burundi,2.9
+168,Glass,Belgium,3.1
+169,Glass,Benin,1.6
+170,Glass,Burkina Faso,1.0
+171,Glass,Bangladesh,0.44
+172,Glass,Bulgaria,5.83
+173,Glass,Bahrain,3.4
+174,Glass,Bahamas,7.0
+175,Glass,Belarus,8.0
+176,Glass,Belize,8.0
+177,Glass,Bermuda,9.0
+178,Glass,Bolivia,2.9034749034749034
+179,Glass,Brazil,2.4
+180,Glass,Barbados,3.7
+181,Glass,Brunei Darussalam,3.0
+182,Glass,Bhutan,4.0
+183,Glass,Canada,6.0
+184,Glass,Switzerland,4.0
+185,Glass,Chile,6.6
+186,Glass,China,2.1
+187,Glass,Cameroon,0.1
+188,Glass,Colombia,2.35
+189,Glass,Comoros,2.0
+190,Glass,Costa Rica,1.0
+191,Glass,Cuba,4.6
+192,Glass,Cayman Islands,3.5
+193,Glass,Cyprus,2.66
+194,Glass,Czech Republic,2.4
+195,Glass,Germany,10.0
+196,Glass,Dominica,8.0
+197,Glass,Denmark,5.78
+198,Glass,Dominican Republic,6.0
+199,Glass,Algeria,1.2
+200,Glass,Ecuador,3.01
+201,Glass,Egypt,4.0
+202,Glass,Spain,8.0
+203,Glass,Estonia,8.3
+204,Glass,Ethiopia,0.8
+205,Glass,Finland,9.24
+206,Glass,Fiji,4.1
+207,Glass,France,10.0
+208,Glass,Micronesia,7.07
+209,Glass,United Kingdom,2.2
+210,Glass,Georgia,3.0
+211,Glass,Ghana,0.0
+212,Glass,Gibraltar,4.42
+213,Glass,Guinea,1.0
+214,Glass,Greece,3.0
+215,Glass,Grenada,3.1
+216,Glass,Greenland,7.1
+217,Glass,Guam,4.6
+218,Glass,Guyana,4.7
+219,Glass,Hong Kong,3.0
+220,Glass,Honduras,1.27
+221,Glass,Croatia,3.7
+222,Glass,Haiti,1.6
+223,Glass,Hungary,3.5
+224,Glass,Indonesia,2.5
+225,Glass,Ireland,8.5
+226,Glass,Iran,1.9
+227,Glass,Iraq,2.3
+228,Glass,Israel,3.0
+229,Glass,Italy,7.6
+230,Glass,Jamaica,2.81
+231,Glass,Jordan,2.0
+232,Glass,Japan,5.0
+233,Glass,Kazakhstan,5.0
+234,Glass,Kenya,3.0
+235,Glass,Cambodia,2.6
+236,Glass,Kiribati,5.5
+237,Glass,St. Kitts and Nevis,8.1
+238,Glass,Kuwait,4.0
+239,Glass,Lao People's Democratic Republic,9.3
+240,Glass,Lebanon,3.5
+241,Glass,Libya,3.1
+242,Glass,St. Lucia,7.0
+243,Glass,Liechtenstein,5.0
+244,Glass,Sri Lanka,2.0
+245,Glass,Lithuania,8.65
+246,Glass,Luxembourg,4.0
+247,Glass,Latvia,21.4
+248,Glass,Macao,3.3
+249,Glass,Morocco,2.0
+250,Glass,Moldova,4.0
+251,Glass,Mexico,5.9
+252,Glass,Marshall Islands,2.0
+253,Glass,North Macedonia,4.1
+254,Glass,Mali,1.0
+255,Glass,Malta,6.0
+256,Glass,Montenegro,8.97
+257,Glass,Northern Mariana Islands,5.5
+258,Glass,Mauritania,4.0
+259,Glass,Malaysia,3.0
+260,Glass,New Caledonia,5.5
+261,Glass,Netherlands,5.4
+262,Glass,Norway,4.6
+263,Glass,Nepal,4.36
+264,Glass,Nauru,5.5
+265,Glass,New Zealand,4.0
+266,Glass,Pakistan,6.0
+267,Glass,Panama,5.8
+268,Glass,Peru,3.05
+269,Glass,Philippines,2.34
+270,Glass,Palau,5.0
+271,Glass,Poland,10.07
+272,Glass,Puerto Rico,2.4
+273,Glass,Portugal,6.73
+274,Glass,"Palestine, State of",2.4
+275,Glass,French Polynesia,3.0
+276,Glass,Qatar,4.0
+277,Glass,Romania,4.89
+278,Glass,Russian Federation,16.82
+279,Glass,Saudi Arabia,4.0
+280,Glass,Sudan,3.5
+281,Glass,Senegal,2.0
+282,Glass,Singapore,0.93
+283,Glass,Solomon Islands,6.65
+284,Glass,El Salvador,4.0
+285,Glass,San Marino,5.61
+286,Glass,Serbia,5.44
+287,Glass,Slovak Republic,19.0
+288,Glass,Seychelles,5.2
+289,Glass,Syrian Arab Republic,3.0
+290,Glass,Turks and Caicos Islands,20.5
+291,Glass,Chad,1.0
+292,Glass,Togo,2.0
+293,Glass,Thailand,3.04
+294,Glass,Tonga,5.9
+295,Glass,Trinidad and Tobago,10.15
+296,Glass,Tunisia,2.0
+297,Glass,Turkey,2.0
+298,Glass,Tuvalu,5.5
+299,Glass,Uganda,0.8
+300,Glass,Ukraine,5.0
+301,Glass,Uruguay,3.0
+302,Glass,United States,4.4
+303,Glass,Uzbekistan,3.0
+304,Glass,Saint Vincent and the Grenadines,5.6
+305,Glass,British Virgin Islands,18.1
+306,Glass,Vietnam,2.18
+307,Glass,Vanuatu,5.4
+308,Glass,Samoa,2.2
+309,Glass,Yemen,1.0
+310,Glass,South Africa,5.200216370472019
+311,Glass,Zimbabwe,5.0
+312,Metal,Angola,4.4
+313,Metal,Albania,4.8
+314,Metal,Andorra,2.6
+315,Metal,United Arab Emirates,3.0
+316,Metal,Argentina,1.84
+317,Metal,Armenia,3.4
+318,Metal,American Samoa,7.9
+319,Metal,Antigua and Barbuda,7.0
+320,Metal,Australia,19.38
+321,Metal,Austria,4.4
+322,Metal,Azerbaijan,3.49
+323,Metal,Burundi,2.1
+324,Metal,Belgium,1.91
+325,Metal,Benin,1.6
+326,Metal,Burkina Faso,1.0
+327,Metal,Bangladesh,0.5
+328,Metal,Bulgaria,1.98
+329,Metal,Bahrain,2.1
+330,Metal,Bahamas,7.0
+331,Metal,Belarus,2.0
+332,Metal,Belize,5.0
+333,Metal,Bermuda,6.0
+334,Metal,Bolivia,2.501930501930502
+335,Metal,Brazil,2.9
+336,Metal,Barbados,4.9
+337,Metal,Brunei Darussalam,4.0
+338,Metal,Bhutan,1.0
+339,Metal,Canada,13.0
+340,Metal,Switzerland,3.0
+341,Metal,Chile,2.3
+342,Metal,China,1.1
+343,Metal,Cameroon,0.7
+344,Metal,Colombia,1.1
+345,Metal,Comoros,4.0
+346,Metal,Costa Rica,2.0
+347,Metal,Cuba,1.6
+348,Metal,Cayman Islands,6.2
+349,Metal,Cyprus,3.25
+350,Metal,Czech Republic,8.4
+351,Metal,Germany,1.4
+352,Metal,Dominica,5.0
+353,Metal,Denmark,6.29
+354,Metal,Dominican Republic,3.0
+355,Metal,Algeria,2.8
+356,Metal,Ecuador,1.53
+357,Metal,Egypt,2.0
+358,Metal,Spain,3.0
+359,Metal,Estonia,2.6
+360,Metal,Ethiopia,1.2
+361,Metal,Finland,1.7
+362,Metal,Fiji,1.9
+363,Metal,France,3.0
+364,Metal,Micronesia,16.73
+365,Metal,United Kingdom,3.5
+366,Metal,Georgia,5.0
+367,Metal,Ghana,1.0
+368,Metal,Gibraltar,4.37
+369,Metal,Guinea,1.0
+370,Metal,Greece,3.0
+371,Metal,Grenada,2.4
+372,Metal,Greenland,2.0
+373,Metal,Guam,9.0
+374,Metal,Guyana,4.2
+375,Metal,Hong Kong,2.0
+376,Metal,Honduras,2.11
+377,Metal,Croatia,2.1
+378,Metal,Haiti,2.5
+379,Metal,Hungary,1.8
+380,Metal,Indonesia,1.8
+381,Metal,Ireland,3.7
+382,Metal,Iran,2.3
+383,Metal,Iraq,0.98
+384,Metal,Israel,3.0
+385,Metal,Italy,4.3
+386,Metal,Jamaica,2.38
+387,Metal,Jordan,1.5
+388,Metal,Japan,4.0
+389,Metal,Kazakhstan,3.0
+390,Metal,Kenya,1.0
+391,Metal,Cambodia,2.0
+392,Metal,Kiribati,10.0
+393,Metal,St. Kitts and Nevis,8.8
+394,Metal,Kuwait,2.0
+395,Metal,Lao People's Democratic Republic,3.7
+396,Metal,Lebanon,5.5
+397,Metal,Libya,4.3
+398,Metal,St. Lucia,5.0
+399,Metal,Liechtenstein,12.5
+400,Metal,Sri Lanka,3.0
+401,Metal,Lithuania,2.75
+402,Metal,Luxembourg,2.0
+403,Metal,Latvia,2.6
+404,Metal,Macao,1.7
+405,Metal,Morocco,2.5
+406,Metal,Moldova,3.0
+407,Metal,Mexico,3.4
+408,Metal,Marshall Islands,6.0
+409,Metal,North Macedonia,2.5
+410,Metal,Mali,3.5
+411,Metal,Malta,4.0
+412,Metal,Montenegro,2.9
+413,Metal,Northern Mariana Islands,10.0
+414,Metal,Mauritania,4.2
+415,Metal,Malaysia,3.0
+416,Metal,New Caledonia,10.0
+417,Metal,Netherlands,4.3
+418,Metal,Norway,6.12
+419,Metal,Nepal,1.9
+420,Metal,Nauru,10.0
+421,Metal,New Zealand,4.5
+422,Metal,Pakistan,4.0
+423,Metal,Panama,3.8
+424,Metal,Peru,2.64
+425,Metal,Philippines,4.22
+426,Metal,Palau,10.0
+427,Metal,Poland,2.17
+428,Metal,Puerto Rico,10.4
+429,Metal,Portugal,1.85
+430,Metal,"Palestine, State of",2.7
+431,Metal,French Polynesia,3.0
+432,Metal,Qatar,9.0
+433,Metal,Romania,2.5
+434,Metal,Russian Federation,1.83
+435,Metal,Saudi Arabia,5.0
+436,Metal,Sudan,1.7
+437,Metal,Senegal,2.0
+438,Metal,Singapore,19.12
+439,Metal,Solomon Islands,13.15
+440,Metal,El Salvador,2.0
+441,Metal,San Marino,0.9
+442,Metal,Serbia,1.38
+443,Metal,Slovak Republic,2.0
+444,Metal,Seychelles,4.6
+445,Metal,Syrian Arab Republic,4.0
+446,Metal,Turks and Caicos Islands,7.6
+447,Metal,Chad,2.0
+448,Metal,Togo,4.0
+449,Metal,Thailand,1.85
+450,Metal,Tonga,9.0
+451,Metal,Trinidad and Tobago,3.74
+452,Metal,Tunisia,4.0
+453,Metal,Turkey,1.0
+454,Metal,Tuvalu,10.0
+455,Metal,Uganda,0.6
+456,Metal,Ukraine,4.0
+457,Metal,Uruguay,5.0
+458,Metal,United States,9.0
+459,Metal,Uzbekistan,2.0
+460,Metal,Saint Vincent and the Grenadines,3.8
+461,Metal,British Virgin Islands,8.6
+462,Metal,Vietnam,0.58
+463,Metal,Vanuatu,3.8
+464,Metal,Samoa,8.8
+465,Metal,Yemen,6.0
+466,Metal,South Africa,16.9104608968452
+467,Metal,Zimbabwe,6.0
+468,Other,Angola,11.7
+469,Other,Albania,19.810000000000002
+470,Other,Andorra,11.6
+471,Other,United Arab Emirates,10.0
+472,Other,Argentina,27.66
+473,Other,Armenia,18.299999999999997
+474,Other,American Samoa,29.8
+475,Other,Antigua and Barbuda,12.0
+476,Other,Australia,3.46
+477,Other,Austria,26.4
+478,Other,Azerbaijan,27.23
+479,Other,Burundi,3.2
+480,Other,Belgium,48.54
+481,Other,Benin,34.3
+482,Other,Burkina Faso,61.0
+483,Other,Bangladesh,10.79
+484,Other,Bulgaria,41.53
+485,Other,Bahrain,15.2
+486,Other,Bahamas,12.0
+487,Other,Belarus,43.0
+488,Other,Belize,5.0
+489,Other,Bermuda,26.0
+490,Other,Bolivia,22.702702702702705
+491,Other,Brazil,16.7
+492,Other,Barbados,36.300000000000004
+493,Other,Brunei Darussalam,23.0
+494,Other,Bhutan,7.0
+495,Other,Canada,7.0
+496,Other,Switzerland,29.0
+497,Other,Chile,16.0
+498,Other,China,16.2
+499,Other,Cameroon,10.4
+500,Other,Colombia,15.74
+501,Other,Comoros,32.0
+502,Other,Costa Rica,7.0
+503,Other,Cuba,3.0
+504,Other,Cayman Islands,37.3
+505,Other,Cyprus,12.17
+506,Other,Czech Republic,15.599999999999996
+507,Other,Germany,21.599999999999998
+508,Other,Dominica,14.0
+509,Other,Denmark,61.96
+510,Other,Dominican Republic,14.0
+511,Other,Algeria,14.9
+512,Other,Ecuador,15.08
+513,Other,Egypt,15.0
+514,Other,Spain,16.0
+515,Other,Estonia,16.3
+516,Other,Ethiopia,4.300000000000001
+517,Other,Finland,13.930000000000001
+518,Other,Fiji,40.8
+519,Other,France,26.0
+520,Other,Micronesia,12.92
+521,Other,United Kingdom,38.5
+522,Other,Georgia,16.0
+523,Other,Ghana,25.0
+524,Other,Gibraltar,17.18
+525,Other,Guinea,27.0
+526,Other,Greece,11.0
+527,Other,Grenada,37.4
+528,Other,Greenland,34.3
+529,Other,Guam,18.2
+530,Other,Guyana,16.099999999999998
+531,Other,Hong Kong,17.0
+532,Other,Honduras,6.92
+533,Other,Croatia,17.2
+534,Other,Haiti,17.80000000000001
+535,Other,Hungary,45.8
+536,Other,Indonesia,13.0
+537,Other,Ireland,33.8
+538,Other,Iran,7.1
+539,Other,Iraq,13.1
+540,Other,Israel,18.0
+541,Other,Italy,19.3
+542,Other,Jamaica,5.63
+543,Other,Jordan,15.5
+544,Other,Japan,11.0
+545,Other,Kazakhstan,12.0
+546,Other,Kenya,9.0
+547,Other,Cambodia,16.2
+548,Other,Kiribati,13.5
+549,Other,St. Kitts and Nevis,12.2
+550,Other,Kuwait,9.0
+551,Other,Lao People's Democratic Republic,61.2
+552,Other,Lebanon,11.0
+553,Other,Libya,9.5
+554,Other,St. Lucia,11.0
+555,Other,Liechtenstein,9.2
+556,Other,Sri Lanka,19.0
+557,Other,Lithuania,28.049999999999997
+558,Other,Luxembourg,27.0
+559,Other,Latvia,15.5
+560,Other,Macao,25.3
+561,Other,Morocco,18.5
+562,Other,Moldova,23.0
+563,Other,Mexico,13.6
+564,Other,Marshall Islands,60.0
+565,Other,North Macedonia,37.400000000000006
+566,Other,Mali,72.5
+567,Other,Malta,8.0
+568,Other,Montenegro,22.16
+569,Other,Northern Mariana Islands,13.5
+570,Other,Mauritania,59.7
+571,Other,Malaysia,19.0
+572,Other,New Caledonia,13.5
+573,Other,Netherlands,20.34
+574,Other,Norway,44.95
+575,Other,Nepal,8.02
+576,Other,Nauru,13.5
+577,Other,New Zealand,48.5
+578,Other,Pakistan,38.0
+579,Other,Panama,5.7
+580,Other,Peru,25.9
+581,Other,Philippines,21.919999999999998
+582,Other,Palau,12.0
+583,Other,Poland,27.09
+584,Other,Puerto Rico,44.3
+585,Other,Portugal,30.580000000000002
+586,Other,"Palestine, State of",11.5
+587,Other,French Polynesia,29.0
+588,Other,Qatar,5.0
+589,Other,Romania,12.68
+590,Other,Russian Federation,19.03
+591,Other,Saudi Arabia,7.5
+592,Other,Sudan,18.9
+593,Other,Senegal,70.0
+594,Other,Singapore,44.0
+595,Other,Solomon Islands,8.600000000000001
+596,Other,El Salvador,7.0
+597,Other,San Marino,69.36
+598,Other,Serbia,29.22
+599,Other,Slovak Republic,1.0
+600,Other,Seychelles,25.900000000000006
+601,Other,Syrian Arab Republic,22.0
+602,Other,Turks and Caicos Islands,2.3
+603,Other,Chad,18.0
+604,Other,Togo,42.0
+605,Other,Thailand,4.44
+606,Other,Tonga,13.0
+607,Other,Trinidad and Tobago,17.19
+608,Other,Tunisia,5.0
+609,Other,Turkey,24.0
+610,Other,Tuvalu,13.5
+611,Other,Uganda,10.5
+612,Other,Ukraine,22.0
+613,Other,Uruguay,7.5
+614,Other,United States,32.2
+615,Other,Uzbekistan,35.0
+616,Other,Saint Vincent and the Grenadines,10.5
+617,Other,British Virgin Islands,27.0
+618,Other,Vietnam,17.98
+619,Other,Vanuatu,6.9
+620,Other,Samoa,26.2
+621,Other,Yemen,11.0
+622,Other,South Africa,45.02064556592234
+623,Other,Zimbabwe,3.0
+624,Paper,Angola,11.9
+625,Paper,Albania,9.9
+626,Paper,Andorra,35.1
+627,Paper,United Arab Emirates,25.0
+628,Paper,Argentina,13.96
+629,Paper,Armenia,6.7
+630,Paper,American Samoa,26.4
+631,Paper,Antigua and Barbuda,15.0
+632,Paper,Australia,17.3
+633,Paper,Austria,19.7
+634,Paper,Azerbaijan,10.93
+635,Paper,Burundi,7.3
+636,Paper,Belgium,18.38
+637,Paper,Benin,3.1
+638,Paper,Burkina Faso,7.0
+639,Paper,Bangladesh,3.04
+640,Paper,Bulgaria,14.18
+641,Paper,Bahrain,12.8
+642,Paper,Bahamas,15.0
+643,Paper,Belarus,5.0
+644,Paper,Belize,16.0
+645,Paper,Bermuda,29.0
+646,Paper,Bolivia,6.501930501930501
+647,Paper,Brazil,13.1
+648,Paper,Barbados,19.7
+649,Paper,Brunei Darussalam,18.0
+650,Paper,Bhutan,17.0
+651,Paper,Canada,47.0
+652,Paper,Switzerland,20.0
+653,Paper,Chile,12.4
+654,Paper,China,9.6
+655,Paper,Cameroon,2.1
+656,Paper,Colombia,8.4
+657,Paper,Comoros,7.0
+658,Paper,Costa Rica,21.0
+659,Paper,Cuba,12.3
+660,Paper,Cayman Islands,31.1
+661,Paper,Cyprus,25.7
+662,Paper,Czech Republic,9.1
+663,Paper,Germany,24.0
+664,Paper,Dominica,12.0
+665,Paper,Denmark,11.57
+666,Paper,Dominican Republic,16.0
+667,Paper,Algeria,9.8
+668,Paper,Ecuador,10.25
+669,Paper,Egypt,10.0
+670,Paper,Spain,15.0
+671,Paper,Estonia,17.5
+672,Paper,Ethiopia,3.8
+673,Paper,Finland,37.83
+674,Paper,Fiji,12.5
+675,Paper,France,20.0
+676,Paper,Micronesia,13.3
+677,Paper,United Kingdom,18.9
+678,Paper,Georgia,34.0
+679,Paper,Ghana,3.0
+680,Paper,Gibraltar,33.65
+681,Paper,Guinea,9.0
+682,Paper,Greece,29.0
+683,Paper,Grenada,13.6
+684,Paper,Greenland,11.4
+685,Paper,Guam,28.5
+686,Paper,Guyana,10.7
+687,Paper,Hong Kong,22.0
+688,Paper,Honduras,17.36
+689,Paper,Croatia,23.2
+690,Paper,Haiti,4.1
+691,Paper,Hungary,13.4
+692,Paper,Indonesia,14.9
+693,Paper,Ireland,25.0
+694,Paper,Iran,7.3
+695,Paper,Iraq,9.6
+696,Paper,Israel,24.0
+697,Paper,Italy,22.8
+698,Paper,Jamaica,14.73
+699,Paper,Jordan,15.0
+700,Paper,Japan,33.0
+701,Paper,Kazakhstan,25.0
+702,Paper,Kenya,11.3
+703,Paper,Cambodia,4.0
+704,Paper,Kiribati,10.9
+705,Paper,St. Kitts and Nevis,20.5
+706,Paper,Kuwait,20.0
+707,Paper,Lao People's Democratic Republic,2.8
+708,Paper,Lebanon,16.0
+709,Paper,Libya,5.5
+710,Paper,St. Lucia,10.0
+711,Paper,Liechtenstein,30.3
+712,Paper,Sri Lanka,7.0
+713,Paper,Lithuania,10.05
+714,Paper,Luxembourg,19.0
+715,Paper,Latvia,6.1
+716,Paper,Macao,58.7
+717,Paper,Morocco,9.0
+718,Paper,Moldova,5.0
+719,Paper,Mexico,13.8
+720,Paper,Marshall Islands,11.0
+721,Paper,North Macedonia,12.8
+722,Paper,Mali,3.5
+723,Paper,Malta,18.0
+724,Paper,Montenegro,13.72
+725,Paper,Northern Mariana Islands,10.9
+726,Paper,Mauritania,7.3
+727,Paper,Malaysia,14.0
+728,Paper,New Caledonia,10.9
+729,Paper,Netherlands,21.0
+730,Paper,Norway,26.57
+731,Paper,Nepal,18.21
+732,Paper,Nauru,10.9
+733,Paper,New Zealand,7.0
+734,Paper,Pakistan,13.0
+735,Paper,Panama,26.3
+736,Paper,Peru,7.44
+737,Paper,Philippines,8.7
+738,Paper,Palau,15.0
+739,Paper,Poland,11.27
+740,Paper,Puerto Rico,19.4
+741,Paper,Portugal,13.64
+742,Paper,"Palestine, State of",10.1
+743,Paper,French Polynesia,16.0
+744,Paper,Qatar,11.0
+745,Paper,Romania,11.34
+746,Paper,Russian Federation,19.7
+747,Paper,Saudi Arabia,27.0
+748,Paper,Sudan,11.8
+749,Paper,Senegal,5.0
+750,Paper,Singapore,14.86
+751,Paper,Solomon Islands,6.45
+752,Paper,El Salvador,12.0
+753,Paper,San Marino,13.21
+754,Paper,Serbia,13.57
+755,Paper,Slovak Republic,25.0
+756,Paper,Seychelles,5.9
+757,Paper,Syrian Arab Republic,7.0
+758,Paper,Turks and Caicos Islands,31.5
+759,Paper,Chad,3.0
+760,Paper,Togo,4.0
+761,Paper,Thailand,7.6
+762,Paper,Tonga,7.4
+763,Paper,Trinidad and Tobago,22.6
+764,Paper,Tunisia,10.0
+765,Paper,Turkey,6.0
+766,Paper,Tuvalu,10.9
+767,Paper,Uganda,6.0
+768,Paper,Ukraine,25.0
+769,Paper,Uruguay,20.0
+770,Paper,United States,26.6
+771,Paper,Uzbekistan,17.5
+772,Paper,Saint Vincent and the Grenadines,22.1
+773,Paper,British Virgin Islands,33.5
+774,Paper,Vietnam,5.2
+775,Paper,Vanuatu,4.05
+776,Paper,Samoa,7.2
+777,Paper,Yemen,7.0
+778,Paper,South Africa,9.396918237794267
+779,Paper,Zimbabwe,27.0
+780,Plastic,Angola,13.5
+781,Plastic,Albania,9.6
+782,Plastic,Andorra,11.3
+783,Plastic,United Arab Emirates,19.0
+784,Plastic,Argentina,14.61
+785,Plastic,Armenia,11.4
+786,Plastic,American Samoa,12.8
+787,Plastic,Antigua and Barbuda,13.0
+788,Plastic,Australia,7.61
+789,Plastic,Austria,11.1
+790,Plastic,Azerbaijan,7.87
+791,Plastic,Burundi,3.5
+792,Plastic,Belgium,13.94
+793,Plastic,Benin,7.3
+794,Plastic,Burkina Faso,9.0
+795,Plastic,Bangladesh,4.67
+796,Plastic,Bulgaria,12.15
+797,Plastic,Bahrain,7.4
+798,Plastic,Bahamas,13.0
+799,Plastic,Belarus,12.0
+800,Plastic,Belize,19.0
+801,Plastic,Bermuda,13.0
+802,Plastic,Bolivia,10.193050193050194
+803,Plastic,Brazil,13.5
+804,Plastic,Barbados,17.1
+805,Plastic,Brunei Darussalam,16.0
+806,Plastic,Bhutan,13.0
+807,Plastic,Canada,3.0
+808,Plastic,Switzerland,15.0
+809,Plastic,Chile,9.4
+810,Plastic,China,9.8
+811,Plastic,Cameroon,3.3
+812,Plastic,Colombia,12.83
+813,Plastic,Comoros,5.0
+814,Plastic,Costa Rica,11.0
+815,Plastic,Cuba,9.6
+816,Plastic,Cayman Islands,11.0
+817,Plastic,Cyprus,14.77
+818,Plastic,Czech Republic,2.2
+819,Plastic,Germany,13.0
+820,Plastic,Dominica,16.0
+821,Plastic,Denmark,1.61
+822,Plastic,Dominican Republic,10.0
+823,Plastic,Algeria,16.9
+824,Plastic,Ecuador,11.44
+825,Plastic,Egypt,13.0
+826,Plastic,Spain,9.0
+827,Plastic,Estonia,18.6
+828,Plastic,Ethiopia,2.3
+829,Plastic,Finland,1.45
+830,Plastic,Fiji,7.5
+831,Plastic,France,9.0
+832,Plastic,Micronesia,26.17
+833,Plastic,United Kingdom,20.2
+834,Plastic,Georgia,3.0
+835,Plastic,Ghana,4.0
+836,Plastic,Gibraltar,15.86
+837,Plastic,Guinea,4.0
+838,Plastic,Greece,14.0
+839,Plastic,Grenada,16.4
+840,Plastic,Greenland,2.4
+841,Plastic,Guam,12.4
+842,Plastic,Guyana,14.2
+843,Plastic,Hong Kong,21.0
+844,Plastic,Honduras,14.41
+845,Plastic,Croatia,22.9
+846,Plastic,Haiti,12.7
+847,Plastic,Hungary,13.0
+848,Plastic,Indonesia,14.0
+849,Plastic,Ireland,12.4
+850,Plastic,Iran,8.5
+851,Plastic,Iraq,5.29
+852,Plastic,Israel,18.0
+853,Plastic,Italy,11.6
+854,Plastic,Jamaica,12.2
+855,Plastic,Jordan,16.0
+856,Plastic,Japan,11.0
+857,Plastic,Kazakhstan,25.0
+858,Plastic,Kenya,18.7
+859,Plastic,Cambodia,8.6
+860,Plastic,Kiribati,16.5
+861,Plastic,St. Kitts and Nevis,23.2
+862,Plastic,Kuwait,20.0
+863,Plastic,Lao People's Democratic Republic,6.1
+864,Plastic,Lebanon,11.5
+865,Plastic,Libya,7.5
+866,Plastic,St. Lucia,22.0
+867,Plastic,Liechtenstein,5.4
+868,Plastic,Sri Lanka,7.0
+869,Plastic,Lithuania,10.15
+870,Plastic,Luxembourg,18.0
+871,Plastic,Latvia,7.7
+872,Plastic,Macao,7.9
+873,Plastic,Morocco,8.0
+874,Plastic,Moldova,10.0
+875,Plastic,Mexico,10.9
+876,Plastic,Marshall Islands,13.0
+877,Plastic,North Macedonia,13.900000000000002
+878,Plastic,Mali,2.0
+879,Plastic,Malta,12.0
+880,Plastic,Montenegro,18.42
+881,Plastic,Northern Mariana Islands,16.5
+882,Plastic,Mauritania,20.0
+883,Plastic,Malaysia,15.0
+884,Plastic,New Caledonia,16.5
+885,Plastic,Netherlands,14.0
+886,Plastic,Norway,2.25
+887,Plastic,Nepal,15.14
+888,Plastic,Nauru,16.5
+889,Plastic,New Zealand,8.0
+890,Plastic,Pakistan,9.0
+891,Plastic,Panama,12.0
+892,Plastic,Peru,10.52
+893,Plastic,Philippines,10.55
+894,Plastic,Palau,32.0
+895,Plastic,Poland,12.13
+896,Plastic,Puerto Rico,10.4
+897,Plastic,Portugal,10.72
+898,Plastic,"Palestine, State of",14.2
+899,Plastic,French Polynesia,2.0
+900,Plastic,Qatar,14.0
+901,Plastic,Romania,12.33
+902,Plastic,Russian Federation,14.21
+903,Plastic,Saudi Arabia,11.0
+904,Plastic,Sudan,12.7
+905,Plastic,Senegal,9.0
+906,Plastic,Singapore,10.58
+907,Plastic,Solomon Islands,22.35
+908,Plastic,El Salvador,10.0
+909,Plastic,San Marino,5.6
+910,Plastic,Serbia,12.73
+911,Plastic,Slovak Republic,11.0
+912,Plastic,Seychelles,9.9
+913,Plastic,Syrian Arab Republic,7.0
+914,Plastic,Turks and Caicos Islands,16.3
+915,Plastic,Chad,6.0
+916,Plastic,Togo,10.0
+917,Plastic,Thailand,17.59
+918,Plastic,Tonga,13.4
+919,Plastic,Trinidad and Tobago,19.17
+920,Plastic,Tunisia,11.0
+921,Plastic,Turkey,3.0
+922,Plastic,Tuvalu,16.5
+923,Plastic,Uganda,7.6
+924,Plastic,Ukraine,7.0
+925,Plastic,Uruguay,11.0
+926,Plastic,United States,12.9
+927,Plastic,Uzbekistan,2.5
+928,Plastic,Saint Vincent and the Grenadines,8.4
+929,Plastic,British Virgin Islands,6.3
+930,Plastic,Vietnam,12.15
+931,Plastic,Vanuatu,6.45
+932,Plastic,Samoa,13.0
+933,Plastic,Yemen,10.0
+934,Plastic,South Africa,7.090104301663434
+935,Plastic,Zimbabwe,23.0
