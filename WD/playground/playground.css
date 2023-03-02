@@ -109,7 +109,7 @@ main {
     Component: footer-nav
 ------------------------------------------------ */
 
-/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container'S ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
+/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container's ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
 
 .footer-nav {
     position: fixed;
@@ -146,6 +146,14 @@ main {
 .footer-nav__icon {
     fill: currentColor;
 }
+
+.footer-nav__a--big {
+    --scale: 1.6;
+    transform:
+        scale(var(--scale))
+        translate(0, calc(var(--footer-height) * -1 / var(--scale) / 2)); /* align vertical center with upper edge of footer */
+    box-shadow: 0 0 0 calc(var(--footer-height) * 0.025) var(--color-2);
+    }
 
 /* ------------------------------------------------
     Component: SplashScreen
