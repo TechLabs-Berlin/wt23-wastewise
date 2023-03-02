@@ -28,7 +28,7 @@ c1, c2 = st.columns((20,20))
 #trying FILTER to do button for country
 
 subset_data = source
-    'Continents',
+
 with country_col:
     country_name_input = st.selectbox(
     'Country',
