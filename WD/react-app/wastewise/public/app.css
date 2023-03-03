@@ -29,9 +29,7 @@ body {
     
     background: var(--color-bright);
 
-/* ------------------------------------------------
-    Typography
------------------------------------------------- */
+/* --------------- Typography --------------- */
 
     font-family: 'Fira Sans', sans-serif;
     font-size: 1rem;
@@ -82,9 +80,46 @@ a:hover {
 
 }
 
+/* --------------- misc --------------- */
+
+button {
+    width: min-content;
+    aspect-ratio: 1;
+
+    padding: 1em;
+    
+    background-color: var(--color-2);
+    color: var(--color-bright);
+    
+    border: none;
+    border-radius: 99999em;
+    
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+    transform: rotate(-8deg);
+}
+
+button:hover {
+    background-color: var(--color-1);
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    border-top: 0.125rem solid var(--color-1);
+}
+
 /* ------------------------------------------------
     General Layout
 ------------------------------------------------ */
+
+h1 {
+    margin-top: 0;
+    padding-top: 0.67em;
+}
 
 header {
     position: sticky;
@@ -102,7 +137,7 @@ main {
     background: var(--color-bright);
 
     padding: 0 1rem 1rem 1rem;
-    margin-bottom: calc(var(--footer-height) * 1); /* otherwise some content might be hidden under the footer */
+    margin-bottom: calc(var(--footer-height) * 1.5); /* otherwise some content might be hidden under the footer */
 }
 
 /* ------------------------------------------------
@@ -114,6 +149,7 @@ main {
 .navbar {
     position: fixed;
     bottom: 0;
+    z-index: 998;
 
     width: 100%;
     height: var(--footer-height);
@@ -163,6 +199,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
     
     width: 100%;
     height: 100vh;
