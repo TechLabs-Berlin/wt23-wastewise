@@ -14,7 +14,7 @@ const SplashScreen = ({ animationDelay }) => {
         return (
             <div
                 className="splashscreen splashscreen--fadeout"
-                style={{'animation-delay': `${animationDelay}ms`}} 
+                style={{'animationDelay': `${animationDelay}ms`}} 
             >
                 <div className="splashscreen__logo-container">
                     <svg

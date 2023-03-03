@@ -13,6 +13,8 @@
 
     --footer-height: clamp(3rem, 10vh, 5rem); /* global because used in several classes */
     --footer-padding: calc(var(--footer-height) * 0.15); /* global because used in several classes */
+
+    --main-padding: 1rem;
 }
 
 *,
@@ -29,9 +31,7 @@ body {
     
     background: var(--color-bright);
 
-/* ------------------------------------------------
-    Typography
------------------------------------------------- */
+/* --------------- Typography --------------- */
 
     font-family: 'Fira Sans', sans-serif;
     font-size: 1rem;
@@ -82,9 +82,46 @@ a:hover {
 
 }
 
+/* --------------- misc --------------- */
+
+button {
+    width: min-content;
+    aspect-ratio: 1;
+
+    padding: 1em;
+    
+    background-color: var(--color-2);
+    color: var(--color-bright);
+    
+    border: none;
+    border-radius: 99999em;
+    
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+    transform: rotate(-8deg);
+}
+
+button:hover {
+    background-color: var(--color-1);
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    border-top: 0.125rem solid var(--color-1);
+}
+
 /* ------------------------------------------------
     General Layout
 ------------------------------------------------ */
+
+h1 {
+    margin-top: 0;
+    padding-top: 0.67em;
+}
 
 header {
     position: sticky;
@@ -101,19 +138,20 @@ header {
 main {
     background: var(--color-bright);
 
-    padding: 0 1rem 1rem 1rem;
-    margin-bottom: calc(var(--footer-height) * 1); /* otherwise some content might be hidden under the footer */
+    padding: var(--main-padding);
+    margin-bottom: calc(var(--footer-height) * 1.5); /* otherwise some content might be hidden under the footer */
 }
 
 /* ------------------------------------------------
-    Component: footer-nav
+    Component: NavBar
 ------------------------------------------------ */
 
-/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container'S ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
+/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container's ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
 
-.footer-nav {
+.navbar {
     position: fixed;
     bottom: 0;
+    z-index: 998;
 
     width: 100%;
     height: var(--footer-height);
@@ -125,7 +163,7 @@ main {
     justify-content: space-evenly;
 }
 
-.footer-nav__a {
+.navbar__a {
     background-color: var(--color-1);
     color: var(--color-2);
 
@@ -138,14 +176,22 @@ main {
     border-radius: 99999rem;
 }
 
-.footer-nav__a:hover {
+.navbar__a:hover {
     background-color: var(--color-bright);
     color: var(--color-3);
 }
 
-.footer-nav__icon {
+.navbar__icon {
     fill: currentColor;
 }
+
+.navbar__a--big {
+    --scale: 1.6;
+    transform:
+        scale(var(--scale))
+        translate(0, calc(var(--footer-height) * -1 / var(--scale) / 2)); /* align vertical center with upper edge of footer */
+    box-shadow: 0 0 0 calc(var(--footer-height) * 0.025) var(--color-2);
+    }
 
 /* ------------------------------------------------
     Component: SplashScreen
@@ -155,6 +201,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
     
     width: 100%;
     height: 100vh;
@@ -195,10 +242,35 @@ main {
     animation-name: fadeout;
     animation-duration: 300ms;
     animation-timing-function: linear;
-    /* animation-delay: 2s; */
+    animation-delay: 2s;
     /* animation-delay: will be assigned by the React component */
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+/* ------------------------------------------------
+    Component: TakePicture → EXPERIMENTAL
+------------------------------------------------ */
+
+.takepicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    min-height: calc(100vh - var(--footer-height));
+}
+
+.takepicture h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.takepicture video {
+    --frame-space-vertically: calc(var(--footer-height) + calc(var(--main-padding) * 2));
+    width: 100%;
+    max-height: calc(100vh - var(--frame-space-vertically));
 }
 
 /* ------------------------------------------------
