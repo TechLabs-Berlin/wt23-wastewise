@@ -13,6 +13,8 @@
 
     --footer-height: clamp(3rem, 10vh, 5rem); /* global because used in several classes */
     --footer-padding: calc(var(--footer-height) * 0.15); /* global because used in several classes */
+
+    --main-padding: 1rem;
 }
 
 *,
@@ -136,7 +138,7 @@ header {
 main {
     background: var(--color-bright);
 
-    padding: 0 1rem 1rem 1rem;
+    padding: var(--main-padding);
     margin-bottom: calc(var(--footer-height) * 1.5); /* otherwise some content might be hidden under the footer */
 }
 
@@ -244,6 +246,31 @@ main {
     /* animation-delay: will be assigned by the React component */
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+/* ------------------------------------------------
+    Component: TakePicture → EXPERIMENTAL
+------------------------------------------------ */
+
+.takepicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    min-height: calc(100vh - var(--footer-height));
+}
+
+.takepicture h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.takepicture video {
+    --frame-space-vertically: calc(var(--footer-height) + calc(var(--main-padding) * 2));
+    width: 100%;
+    max-height: calc(100vh - var(--frame-space-vertically));
 }
 
 /* ------------------------------------------------
