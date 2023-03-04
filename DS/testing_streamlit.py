@@ -7,8 +7,8 @@ source= pd.read_csv('unstacked_df_v1.csv')
 
 # -- DASHBOARD SETINGS 
 #Create three columns to put tittle in the middle
-#col1, col2, col3 = st.columns([5, 5, 20])
-col1, col3 = st.columns([10, 20])
+col1, col2, col3 = st.columns([2, 1, 10])
+#col1, col3 = st.columns([10, 20])
 
 # -- Put the image in the middle column
 # - Commented out here so that the file will run without having the image downloaded
@@ -19,11 +19,11 @@ with col3:
     st.title("Waste produced")
 # -- We use the first column here as a dummy to add a space to the left
 
-country_col, continent_col = st.columns((20, 20))
+random_col, country_col, random_col3 = st.columns([5,10,5])
 
 #"Waste by country"
 
-c1, c2 = st.columns((20,20))
+#c1, c2 = st.columns((50,50))
 
 #trying FILTER to do button for country
 
@@ -40,21 +40,23 @@ if len(country_name_input) > 0:
 
 
 
+
+
 #This is the code that create the graph
 
-with c1:
-    bar_chart = alt.Chart(subset_data).mark_bar().encode(
-    x= alt.X('type_of_waste:O',title="Type of waste"),
-    y=alt.Y('percentage:Q', title='Percentage'),
-    color='type_of_waste:N',
-    )
+#with c1:
+bar_chart = alt.Chart(subset_data).mark_bar().encode(
+x= alt.X('type_of_waste:O',title="Type of waste"),
+y=alt.Y('percentage:Q', title='Percentage'),
+color='type_of_waste:N',
+).configure(background='#FFFFFF')
 
-    st.altair_chart(bar_chart, use_container_width=True)
+st.altair_chart(bar_chart, use_container_width=True)
 
 
+#continents
 
-#CONTINENT
-
+random1_col, continent_col, random2_col = st.columns((5,10,5))
 
 
 source2=pd.read_csv('unstacked_df_continent.csv')
@@ -76,16 +78,22 @@ if len(continent_name_input) > 0:
 
 #This is the code that create the graph
 
-with c2:
-    bar_chart = alt.Chart(subset_data).mark_bar().encode(
-    x= alt.X('type_of_waste:O',title="Type of waste"),
-    y=alt.Y('percentage:Q', title='Percentage'),
-    color='type_of_waste:N',
-    )
+#with c2:
+bar_chart = alt.Chart(subset_data).mark_bar().encode(
+x= alt.X('type_of_waste:O',title="Type of waste"),
+y=alt.Y('percentage:Q', title='Percentage'),
+color='type_of_waste:N',
+).configure(background='#FFFFFF')
 
-    st.altair_chart(bar_chart, use_container_width=True)
+st.altair_chart(bar_chart, use_container_width=True)
 
 
+#trying to apply the theme ./.streamlit/config.toml
+
+#[theme]
+#base="light"
+#backgroundColor="#f5fbf9"
+#secondaryBackgroundColor="#fdfeff"
 
 
 
