@@ -7,6 +7,7 @@
 :root {
     --color-pri: #0e7b54;
     --color-sec: #e7e8e3;
+    --color-pri-warmer: #2D6936;
     --color-bright-logo: #f7f2db;
     --color-dark: #0e0e0e;
     --color-bright: white;
@@ -14,7 +15,7 @@
     --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP*/
     --footer-padding: calc(var(--footer-height) * 0.175); /* global because used in several classes */
 
-    --main-padding: 1rem;
+    --main-padding: 1.5rem;
 }
 
 *,
@@ -48,21 +49,34 @@ h3, h4, h5, h6 {
 }
 
 h1 {
-    color: var(--color-pri);
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--color-pri-warmer);
+    margin: 0 0 0.25em 0;
 }
 
 h2 {
-    color: var(--color-sec);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-pri-warmer);
+    margin: 0 0 1em 0;
 }
 
 h3 {
-    color: var(--color-3);
+    color: var(--color-dark);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-dark);
+    margin: 0 0 1em 0;
 }
 
 /* --------------- Links --------------- */
 
 a {
-    color: var(--color-sec);
+    color: var(--color-pri);
     /* font-weight: bold; */
     text-decoration: underline dotted;
     text-decoration-color: inherit;
@@ -85,27 +99,24 @@ a:hover {
 /* --------------- misc --------------- */
 
 button {
-    width: min-content;
-    aspect-ratio: 1;
+    width: max-content;
 
-    padding: 1em;
+    padding: 1em 3em;
     
-    background-color: var(--color-sec);
+    background-color: var(--color-pri);
     color: var(--color-bright);
     
     border: none;
-    border-radius: 99999em;
+    border-radius: 0.4em;
     
     font-family: inherit;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-
-    transform: rotate(-8deg);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
 }
 
 button:hover {
-    background-color: var(--color-pri);
+    background-color: var(--color-pri-warmer);
     cursor: pointer;
 }
 
@@ -117,11 +128,6 @@ hr {
 /* ------------------------------------------------
     General Layout
 ------------------------------------------------ */
-
-h1 {
-    margin-top: 0;
-    padding-top: 0.67em;
-}
 
 main {
     background: var(--color-bright);
@@ -301,6 +307,57 @@ main {
     --frame-space-vertically: calc(var(--footer-height) + calc(var(--main-padding) * 2));
     width: 100%;
     max-height: calc(100vh - var(--frame-space-vertically));
+}
+
+/* ------------------------------------------------
+    Component: Tour → IN PROGRESS
+------------------------------------------------ */
+
+.tour {
+    width: 100%;
+    height: 100vh;
+    padding-top: clamp(var(--main-padding), calc(var(--main-padding) + 2vh), calc(var(--main-padding) * 3));
+    padding-bottom: clamp(var(--main-padding), calc(var(--main-padding) + 2vh), calc(var(--main-padding) * 3));
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tour__slide1__image {
+    overflow: hidden;
+}
+
+.tour__slide1__image img {
+    
+}
+
+.tour__p {
+    font-size: 1.125rem;
+}
+
+.tour__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.tour__pagination__item {
+    display: block;
+    width: 2rem;
+    height: 0.5rem;
+    border-radius: 99999rem;
+    background-color: var(--color-bright);
+}
+
+.tour__pagination__item:hover,
+.tour__pagination__item--active {
+    cursor: pointer;
+    background-color: var(--color-pri);
 }
 
 /* ------------------------------------------------
