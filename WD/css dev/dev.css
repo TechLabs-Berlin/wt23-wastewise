@@ -7,12 +7,12 @@
 :root {
     --color-pri: #0e7b54;
     --color-sec: #e7e8e3;
-    /* --color-3: #ffa200; */
+    --color-bright-logo: #f7f2db;
     --color-dark: #0e0e0e;
     --color-bright: white;
 
-    --footer-height: 6vh; /* global because used in several classes → TO DO: CLAMP*/
-    --footer-padding: calc(var(--footer-height) * 0.1); /* global because used in several classes */
+    --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP*/
+    --footer-padding: calc(var(--footer-height) * 0.175); /* global because used in several classes */
 
     --main-padding: 1rem;
 }
@@ -217,24 +217,29 @@ main {
     
     width: 100%;
     height: 100vh;
-    background: var(--color-sec);
+    background: var(--color-pri);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1vh;
 }
 
 .splashscreen__logo-container {
-    --dimensions: 62; /* width in % and height in vh – appending unit with calc trick */
-    --ratio: 0.85;
+    --dimensions: 50; /* width in % and height in vh – appending unit with calc trick */
+    --ratio: 1;
     
     width: calc(var(--dimensions) * 1%);
     max-width: calc(calc(var(--dimensions) * 1vh) * var(--ratio));
     aspect-ratio: var(--ratio);
     max-height: calc(var(--dimensions) * 1%);
-    clip-path: polygon(0% 3.5%, 100% 0%, 90.5% 98%, 14% 100%);
+    /* clip-path: polygon(0% 3.5%, 100% 0%, 90.5% 98%, 14% 100%); */
 
-    background: var(--color-bright);
+    /* padding: 3rem; */
+    border-radius: 5%;
+
+    background: var(--color-dark);
 
     display: flex;
     justify-content: center;
@@ -242,12 +247,25 @@ main {
 }
 
 .splashscreen__logo {
-    height: 60%;
-
-    position: relative;
-    right: -3%;
-    bottom: -8%
+    width: 75%;
 }
+
+.splashscreen__logo__pictogram {
+    fill: var(--color-bright-logo);
+}
+
+.splashscreen__logo__text {
+    fill: var(--color-pri);
+}
+
+.splashscreen__claim {
+    max-width: 75vw;
+    margin: 0;
+    font-weight: 400;
+    font-size: clamp(1rem, 5vw, 2rem);
+    text-align: center;
+    color: var(--color-sec);
+} 
 
 .splashscreen--fadeout {
     /* animation: fadeout 0.3s linear 2s 1 forwards; */
