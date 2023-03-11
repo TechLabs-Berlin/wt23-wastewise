@@ -12,7 +12,8 @@
     --color-dark: #0e0e0e;
     --color-bright: white;
 
-    --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP*/
+    --header-height: 17vh; /* needed globally for calculating iframe height */ 
+    --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP? */
     --footer-padding: calc(var(--footer-height) * 0.175); /* global because used in several classes */
 
     --main-padding: 1.5rem;
@@ -136,6 +137,12 @@ main {
     margin-bottom: var(--footer-height); /* otherwise some content might be hidden under the footer */
 }
 
+iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
 /* ------------------------------------------------
     Component: Header
 ------------------------------------------------ */
@@ -143,7 +150,7 @@ main {
 .header {
     position: sticky;
     top: 0;
-    height: 17vh;
+    height: var(--header-height);
     background: var(--color-sec);
 
     color: var(--color-dark);
@@ -412,6 +419,16 @@ main {
 .tour--3 .tour__image {
     display: block;
     width: 100%;
+}
+
+/* ------------------------------------------------
+    Component: iFrame
+------------------------------------------------ */
+
+.iframe {
+    height: calc(100vh - var(--header-height) - var(--footer-height) - calc(var(--main-padding) * 2));
+    
+    background: var(--color-sec); /* temporary */
 }
 
 /* ------------------------------------------------
