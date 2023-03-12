@@ -12,11 +12,13 @@
     --color-dark: #0e0e0e;
     --color-bright: white;
 
-    --header-height: 17vh; /* needed globally for calculating iframe height */ 
+    --header-height: 12vh;
     --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP? */
-    --footer-padding: calc(var(--footer-height) * 0.175); /* global because used in several classes */
-
     --main-padding: 1.5rem;
+
+    --footer-padding: calc(var(--footer-height) * 0.175); /* global because used in several classes */
+    --main-height: calc(100vh - var(--header-height) - var(--footer-height));
+
 }
 
 *,
@@ -126,15 +128,21 @@ hr {
     border-top: 0.125rem solid var(--color-pri);
 }
 
+svg,
+video {
+    display: block;
+}
+
 /* ------------------------------------------------
     General Layout
 ------------------------------------------------ */
 
+/* main is always used together with header and footer! */
 main {
     background: var(--color-bright);
-
     padding: var(--main-padding);
-    margin-bottom: var(--footer-height); /* otherwise some content might be hidden under the footer */
+    margin-bottom: var(--footer-height); 
+    /* otherwise some content might be hidden under the footer */
 }
 
 iframe {
@@ -167,7 +175,7 @@ iframe {
     color: inherit;
 
     position: relative;
-    bottom: -0.75em;
+    bottom: -0.25em;
 }
 
 /* ------------------------------------------------
@@ -292,31 +300,6 @@ iframe {
 }
 
 /* ------------------------------------------------
-    Component: TakePicture → EXPERIMENTAL
------------------------------------------------- */
-
-.takepicture {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-    min-height: calc(100vh - var(--footer-height));
-}
-
-.takepicture h1 {
-    font-size: 3em;
-    text-align: center;
-}
-
-.takepicture video {
-    --frame-space-vertically: calc(var(--footer-height) + calc(var(--main-padding) * 2));
-    width: 100%;
-    max-height: calc(100vh - var(--frame-space-vertically));
-}
-
-/* ------------------------------------------------
     Component: Tour
 ------------------------------------------------ */
 
@@ -421,14 +404,91 @@ iframe {
     width: 100%;
 }
 
+
 /* ------------------------------------------------
-    Component: iFrame
+Component: iFrame
 ------------------------------------------------ */
 
 .iframe {
-    height: calc(100vh - var(--header-height) - var(--footer-height) - calc(var(--main-padding) * 2));
+    height: calc(var(--main-height) - calc(var(--main-padding) * 2));
     
     background: var(--color-sec); /* temporary */
+}
+
+/* ------------------------------------------------
+Component: TakePicture
+------------------------------------------------ */
+
+.takepicture {
+    --button-height: 12vh;
+    
+    height: var(--main-height);
+    /* min-height: var(--main-height); */
+    
+    background: linear-gradient(180deg, #f0f0ed 0%, #ebebe7 100%);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* gap: var(--main-padding); */
+}
+
+.takepicture__image-container {
+    /* ----- make it always a square ----- */
+    width: calc(var(--main-height) - var(--button-height) - calc(var(--main-padding) * 2));/* luck: header has a fixed height , remove it */
+    max-width: calc(100vw - calc(var(--main-padding) * 2));/* stay within the window */
+    max-height: calc(100vw - calc(var(--main-padding) * 2)); 
+    flex: 1;
+}
+
+.takepicture__image-container__border {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1;
+    
+    /* ----- Border only at the corners ----- */
+    
+    --b: 0.1875rem; /* border thickness */
+    --c: transparent 90deg, var(--color-pri) 0; /* border color */
+    padding: 0.625rem;
+    
+    background:
+    conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+    conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+    conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+    background-size: 10% 10%; /* border length */
+    background-repeat: no-repeat;
+}
+
+.takepicture__image-container video {
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100%;
+    border-radius: 6%;
+}
+
+.takepicture__button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.takepicture__button {
+    width: var(--button-height);
+}
+.takepicture__button__background {
+    fill: var(--color-pri);
+}
+.takepicture__button__icon {
+    fill: var(--color-bright);
+}
+
+.takepicture__button:hover {
+    cursor: pointer;
+}
+.takepicture__button:hover .scan__button__background {
+    fill: var(--color-pri-warmer);
 }
 
 /* ------------------------------------------------
