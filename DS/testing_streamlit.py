@@ -92,7 +92,7 @@ st.altair_chart(bar_chart, use_container_width=True)
 
 #[theme]
 #base="light"
-#backgroundColor="#F3F7F5"
+#backgroundColor="#F3F7F5" o #F4F7F3
 #secondaryBackgroundColor="#fdfeff"
 
 
