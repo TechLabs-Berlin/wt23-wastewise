@@ -128,6 +128,7 @@ hr {
     border-top: 0.125rem solid var(--color-pri);
 }
 
+img,
 svg,
 video {
     display: block;
@@ -434,42 +435,81 @@ Component: TakePicture
     /* gap: var(--main-padding); */
 }
 
-.takepicture__image-container {
+.takepicture__media-box {
     /* ----- make it always a square ----- */
-    width: calc(var(--main-height) - var(--button-height) - calc(var(--main-padding) * 2));/* luck: header has a fixed height , remove it */
-    max-width: calc(100vw - calc(var(--main-padding) * 2));/* stay within the window */
+    width: calc(var(--main-height) - var(--button-height) - calc(var(--main-padding) * 2));
+    max-width: calc(100vw - calc(var(--main-padding) * 2));
     max-height: calc(100vw - calc(var(--main-padding) * 2)); 
     flex: 1;
 }
 
-.takepicture__image-container__border {
+.takepicture__frame {
     max-width: 100%;
     max-height: 100%;
     aspect-ratio: 1;
     
-    /* ----- Border only at the corners ----- */
+    /* ----- Border only at the 4 corners ----- */
     
     --b: 0.1875rem; /* border thickness */
     --c: transparent 90deg, var(--color-pri) 0; /* border color */
-    padding: 0.625rem;
+    --p: 0.625rem; /* used also in other class down below*/
+
+    padding: var(--p);
     
     background:
-    conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
-    conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
-    conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
-    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+        conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+        conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+        conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
     background-size: 10% 10%; /* border length */
     background-repeat: no-repeat;
 }
 
-.takepicture__image-container video {
+.takepicture__video,
+.takepicture__photo {
     background-color: #f4f4f4;
     width: 100%;
     height: 100%;
     border-radius: 6%;
 }
 
-.takepicture__button-container {
+.takepicture__processing-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 6%;
+    overflow: clip;
+
+    position: relative;
+}
+
+.u-blur {
+    filter: blur(0.5rem);
+}
+
+/* TO DEBUG: In Safari it is not a quare, 20px more vertically, causing background-cover beeing zoomed and flickering at start/end of animation */
+
+.takepicture__processing-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("images/dummy/358-364x364.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation-name: processing-image;
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.takepicture__button-box {
     display: flex;
     justify-content: center;
 }
@@ -487,7 +527,7 @@ Component: TakePicture
 .takepicture__button:hover {
     cursor: pointer;
 }
-.takepicture__button:hover .scan__button__background {
+.takepicture__button:hover .takepicture__button__background {
     fill: var(--color-pri-warmer);
 }
 
@@ -501,5 +541,17 @@ Component: TakePicture
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes processing-image {
+    0% {
+        height: 100%;
+    }
+    50% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
     }
 }
