@@ -11,14 +11,28 @@
     --color-bright-logo: #f7f2db;
     --color-dark: #0e0e0e;
     --color-bright: white;
+    --color-grey: #c9c9c9;
+
+    --color-fail: #F46767;
+    --color-cat1: #f0d06e;
+    --color-cat2: #74f06e;
+    --color-cat3: #2cbab8;
+    --color-cat4: #cb6ef0;
+    --color-cat5: #be2b72;
+    --color-cat6: #6ee7f0;
+    --color-cat7: #866b1b;
+    --color-cat8: #ea982d;
+    --color-cat9: #e90ae9;
 
     --header-height: 12vh;
     --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP? */
     --main-padding: 1.5rem;
+    
+    --border-radius: 1.25rem;
+    --border-radius-small: 0.25rem;
 
     --footer-padding: calc(var(--footer-height) * 0.175); /* global because used in several classes */
     --main-height: calc(100vh - var(--header-height) - var(--footer-height));
-
 }
 
 *,
@@ -110,7 +124,7 @@ button {
     color: var(--color-bright);
     
     border: none;
-    border-radius: 0.4em;
+    border-radius: var(--border-radius-small);
     
     font-family: inherit;
     font-size: 1rem;
@@ -405,7 +419,6 @@ iframe {
     width: 100%;
 }
 
-
 /* ------------------------------------------------
 Component: iFrame
 ------------------------------------------------ */
@@ -421,13 +434,15 @@ Component: TakePicture
 ------------------------------------------------ */
 
 .takepicture {
-    --button-height: 12vh;
+    --button-height: 12vh; /* needed due to general height constraints and calculate proper sizes of other elements */
     
     height: var(--main-height);
     /* min-height: var(--main-height); */
     
-    background: linear-gradient(180deg, #f0f0ed 0%, #ebebe7 100%);
+    background: linear-gradient(to bottom, #f0f0ed 0%, var(--color-sec) calc(100% - var(--border-radius)));
     
+    border-radius: var(--border-radius);
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -441,6 +456,8 @@ Component: TakePicture
     max-width: calc(100vw - calc(var(--main-padding) * 2));
     max-height: calc(100vw - calc(var(--main-padding) * 2)); 
     flex: 1;
+
+    position: relative;
 }
 
 .takepicture__frame {
@@ -470,13 +487,13 @@ Component: TakePicture
     background-color: #f4f4f4;
     width: 100%;
     height: 100%;
-    border-radius: 6%;
+    border-radius: var(--border-radius);
 }
 
 .takepicture__processing-box {
     width: 100%;
     height: 100%;
-    border-radius: 6%;
+    border-radius: var(--border-radius);
     overflow: clip;
 
     position: relative;
@@ -530,6 +547,109 @@ Component: TakePicture
 .takepicture__button:hover .takepicture__button__background {
     fill: var(--color-pri-warmer);
 }
+
+/* Append toggle class .t-inactive to .takepicture__button element to make the button inactive */
+
+.t-inactive .takepicture__button__background {
+    fill: var(--color-grey);
+}
+.t-inactive .takepicture__button__icon {
+    fill: var(--color-bright);
+}
+
+/* ------------------------------------------------
+    Component: ShowResult
+------------------------------------------------ */
+
+.showresult {
+    height: var(--main-height);
+    background: var(--color-sec);
+
+    /* TO DO: solve conflict of global main-padding, keep main tag! */
+    padding: 0; 
+}
+
+.showresult__flexbox {
+    height: calc(var(--main-height) - var(--footer-height));
+    padding: var(--main-padding);
+
+    border-radius: var(--border-radius);
+    overflow: clip; /* for when the failed image is extremely blurred */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: calc(var(--main-padding) / 2);
+}
+
+.showresult__photo {
+    background-color: #f4f4f4;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+    .m-fail .showresult__photo {
+        filter: blur(1.5rem);
+    }
+
+.showresult__text-box {
+    background-color: var(--color-bright);
+    padding: calc(var(--main-padding) / 2) var(--main-padding);
+    border-radius: var(--border-radius);
+}
+    /* -- Place it in the middle when there's no result -- */
+
+    .m-fail .showresult__text-box {
+        position: absolute;
+        margin: var(--main-padding);
+        left: 0;
+        right: 0;
+    }
+
+    .m-fail h3 {
+        color: var(--color-fail);
+    }
+
+/* ----- Refresh Button ----- */
+
+.showresult__button {
+    --button-height: var(--footer-height);
+
+    height: var(--button-height);
+    aspect-ratio: 1;
+
+    position: relative;
+    top: calc(-1 * calc(var(--main-padding) / 2));
+
+    display: block;
+    margin: 0 auto;
+
+    background-color: var(--color-pri);
+    color: var(--color-bright);
+
+    padding: calc(var(--button-height) * 0.25);
+    border-radius: 99999rem;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.showresult__button__icon {
+    fill: currentColor;
+}
+
+/* ----- Modifier classes to change background color according to result ----- */
+
+.m-fail { background-color: var(--color-fail); }
+.m-cat1 { background-color: var(--color-cat1); }
+.m-cat2 { background-color: var(--color-cat2); }
+.m-cat3 { background-color: var(--color-cat3); }
+.m-cat4 { background-color: var(--color-cat4); }
+.m-cat5 { background-color: var(--color-cat5); }
+.m-cat6 { background-color: var(--color-cat6); }
+.m-cat7 { background-color: var(--color-cat7); }
+.m-cat8 { background-color: var(--color-cat8); }
+.m-cat9 { background-color: var(--color-cat9); }
 
 /* ------------------------------------------------
     Animations
