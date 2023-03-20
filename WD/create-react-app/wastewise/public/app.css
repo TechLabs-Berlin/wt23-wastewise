@@ -373,7 +373,7 @@ iframe {
 .tour--1 .tour__image-container {
     overflow: hidden;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .tour--1 .tour__image {
