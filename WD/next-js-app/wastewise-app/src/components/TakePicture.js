@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
 const TakePicture = () => {
@@ -16,7 +16,7 @@ const TakePicture = () => {
     const captureImage = () => {
         const img = camRef.current.getScreenshot();
         // console.log(img);
-        console.log(camRef.current)
+        // console.log(camRef.current)
         setUrl(img);
         setCamOn(false);
     };
