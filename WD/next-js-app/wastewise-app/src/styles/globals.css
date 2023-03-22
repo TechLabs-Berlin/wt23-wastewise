@@ -31,6 +31,8 @@
     --border-radius: 1.25rem;
     --border-radius-small: 0.5rem;
 
+    --box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+
     --footer-padding: calc(var(--footer-height) * 0.175);
     --main-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
@@ -113,7 +115,8 @@ a:hover {
 
 /* --------------- misc --------------- */
 
-button {
+button,
+.button {
     width: max-content;
 
     padding: 1em 3em;
@@ -123,15 +126,19 @@ button {
     
     border: none;
     border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow);
     
     font-family: inherit;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.03em;
+    text-decoration: none;
 }
 
-button:hover {
+button:hover,
+.button:hover {
     background-color: var(--color-pri-warmer);
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -634,7 +641,7 @@ Component: TakePicture
 
     padding: calc(var(--button-height) * 0.25);
     border-radius: 99999rem;
-    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    box-shadow: var(--box-shadow);
 }
 
 .showresult__button:hover {

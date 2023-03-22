@@ -4,8 +4,7 @@ import Webcam from 'react-webcam';
 const TakePicture = () => {
 
     const camRef = useRef(null);
-    const [url, setUrl] = useState(null);
-    const [camOn, setCamOn] = useState(false);
+    const [dataURL, setDataURL] = useState(null);
 
     const videoConstraints = {
         width: 2000,
@@ -17,21 +16,13 @@ const TakePicture = () => {
         const img = camRef.current.getScreenshot();
         // console.log(img);
         // console.log(camRef.current)
-        setUrl(img);
-        setCamOn(false);
+        setDataURL(img);
     };
 
     return (
         <main className="takepicture">
 
-            {!camOn && !url && (
-                <>
-                    <h1 className="takepicture__question">What do you want to dispose of?</h1>
-                    <button onClick={() => setCamOn(true)}>Take a picture</button>
-                </>
-            )}
-
-            {camOn && (
+            {!dataURL && (
                 <>
                     <div className="takepicture__media-box">
                         <div className="takepicture__frame">
@@ -54,7 +45,7 @@ const TakePicture = () => {
                         </div>
                     </div>
                     <div className="takepicture__button-box">
-                        <svg onClick={captureImage} className="takepicture__button" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 120 120">
+                        <svg onClick={captureImage} className="takepicture__button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
                             <circle className="takepicture__button__background" cx="60" cy="60" r="40"/>
                             <path className="takepicture__button__background" d="M95.8 108.149a60.004 60.004 0 0 0 20.776-68.129A59.999 59.999 0 0 0 2.021 44.56a60 60 0 0 0 26.1 66.271l5.232-8.343a50.149 50.149 0 0 1-21.816-55.394 50.151 50.151 0 1 1 78.388 53.153l5.876 7.903Z"/>
                             <mask id="a" width="40" height="36" x="40" y="42" maskUnits="userSpaceOnUse" style={{maskType: 'alpha'}}>
@@ -68,7 +59,7 @@ const TakePicture = () => {
                 </>
             )}
 
-            {!camOn && url && (
+            {dataURL && (
                 <>
                     <div className="takepicture__media-box">
                         <div className="takepicture__frame">
@@ -76,13 +67,13 @@ const TakePicture = () => {
 
                                 <div className="takepicture__processing-box">
                                     <img
-                                        src={url}
+                                        src={dataURL}
                                         alt="the photo you just took in a blurred and animated version"
                                         className="takepicture__photo u-blur"
                                     />
                                     <div className="takepicture__processing-animation">
                                         <img
-                                            src={url}
+                                            src={dataURL}
                                             alt="the photo you just took"
                                             className="takepicture__photo"
                                         />
