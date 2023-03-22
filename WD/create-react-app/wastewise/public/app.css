@@ -373,7 +373,7 @@ iframe {
 .tour--1 .tour__image-container {
     overflow: hidden;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .tour--1 .tour__image {
@@ -588,6 +588,7 @@ Component: TakePicture
 .showresult__photo {
     background-color: #f4f4f4;
     width: 100%;
+    flex-grow: 1;
     object-fit: cover;
     overflow: hidden;
     border-radius: var(--border-radius);
