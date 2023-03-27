@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 /* ------------------------------------------------
     Reset & General Styles
@@ -264,7 +264,7 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1vh;
+    gap: var(--main-padding);
 }
 
 .splashscreen__logo-container {
@@ -572,7 +572,10 @@ Component: TakePicture
 
 .showresult {
     height: var(--main-height);
+    max-width: calc(var(--main-height) - var(--footer-height));
     background: var(--color-sec);
+
+    margin: 0 auto;
 
     /* TO DO: solve conflict of global main-padding, keep main tag! */
     padding: 0; 
@@ -613,9 +616,10 @@ Component: TakePicture
 
     .m-fail .showresult__text-box {
         position: absolute;
-        margin: var(--main-padding);
-        left: 0;
-        right: 0;
+        margin: 0 auto;
+        left: var(--main-padding);
+        right: var(--main-padding);
+        max-width: calc(var(--main-height) - var(--footer-height) - calc(var(--main-padding) * 2));
     }
 
     .m-fail h3 {
@@ -687,5 +691,27 @@ Component: TakePicture
     }
     100% {
         height: 100%;
+    }
+}
+
+/* ------------------------------------------------
+    Responsive adaptions
+------------------------------------------------ */
+
+@media screen and (height < 40em) {
+
+    html {
+        font-size: 80%;
+    }
+
+    .u-hide-when-small-vh:not(:focus):not(:active) {
+        /* Hiding class, making content visible only to screen readers but not visually */
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 }
