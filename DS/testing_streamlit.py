@@ -7,7 +7,7 @@ source= pd.read_csv('unstacked_df_v1.csv')
 
 # -- DASHBOARD SETINGS 
 #Create three columns to put tittle in the middle
-col1, col2, col3 = st.columns([2, 1, 10])
+col1, col2, col3 = st.columns([2, 1, 13])
 #col1, col3 = st.columns([10, 20])
 
 # -- Put the image in the middle column
@@ -16,7 +16,7 @@ col1, col2, col3 = st.columns([2, 1, 10])
 # st.image("streamlit.png", width=200)
 # -- Put the title in the last column
 with col3:
-    st.title("Waste produced")
+    st.title("Waste produced 2022")
 # -- We use the first column here as a dummy to add a space to the left
 
 random_col, country_col, random_col3 = st.columns([5,10,5])
@@ -46,10 +46,10 @@ if len(country_name_input) > 0:
 
 #with c1:
 bar_chart = alt.Chart(subset_data).mark_bar().encode(
-x= alt.X('type_of_waste:O',title="Type of waste"),
-y=alt.Y('percentage:Q', title='Percentage'),
+x= alt.X('type_of_waste:O',title="Type of waste", axis=alt.Axis(labelColor='black')),
+y=alt.Y('percentage:Q', title='Percentage',axis=alt.Axis(labelColor='black')),
 color='type_of_waste:N',
-).configure(background='#FFFFFF')
+).configure(background='#FFFFFF').configure_legend(title=None)
 
 st.altair_chart(bar_chart, use_container_width=True)
 
@@ -80,20 +80,14 @@ if len(continent_name_input) > 0:
 
 #with c2:
 bar_chart = alt.Chart(subset_data).mark_bar().encode(
-x= alt.X('type_of_waste:O',title="Type of waste"),
-y=alt.Y('percentage:Q', title='Percentage'),
+x= alt.X('type_of_waste:O',title="Type of waste", axis=alt.Axis(labelColor='black')),
+y=alt.Y('percentage:Q', title='Percentage',axis=alt.Axis(labelColor='black')),
 color='type_of_waste:N',
-).configure(background='#FFFFFF')
+).configure(background='#FFFFFF').configure_legend(title=None)
 
 st.altair_chart(bar_chart, use_container_width=True)
 
 
-#trying to apply the theme ./.streamlit/config.toml
-
-#[theme]
-#base="light"
-#backgroundColor="#F3F7F5" o #F4F7F3
-#secondaryBackgroundColor="#fdfeff"
 
 
 
