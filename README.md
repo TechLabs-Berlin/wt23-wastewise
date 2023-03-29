@@ -1,5 +1,12 @@
 # WasteWise
 
+<!--- 
+add the WasteWise logo and align it to the center 
+--->
+<p align = "center">
+<img src = "UX/logo-color.png">
+</p>
+
 ## Brainstorm 
 
 Hey @all! 
