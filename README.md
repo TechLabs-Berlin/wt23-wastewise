@@ -28,6 +28,8 @@ Obviously, feel free to change and beautify stuff! This is just a suggestion and
 
 ## Contributors
 
+<!--- all tracks and names of members are sorted alphabetically --->
+
 ### Artificial Intelligence: 
 [Andrea Torcianti](https://github.com/trc729)\
 [Fabian Janosch Krüger](https://github.com/fabianjkrueger)
