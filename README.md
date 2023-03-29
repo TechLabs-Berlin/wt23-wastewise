@@ -1,10 +1,10 @@
 # WasteWise
 
 <!--- 
-add the WasteWise logo and align it to the center 
+add the WasteWise logo and align it to the center, adjust size using "width"
 --->
 <p align = "center">
-<img src = "UX/logo-color.png">
+<img src = "UX/logo-color.png" width = "250">
 </p>
 
 ## Brainstorm 
