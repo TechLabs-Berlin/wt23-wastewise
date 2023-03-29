@@ -11,16 +11,6 @@ For each version of the classifier, there is a Jupyter notebook used to train it
 
 Beyond that, each version was exported to a ".pkl" file. This contains the trained model with all its weights and can be deployed in an application.
 
-## How to Query using Python
-
-This section is still work in progress and will soon be updated. I will also see if I manage to deploy the model.
-
-```python
-# loads the trained network
-learn_inf = load_learner(<path_to_model>)
-# queries the network
-learn_inf.predict(<path_to_image>)
-```
 
 ## Versions
 
