@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 /* ------------------------------------------------
     Reset & General Styles
@@ -130,6 +130,7 @@ button,
     
     font-family: inherit;
     font-size: 1rem;
+    line-height: 1.25em;
     font-weight: 400;
     letter-spacing: 0.03em;
     text-decoration: none;
@@ -264,7 +265,7 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1vh;
+    gap: var(--main-padding);
 }
 
 .splashscreen__logo-container {
@@ -324,42 +325,80 @@ iframe {
 ------------------------------------------------ */
 
 .tour {
-    --p: var(--main-padding);
-
     width: 100%;
     height: 100vh;
-    padding-top: clamp(var(--p), calc(var(--p) + 2vh), calc(var(--p) * 3));
-    padding-bottom: clamp(var(--p), calc(var(--p) + 2vh), calc(var(--p) * 3));
-    padding-left: 0;
-    padding-right: 0;
+    position: relative;
+}
+
+.tour__slide-wrapper {    
+    width: 100%;
+    height: calc(100vh - calc(var(--main-padding) * 7));
+
+    padding-top: calc(var(--main-padding) * 2);
+    padding-bottom: 0;
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    gap: var(--main-padding);
+    justify-content: space-evenly;
 }
 
-.tour__text,
-.tour__buttons {
-    padding-left: var(--p);
-    padding-right: var(--p);
-}
+    .m-tour-2 {
+        background: url("/images/greencornerblob.svg") right top no-repeat;
+        background-size: 100% auto;
+    }
 
-.tour__text__p {
-    font-size: 1.125rem;
-}
+    .m-tour-3 {
+        background: url("/images/greencornerblob.svg") right top no-repeat;
+        background-size: 75% auto;
+        text-align: center;
+    }
 
-.tour__image-container {
-    width: 100%;
-}
+    .tour__text-wrapper {
+        flex-basis: auto;
+        flex-grow: 2;
+        flex-shrink: 0;
 
-.tour__pagination {
+        display: flex;
+        align-items: center;
+    }
+
+        .tour__text__p {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+
+    .tour__image-container {
+        flex-basis: auto;
+        flex-grow: 10;
+        flex-shrink: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .tour__image {
+            /* make it scale with the size of the parent container */
+            height: 0;
+            min-height: 100%;
+            max-width: 100%;
+        }
+
+.tour__pagination,
+.swiper-pagination {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 2rem;
+    margin-top: calc(var(--main-padding) * 1.75);
 }
+    .swiper-pagination {
+        /* override of swiper styles */
+        position: relative !important;
+        bottom: 0 !important;
+    }
 
 .tour__pagination__item {
     display: block;
@@ -375,57 +414,17 @@ iframe {
     background-color: var(--color-pri);
 }
 
-/* --------------- Slide 1 --------------- */
-
-.tour--1 .tour__image-container {
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.tour--1 .tour__image {
-    display: block;
-}
-
-/* --------------- Slide 2 --------------- */
-
-.tour--2 {
-    padding-top: clamp(var(--p), 10vh, calc(var(--p) * 5));
-    text-align: center;
-}
-
-.tour--2 .tour__text {
-    position: relative;
-    top: -5vh;
-}
-
-.tour--2 .tour__image {
-    display: block;
-    width: 100%;
-}
-
-/* --------------- Slide 3 --------------- */
-
-.tour--3 {
-    padding-top: clamp(var(--p), 20vh, calc(var(--p) * 8));
-    background: url("/greencornerblob.svg") right top no-repeat;
-    text-align: center;
-}
-
-.tour--3 .tour__image-container {
-    overflow: hidden;
-    display: flex;
-    padding-left: var(--p);
-    padding-right: var(--p);
-}
-
-.tour--3 .tour__image {
-    display: block;
-    width: 100%;
+.tour__button {
+    position: absolute;
+    bottom: calc(var(--main-padding) * 1.5);
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 /* ------------------------------------------------
-Component: iFrame
+    Component: iFrame
 ------------------------------------------------ */
 
 .iframe {
@@ -435,16 +434,14 @@ Component: iFrame
 }
 
 /* ------------------------------------------------
-Component: TakePicture
+    Component: TakePicture
 ------------------------------------------------ */
 
 .takepicture {
     --button-height: 12vh; /* needed due to general height constraints and calculate proper sizes of other elements */
     
     height: var(--main-height);
-    
     background: linear-gradient(to bottom, #f0f0ed 0%, var(--color-sec) calc(100% - var(--border-radius)));
-    
     border-radius: var(--border-radius);
 
     display: flex;
@@ -572,7 +569,10 @@ Component: TakePicture
 
 .showresult {
     height: var(--main-height);
+    max-width: calc(var(--main-height) - var(--footer-height));
     background: var(--color-sec);
+
+    margin: 0 auto;
 
     /* TO DO: solve conflict of global main-padding, keep main tag! */
     padding: 0; 
@@ -613,9 +613,10 @@ Component: TakePicture
 
     .m-fail .showresult__text-box {
         position: absolute;
-        margin: var(--main-padding);
-        left: 0;
-        right: 0;
+        margin: 0 auto;
+        left: var(--main-padding);
+        right: var(--main-padding);
+        max-width: calc(var(--main-height) - var(--footer-height) - calc(var(--main-padding) * 2));
     }
 
     .m-fail h3 {
@@ -687,5 +688,27 @@ Component: TakePicture
     }
     100% {
         height: 100%;
+    }
+}
+
+/* ------------------------------------------------
+    Responsive adaptions
+------------------------------------------------ */
+
+@media screen and (height < 40em) {
+
+    html {
+        font-size: 80%;
+    }
+
+    .u-hide-when-small-vh:not(:focus):not(:active) {
+        /* Hiding class, making content visible only to screen readers but not visually */
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
     }
 }
