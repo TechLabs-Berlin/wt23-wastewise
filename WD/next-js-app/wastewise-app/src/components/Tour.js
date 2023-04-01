@@ -26,17 +26,17 @@ const Tour = () => {
                     bulletElement: 'div'
                 }}
                 autoplay={{ 
-                    delay: 10000,
+                    delay: 15000,
                     pauseOnMouseEnter: true
                 }}
             >
-                <SwiperSlide>
+                <SwiperSlide data-swiper-autoplay="19000">
                     <div className="tour__slide-wrapper m-tour-1">
                         <div className="tour__text-wrapper">
                             <div className="tour__text">
-                                <h1>Welcome</h1>
-                                <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
-                                <p className="tour__text__p">Debitis aut assumenda impedit fugiat cupiditate numquam at, vel accusantium temporibus maiores!</p>
+                                <h1 className="tour__text__h1">Sort smarter.</h1>
+                                <h2>Not harder. For the love of our planet. With WasteWise.</h2>
+                                <p className="tour__text__p">Do you want to recycle your waste? Great! But you don't know where to put it? Just use WasteWise! <b>Scan</b> your garbage and I will tell you which bin it belongs in.</p>
                             </div>
                         </div>
                         <div className="tour__image-container">
@@ -59,8 +59,8 @@ const Tour = () => {
                         </div>
                         <div className="tour__text-wrapper">
                             <div className="tour__text">
-                                <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
-                                <p className="tour__text__p">Debitis aut assumenda impedit fugiat cupiditate numquam at, vel accusantium temporibus maiores!</p>
+                                <h2>Find out more about your personal waste production.</h2>
+                                <p className="tour__text__p">Based on your use of WasteWise, <b>Predictions</b> will assume the amount and type of waste you will produce in the future. For what reason? Prove me wrong, try to do better! Consume consciously and take important steps towards a more sustainable life.</p>
                             </div>
                         </div>
                     </div>
@@ -76,8 +76,8 @@ const Tour = () => {
                         </div>
                         <div className="tour__text-wrapper">
                             <div className="tour__text">
-                                <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
-                                <p className="tour__text__p">Debitis aut assumenda impedit fugiat cupiditate numquam at, vel accusantium temporibus maiores!</p>
+                                <h2>Do you like numbers? Me too.</h2>
+                                <p className="tour__text__p">But I wish they were lower! Just take a look at the <b>Info</b> section. No matter where in the world, we humans produce far too much waste of all kind. It is high time we changed our behavior. <b>Become part of a sustainable future today. Use WasteWise.</b></p>
                             </div>
                         </div>
                     </div>

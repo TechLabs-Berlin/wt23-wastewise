@@ -66,10 +66,10 @@ h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.25rem;
     font-weight: 500;
     color: var(--color-pri-warmer);
-    margin: 0 0 0.25em 0;
+    margin: 0 0 0.375em 0;
 }
 
 h2 {
@@ -364,6 +364,10 @@ iframe {
         display: flex;
         align-items: center;
     }
+
+        .tour__text__h1 {
+            line-height: 0.875em;
+        }
 
         .tour__text__p {
             font-size: 1.125rem;
