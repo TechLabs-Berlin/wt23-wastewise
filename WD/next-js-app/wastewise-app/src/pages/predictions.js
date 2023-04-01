@@ -15,7 +15,13 @@ export default function Predictions() {
 			</Head>
 			<NavBar />
 			<Header title={title} />
-			<IFrame />
+			<main className="predictions">
+				<div>
+					<h2>Sorry, there's not enough data yet.</h2>
+					<p>I'm so sorry to say you haven't used the app enough yet. To get some predictions about your waste production, please come back later.</p>
+				</div>
+				<img className="predictions__img" src="images/undraw_blank_canvas_modified.svg" alt="a person looking at a blank canvas" />
+			</main>
 		</>
     )
 }

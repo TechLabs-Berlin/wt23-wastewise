@@ -728,6 +728,29 @@ iframe {
 .m-cat9 { background-color: var(--color-cat9); }
 
 /* ------------------------------------------------
+    Component: Predictions
+------------------------------------------------ */
+
+.predictions {
+    height: var(--main-height);
+    max-height: var(--main-height);
+    background: linear-gradient(to bottom, #f0f0ed 0%, var(--color-sec) calc(100% - var(--border-radius)));
+    padding-top: calc((var(--main-padding) * 2));
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.predictions__img {
+    flex-grow: 1;
+    max-width: 100%;
+    height: 0;
+    max-height: 100%;
+}
+
+/* ------------------------------------------------
     Animations
 ------------------------------------------------ */
 
