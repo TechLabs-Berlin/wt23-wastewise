@@ -8,6 +8,7 @@ const TakePicture = () => {
 
     const camRef = useRef(null);
     const [dataURL, setDataURL] = useState(null);
+    const [camReady, setCamReady] = useState(false);
     const [category, setCategory] = useState(null);
 
     const videoConstraints = {
@@ -54,6 +55,14 @@ const TakePicture = () => {
                     <div className="takepicture__media-box">
                         <div className="takepicture__frame">
                             <div className="takepicture__canvas">
+                                <div className="takepicture__loader"></div>
+
+                                {camReady ? null : (
+                                    <div className="takepicture__waiting">
+                                        <h2 className="takepicture__waiting__headline">Waiting for your camera…</h2>
+                                        <p className="takepicture__waiting__text">For this app to work properly, you need to grant it access to your camera.</p>
+                                    </div>
+                                )}
 
                                 <Webcam
                                     ref={camRef}
@@ -64,7 +73,12 @@ const TakePicture = () => {
                                     screenshotQuality={1}
                                     // imageSmoothing={false}
                                     forceScreenshotSourceSize={true}
+                                    
+                                    onUserMedia={() => {setCamReady(true)}}
+                                    onUserMediaError={() => {setCamReady(false)}}
 
+                                    // videoRef={videoRef}
+                                    
                                     className={"takepicture__video"}
                                 />
 
