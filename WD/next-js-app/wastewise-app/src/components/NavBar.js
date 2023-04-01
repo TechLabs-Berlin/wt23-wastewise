@@ -22,18 +22,19 @@ const NavBar = () => {
                 </svg>
                 <span class="u-hide-when-small-vh">Scan Waste</span>
             </Link>
-            <Link href="/analytics" className={`navbar__a ${router.pathname == '/analytics' ? 'navbar__a--active' : ''}`}>
+            <Link href="/predictions" className={`navbar__a ${router.pathname == '/predictions' ? 'navbar__a--active' : ''}`}>
+                <svg className="navbar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path fill="none" d="M0 0h20v20H0z"/>
+                    <path d="m12.5 8 .79-1.72L15 5.5l-1.71-.78L12.5 3l-.76 1.72L10 5.5l1.74.78zM4 10l.4-1.6L6 8l-1.6-.4L4 6l-.4 1.6L2 8l1.6.4z"/>
+                    <path d="M16.5 6c-1.07 0-1.84 1.12-1.35 2.14l-3.01 3.01c-.52-.25-.99-.14-1.29 0l-1.01-1.01c.1-.19.16-.41.16-.64C10 8.67 9.33 8 8.5 8S7 8.67 7 9.5c0 .23.06.45.15.64l-3.01 3.01c-.19-.09-.41-.15-.64-.15-.83 0-1.5.67-1.5 1.5S2.67 16 3.5 16 5 15.33 5 14.5c0-.23-.06-.45-.15-.64l3.01-3.01c.52.25.99.14 1.29 0l1.01 1.01c-.1.19-.16.41-.16.64 0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5c0-.23-.06-.45-.15-.64l3.01-3.01c1.03.5 2.14-.29 2.14-1.35 0-.83-.67-1.5-1.5-1.5z"/>
+                </svg>
+                <span class="u-hide-when-small-vh">Predictions</span>
+            </Link>
+            <Link href="/info" className={`navbar__a ${router.pathname == '/info' ? 'navbar__a--active' : ''}`}>
                 <svg className="navbar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="none" d="M0 0h24v24H0z"/>
                     <path d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"/>
                 </svg>
-                <span class="u-hide-when-small-vh">Analytics</span>
-            </Link>
-            <Link href="/info" className={`navbar__a ${router.pathname == '/info' ? 'navbar__a--active' : ''}`}>
-                <svg className="navbar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path fill="none" d="M0 0h24v24H0V0z"/>
-                    <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                </svg>              
                 <span class="u-hide-when-small-vh">Info</span>
             </Link>
         </nav>

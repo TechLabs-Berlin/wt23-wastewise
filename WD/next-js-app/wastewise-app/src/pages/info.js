@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import NavBar from '@/components/NavBar'
 import Header from '@/components/Header'
-import IFrame from '@/components/IFrame'
 
 const title = 'Info';
 
@@ -15,7 +14,9 @@ export default function Info() {
 			</Head>
 			<NavBar />
 			<Header title={title} />
-			<IFrame />
+			<main class="info">
+				<iframe class="info__iframe" src="https://julianabquiroga-streamlit-testing-streamlit-5s44p4.streamlit.app/~/+/" title="Streamlit App"></iframe>
+			</main>
 		</>
     )
 }
