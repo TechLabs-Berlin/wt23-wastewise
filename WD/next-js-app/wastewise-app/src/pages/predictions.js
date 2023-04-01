@@ -3,9 +3,9 @@ import NavBar from '@/components/NavBar'
 import Header from '@/components/Header'
 import IFrame from '@/components/IFrame'
 
-const title = 'Analytics';
+const title = 'Predictions';
 
-export default function Analytics() {
+export default function Predictions() {
 	return (
 		<>
 			<Head>
