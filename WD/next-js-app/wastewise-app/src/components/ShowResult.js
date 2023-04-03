@@ -3,53 +3,45 @@ const ShowResult = ({dataURL, category, handleReset}) => {
     const output = [
         {
             class: 'm-fail',
-            h: <>Sorry, we couldn’t find a match. 😞</>,
-            p: <><b>Please try again.</b> Make sure you only scan a single item at a time. Also placing the object on a plain background like a tabletop or a wall can help us make a suggestion.</>
+            label: null,
+            h3: <>Sorry, I couldn’t find a match. <span className="u-bigger">😞</span></>,
+            p: <><b>Please try again.</b> Make sure you only scan a single item at a time. Also placing the object on a plain background like a tabletop or a wall can help me make a suggestion.</>
         },
         {   
             class: 'm-cat1',
-            h: <>You can dispose of this in the <i>organic waste bin.</i></>,
-            p: <>Usually there is one in your backyard. Such a bin is usually brown and labeled <b><i>Biotonne</i></b> or <b><i>Biomüll</i></b>.</>
+            label: <>Recyclable Waste</>,
+            h3: <>You can dispose of it in the recycling bin.</>,
+            p: <>Such a bin is usually either <b>orange</b> or <b>yellow</b> (or has such a lid or sticker) and is labeled <b><i>Wertstoffe</i></b>. There should be one in your courtyard.</>
         },
         {
             class: 'm-cat2',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
+            label: <>Organic Waste</>,
+            h3: <>You can dispose of it in the organic waste bin.</>,
+            p: <>Such a bin is usually <b>brown</b> (or has such a lid or sticker) and is labeled <b><i>Biogut</i></b>. There should be one in your courtyard.</>
         },
         {
             class: 'm-cat3',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
+            label: <>Paper Waste</>,
+            h3: <>You can dispose of it in the <b>paper and cardboard bin</b>.</>,
+            p: <>Such a bin is usually <b>blue</b> (or has such a lid or sticker) and is labeled <b><i>Papier</i></b> or <i>Papier Pappe</i> or <i>Papiertiger</i>. There should be one in your courtyard.</>
         },
-        {   
+        {
             class: 'm-cat4',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
+            label: <>Household Waste</>,
+            h3: <>Unfortunately, this cannot be recycled. You can dispose of it in the household waste bin.</>,
+            p: <>Such a bin is <b>dark grey</b> and labeled <b><i>Hausmüll</i></b> (or even not at all). There should be one in your courtyard.</>
         },
         {
             class: 'm-cat5',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
+            label: <>Electronic Waste</>,
+            h3: <>It is valuable electronic waste. Please take it to a <b>collection point</b>.</>,
+            p: <>You will find a so-called <b><i>BSR Recyclinghof</i></b> in almost every district. See a map of the locations <a href="https://www.bsr.de/recyclinghoefe-20503.php">here</a>. Small electronic devices are also accepted by <b>electronics shops</b>.</>
         },
         {
             class: 'm-cat6',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
-        },
-        {
-            class: 'm-cat7',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
-        },
-        {
-            class: 'm-cat8',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
-        },
-        {
-            class: 'm-cat9',
-            h: 'Lorem ipsum dolor sit amet consectetur.',
-            p: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi perferendis delectus debitis expedita voluptatem ipsam rerum aperiam ad rem corporis asperiores repudiandae sapiente veritatis illum earum neque accusamus, sequi est?'
+            label: <>Waste Glass</>,
+            h3: <>Please be sure to dispose of it <b>sorted by color</b> in <b>special waste glass containers</b> in public streets.</>,
+            p: <>See a map of the locations <a href="https://www.bsr.de/recyclinghoefe-20503.php?activeLayer=glas">here</a>. There may also be bins in your courtyard. The bins are usually <b>green</b>, but also can match the colour of the glass (<b><i>Glas</i></b>). Always check the label as there is white (<i>weiß</i> or <i>WEISS</i>), amber (<i>braun</i>), green (<i>grün</i>), and coloured glass incl. brown and green (<i>bunt</i>).</>
         }
     ];
 
@@ -65,7 +57,10 @@ const ShowResult = ({dataURL, category, handleReset}) => {
             <div className={`showresult__flexbox ${result.class}`}>
                 <img src={dataURL} alt="Your captured photo" className="showresult__photo" />
                 <div className="showresult__text-box">
-                    <h3>{result.h}</h3>
+                    {result.label ? (
+                        <h2 className="showresult__label">{result.label}</h2>
+                    ) : null}
+                    <h3>{result.h3}</h3>
                     <p>{result.p}</p>
                 </div>
             </div>

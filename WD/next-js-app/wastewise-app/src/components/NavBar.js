@@ -30,12 +30,12 @@ const NavBar = () => {
                 </svg>
                 <span class="u-hide-when-small-vh">Predictions</span>
             </Link>
-            <Link href="/info" className={`navbar__a ${router.pathname == '/info' ? 'navbar__a--active' : ''}`}>
+            <Link href="/charts" className={`navbar__a ${router.pathname == '/charts' ? 'navbar__a--active' : ''}`}>
                 <svg className="navbar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill="none" d="M0 0h24v24H0z"/>
                     <path d="M10 20h4V4h-4v16zm-6 0h4v-8H4v8zM16 9v11h4V9h-4z"/>
                 </svg>
-                <span class="u-hide-when-small-vh">Info</span>
+                <span class="u-hide-when-small-vh">Charts</span>
             </Link>
         </nav>
     );

@@ -7,34 +7,40 @@
 :root {
     --color-pri: #0e7b54;
     --color-sec: #e7e8e3;
-    --color-pri-warmer: #2D6936;
+    --color-pri-darker: #006F4A;
     --color-bright-logo: #f7f2db;
     --color-dark: #0e0e0e;
     --color-bright: white;
     --color-grey: #c9c9c9;
 
-    --color-fail: #F46767;
-    --color-cat1: #f0d06e;
-    --color-cat2: #74f06e;
-    --color-cat3: #2cbab8;
-    --color-cat4: #cb6ef0;
-    --color-cat5: #be2b72;
-    --color-cat6: #6ee7f0;
-    --color-cat7: #866b1b;
-    --color-cat8: #ea982d;
-    --color-cat9: #e90ae9;
+    --color-fail: #f46767;
+    --color-cat1a: #f36917; /* Wertstoffe */
+    --color-cat1b: #fac607; /* Wertstoffe */
+    --color-cat2: #57332e; /* Biogut */
+    --color-cat3: #0d4a87; /* Papier */
+    --color-cat4: #444; /* Hausmüll */
+    --color-cat5: #f36917; /* Elektrogeräte */
+    --color-cat6: var(--color-pri-darker); /* Glas */
 
     --header-height: 12vh;
     --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP? */
-    --main-padding: 1.5rem;
+
+        --footer-padding: calc(var(--footer-height) * 0.175);
+        --main-height: calc(100vh - var(--header-height) - var(--footer-height));
     
-    --border-radius: 1.25rem;
-    --border-radius-small: 0.5rem;
+    --main-padding: 1.5rem;
+
+        --main-padding-d2: calc(var(--main-padding) / 2);
+        --main-padding-m2: calc(var(--main-padding) * 2);
+    
+    --border-radius: 1rem;
+
+        --border-radius-d2: calc(var(--border-radius) / 2);
+        --border-radius-d3m2: calc(var(--border-radius) / 3 * 2);
+        --border-radius-d4: calc(var(--border-radius) / 4);
 
     --box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-
-    --footer-padding: calc(var(--footer-height) * 0.175);
-    --main-height: calc(100vh - var(--header-height) - var(--footer-height));
+    --box-shadow-softer: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
 }
 
 *,
@@ -68,19 +74,20 @@ h3, h4, h5, h6 {
 h1 {
     font-size: 3.25rem;
     font-weight: 500;
-    color: var(--color-pri-warmer);
+    color: var(--color-pri-darker);
     margin: 0 0 0.375em 0;
 }
 
 h2 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-pri-warmer);
+    color: var(--color-pri-darker);
     margin: 0 0 1em 0;
 }
 
 h3 {
     color: var(--color-dark);
+    margin: 0 0 1em 0;
 }
 
 p {
@@ -90,13 +97,19 @@ p {
     margin: 0 0 1em 0;
 }
 
+.u-bigger {
+    font-size: 1.5em;
+    position: relative;
+    bottom: -0.0625em;
+}
+
 /* --------------- Links --------------- */
 
 a {
     color: var(--color-pri);
     /* font-weight: bold; */
-    text-decoration: underline dotted;
-    text-decoration-color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-pri);
     text-underline-offset: 0.125em;
 }
 
@@ -125,7 +138,7 @@ button,
     color: var(--color-bright);
     
     border: none;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-d2);
     box-shadow: var(--box-shadow);
     
     font-family: inherit;
@@ -138,7 +151,7 @@ button,
 
 button:hover,
 .button:hover {
-    background-color: var(--color-pri-warmer);
+    background-color: var(--color-pri-darker);
     text-decoration: none;
     cursor: pointer;
 }
@@ -343,6 +356,9 @@ iframe {
     flex-direction: column;
     gap: var(--main-padding);
     justify-content: space-evenly;
+
+    position: relative;
+    overflow: hidden;
 }
 
     .m-tour-2 {
@@ -353,7 +369,7 @@ iframe {
     .m-tour-3 {
         background: url("images/greencornerblob.svg") right top no-repeat; /* !!! path must start with / in next-js-app !!! */
         background-size: 75% auto;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .tour__text-wrapper {
@@ -373,6 +389,10 @@ iframe {
             font-size: 1.125rem;
             margin-bottom: 0;
         }
+
+            .tour__text__p a {
+                font-weight: 700;
+            }
 
     .tour__image-container {
         flex-basis: auto;
@@ -616,16 +636,22 @@ iframe {
     cursor: pointer;
 }
 .takepicture__button:hover .takepicture__button__background {
-    fill: var(--color-pri-warmer);
+    fill: var(--color-pri-darker);
 }
 
 /* Append toggle class .t-inactive to .takepicture__button element to make the button inactive */
 
-.t-inactive .takepicture__button__background {
+.takepicture__button.t-inactive .takepicture__button__background {
     fill: var(--color-grey);
 }
-.t-inactive .takepicture__button__icon {
-    fill: var(--color-bright);
+.takepicture__button.t-inactive .takepicture__button__icon {
+    fill: transparent;
+}
+.takepicture__button:hover.t-inactive  {
+    cursor: default;
+}
+.takepicture__button:hover.t-inactive .takepicture__button__background {
+    fill: var(--color-grey);
 }
 
 /* ------------------------------------------------
@@ -645,7 +671,8 @@ iframe {
 
 .showresult__flexbox {
     height: calc(var(--main-height) - var(--footer-height));
-    padding: var(--main-padding);
+    padding: var(--main-padding-d2) var(--main-padding-d2) var(--main-padding) var(--main-padding-d2);
+    /* padding: var(--main-padding); */
 
     border-radius: var(--border-radius);
     overflow: clip; /* for when the failed image is extremely blurred */
@@ -654,7 +681,7 @@ iframe {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: calc(var(--main-padding) / 2);
+    gap: 0;
 }
 
 .showresult__photo {
@@ -663,7 +690,9 @@ iframe {
     flex-grow: 1;
     object-fit: cover;
     overflow: hidden;
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius) var(--border-radius) 0 0; */
+    border-radius: var(--border-radius-d3m2) var(--border-radius-d3m2) 0 0;
+    /* border: 0.0625rem solid var(--color-bright); */
 }
     .m-fail .showresult__photo {
         filter: blur(1.5rem);
@@ -671,8 +700,8 @@ iframe {
 
 .showresult__text-box {
     background-color: var(--color-bright);
-    padding: calc(var(--main-padding) / 2) var(--main-padding);
-    border-radius: var(--border-radius);
+    padding: var(--main-padding) var(--main-padding) calc(var(--main-padding) / 2) ;
+    border-radius: 0 0 var(--border-radius-d3m2) var(--border-radius-d3m2);
 }
     /* -- Place it in the middle when there's no result -- */
 
@@ -682,6 +711,7 @@ iframe {
         left: var(--main-padding);
         right: var(--main-padding);
         max-width: calc(var(--main-height) - var(--footer-height) - calc(var(--main-padding) * 2));
+        border-radius: var(--border-radius);
     }
 
     .m-fail h3 {
@@ -711,25 +741,42 @@ iframe {
 }
 
 .showresult__button:hover {
-    background-color: var(--color-pri-warmer);
+    background-color: var(--color-pri-darker);
 }
 
 .showresult__button__icon {
     fill: currentColor;
 }
 
+.showresult__label {
+    display: inline-block;
+    padding: 0.1875em 0.5em 0.125em 0.5em;
+    border-radius: 0.25em;
+    background-color: var(--color-pri);
+    color: var(--color-bright);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1em;
+}
+
 /* ----- Modifier classes to change background color according to result ----- */
 
-.m-fail { background-color: var(--color-fail); }
-.m-cat1 { background-color: var(--color-cat1); }
-.m-cat2 { background-color: var(--color-cat2); }
-.m-cat3 { background-color: var(--color-cat3); }
-.m-cat4 { background-color: var(--color-cat4); }
-.m-cat5 { background-color: var(--color-cat5); }
-.m-cat6 { background-color: var(--color-cat6); }
-.m-cat7 { background-color: var(--color-cat7); }
-.m-cat8 { background-color: var(--color-cat8); }
-.m-cat9 { background-color: var(--color-cat9); }
+.m-fail,
+.m-fail .showresult__label { background-color: var(--color-fail); }
+.m-cat1,
+.m-cat1 .showresult__label { background: linear-gradient(var(--color-cat1a), var(--color-cat1b)); } 
+.m-cat2,
+.m-cat2 .showresult__label { background-color: var(--color-cat2); }
+.m-cat3,
+.m-cat3 .showresult__label { background-color: var(--color-cat3); }
+.m-cat4,
+.m-cat4 .showresult__label { background-color: var(--color-cat4); }
+.m-cat5,
+.m-cat5 .showresult__label { background-color: var(--color-cat5); }
+.m-cat6,
+.m-cat6 .showresult__label { background-color: var(--color-cat6); }
 
 /* ------------------------------------------------
     Component: Predictions
@@ -766,6 +813,40 @@ iframe {
 .info__iframe {
     height: var(--main-height);
 }
+
+/* ------------------------------------------------
+    Component: Badge 'Coming soon'
+------------------------------------------------ */
+
+.u-badge-coming-soon {
+    position: absolute;
+    left: -9.1rem;
+    top: 2.2rem;
+
+    display: block;
+    width: 25rem;
+   
+    background-color: var(--color-fail);
+    color: var(--color-bright);
+
+    padding: 0.55em;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    display: grid;
+    place-content: center;
+
+    transform: rotate(-35deg);
+    transform-origin: top center;
+
+    box-shadow:
+        0.03125rem 0.03125rem rgba(209, 88, 88, 0.8),
+        var(--box-shadow-softer);
+    }
 
 /* ------------------------------------------------
     Animations

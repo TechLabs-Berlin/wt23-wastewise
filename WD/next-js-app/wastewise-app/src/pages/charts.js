@@ -2,9 +2,9 @@ import Head from 'next/head'
 import NavBar from '@/components/NavBar'
 import Header from '@/components/Header'
 
-const title = 'Info';
+const title = 'Charts';
 
-export default function Info() {
+export default function Charts() {
 	return (
 		<>
 			<Head>
