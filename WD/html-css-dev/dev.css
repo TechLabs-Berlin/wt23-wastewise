@@ -369,7 +369,7 @@ iframe {
     .m-tour-3 {
         background: url("images/greencornerblob.svg") right top no-repeat; /* !!! path must start with / in next-js-app !!! */
         background-size: 75% auto;
-        text-align: center;
+        /* text-align: center; */
     }
 
     .tour__text-wrapper {
@@ -389,6 +389,10 @@ iframe {
             font-size: 1.125rem;
             margin-bottom: 0;
         }
+
+            .tour__text__p a {
+                font-weight: 700;
+            }
 
     .tour__image-container {
         flex-basis: auto;
