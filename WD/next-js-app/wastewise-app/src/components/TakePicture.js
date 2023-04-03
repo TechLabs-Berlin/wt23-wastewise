@@ -39,14 +39,14 @@ const TakePicture = () => {
             /* Temporary: Faking/pretending AI MAGIC with setTimeout and a random category value */
             const randomTime = Math.floor(Math.random() * 3000 + 1000);
             setTimeout(() => {
-                if (Math.random() < 0.3) setCategory('x');
+                if (Math.random() < 0.4) setCategory('x');
                 else {
                     const random2 = Math.floor(Math.random() * 6 + 1);
                     setCategory(random2);
                 };
             }, randomTime);
 
-            // setCategory(1);
+            // setCategory(6);
 
     }, [dataURL]);
 
@@ -88,15 +88,14 @@ const TakePicture = () => {
                         </div>
                     </div>
                     <div className="takepicture__button-box">
-                        <svg onClick={captureImage} className="takepicture__button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-                            <circle className="takepicture__button__background" cx="60" cy="60" r="40"/>
-                            <path className="takepicture__button__background" d="M95.8 108.149a60.004 60.004 0 0 0 20.776-68.129A59.999 59.999 0 0 0 2.021 44.56a60 60 0 0 0 26.1 66.271l5.232-8.343a50.149 50.149 0 0 1-21.816-55.394 50.151 50.151 0 1 1 78.388 53.153l5.876 7.903Z"/>
-                            <mask id="a" width="40" height="36" x="40" y="42" maskUnits="userSpaceOnUse" style={{maskType: 'alpha'}}>
-                                <path fill="#000" fill-rule="evenodd" d="M76 46h-6.34l-2.48-2.7c-.74-.82-1.82-1.3-2.94-1.3h-8.48c-1.12 0-2.2.48-2.96 1.3L50.34 46H44c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V50c0-2.2-1.8-4-4-4ZM60 56a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm-10 6c0 5.52 4.48 10 10 10s10-4.48 10-10-4.48-10-10-10-10 4.48-10 10Z" clip-rule="evenodd"/>
-                            </mask>
-                            <g mask="url(#a)">
-                                <path className="takepicture__button__icon" d="M36 36h48v48H36z"/>
-                            </g>
+                        <svg onClick={captureImage} className="takepicture__button" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" strokeLinejoin="round" strokeMiterlimit="2" clipRule="evenodd" viewBox="0 0 120 111">
+                            <path className="takepicture__button__background" d="M60 20c22.077 0 40 17.923 40 40s-17.923 40-40 40-40-17.923-40-40 17.923-40 40-40zm-6.003 20l-3.66 4h-6.34c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V48c0-2.2-1.8-4-4-4h-6.34l-3.66-4h-12zm6 30c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10zm0-16.4a6.403 6.403 0 00-6.4 6.4c0 3.532 2.867 6.4 6.4 6.4 3.532 0 6.4-2.868 6.4-6.4 0-3.532-2.868-6.4-6.4-6.4z"></path>
+                            <path className="takepicture__button__background" d="M59.994 9.853c-22.653.002-42.626 15.351-48.457 37.241-5.482 20.579 2.734 42.439 20.228 54.356a1.953 1.953 0 01.566 2.66c-.906 1.453-2.233 3.569-3.154 5.037a1.96 1.96 0 01-1.248.875 1.96 1.96 0 01-1.497-.285C5.361 95.509-4.558 69.263 2.021 44.56 8.994 18.368 32.891 0 59.994-.002h.003C87.1 0 110.996 18.368 117.97 44.56c6.575 24.689-3.328 50.918-24.377 65.149a1.999 1.999 0 01-1.527.291 1.994 1.994 0 01-1.272-.892c-.916-1.453-2.215-3.525-3.116-4.962a2 2 0 01.578-2.721c17.473-11.919 25.676-33.765 20.198-54.331-5.832-21.89-25.805-37.239-48.457-37.241h-.003z"></path>
+                            <path fill="none" d="M35.997 36h48v48h-48z"></path>
+                            <circle className="takepicture__button__icon" cx="59.997" cy="60" r="6.4" fill="#cc339f"></circle>
+                            <path className="takepicture__button__icon" fill="#cc339f" fillRule="nonzero"
+                                d="M53.997 40l-3.66 4h-6.34c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V48c0-2.2-1.8-4-4-4h-6.34l-3.66-4h-12zm6 30c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10z">
+                            </path>
                         </svg>
                     </div>
                 </main>

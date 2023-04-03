@@ -641,11 +641,17 @@ iframe {
 
 /* Append toggle class .t-inactive to .takepicture__button element to make the button inactive */
 
-.t-inactive .takepicture__button__background {
+.takepicture__button.t-inactive .takepicture__button__background {
     fill: var(--color-grey);
 }
-.t-inactive .takepicture__button__icon {
-    fill: var(--color-bright);
+.takepicture__button.t-inactive .takepicture__button__icon {
+    fill: transparent;
+}
+.takepicture__button:hover.t-inactive  {
+    cursor: default;
+}
+.takepicture__button:hover.t-inactive .takepicture__button__background {
+    fill: var(--color-grey);
 }
 
 /* ------------------------------------------------

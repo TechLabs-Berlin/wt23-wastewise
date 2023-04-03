@@ -36,7 +36,7 @@ const Tour = () => {
                             <div className="tour__text">
                                 <h1 className="tour__text__h1">Sort smarter.</h1>
                                 <h2>Not harder. For the love of our planet. With WasteWise.</h2>
-                                <p className="tour__text__p">Do you want to recycle your waste? Great! But you don't know where to put it? Just use WasteWise! <Link href="/scan">Scan</Link> your garbage and I will tell you which bin it belongs in.</p>
+                                <p className="tour__text__p">Do you want to recycle your waste? Great! But you don’t know where to put it? Just use WasteWise! <Link href="/scan">Scan</Link> your garbage and I will tell you which bin it belongs in.</p>
                             </div>
                         </div>
                         <div className="tour__image-container">
