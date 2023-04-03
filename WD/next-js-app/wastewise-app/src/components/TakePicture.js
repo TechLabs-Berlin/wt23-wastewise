@@ -37,14 +37,16 @@ const TakePicture = () => {
         // const result = useIdentifyItem(dataURL);
 
             /* Temporary: Faking/pretending AI MAGIC with setTimeout and a random category value */
-            const randomTime = Math.floor(Math.random() * 4000 + 1000);
+            const randomTime = Math.floor(Math.random() * 3000 + 1000);
             setTimeout(() => {
                 if (Math.random() < 0.3) setCategory('x');
                 else {
-                    const random2 = Math.floor(Math.random() * 9 + 1);
+                    const random2 = Math.floor(Math.random() * 6 + 1);
                     setCategory(random2);
                 };
             }, randomTime);
+
+            // setCategory(1);
 
     }, [dataURL]);
 
