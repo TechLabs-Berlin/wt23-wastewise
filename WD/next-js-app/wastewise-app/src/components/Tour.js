@@ -59,7 +59,7 @@ const Tour = () => {
                         </div>
                         <div className="tour__text-wrapper">
                             <div className="tour__text">
-                                <h2>Find out more about your personal waste production.</h2>
+                                <h2>Find out more about your personal waste production. <span className="u-badge-coming-soon">Coming soon</span></h2>
                                 <p className="tour__text__p">Based on your use of WasteWise, <b>Predictions</b> will assume the amount and type of waste you will produce in the future. For what reason? Prove me wrong, try to do better! Consume consciously and take important steps towards a more sustainable life.</p>
                             </div>
                         </div>

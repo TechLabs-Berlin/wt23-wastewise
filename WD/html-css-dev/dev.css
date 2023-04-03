@@ -40,7 +40,7 @@
         --border-radius-d4: calc(var(--border-radius) / 4);
 
     --box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-
+    --box-shadow-softer: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
 }
 
 *,
@@ -356,6 +356,9 @@ iframe {
     flex-direction: column;
     gap: var(--main-padding);
     justify-content: space-evenly;
+
+    position: relative;
+    overflow: hidden;
 }
 
     .m-tour-2 {
@@ -800,6 +803,40 @@ iframe {
 .info__iframe {
     height: var(--main-height);
 }
+
+/* ------------------------------------------------
+    Component: Badge 'Coming soon'
+------------------------------------------------ */
+
+.u-badge-coming-soon {
+    position: absolute;
+    left: -9.1rem;
+    top: 2.2rem;
+
+    display: block;
+    width: 25rem;
+   
+    background-color: var(--color-fail);
+    color: var(--color-bright);
+
+    padding: 0.55em;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    display: grid;
+    place-content: center;
+
+    transform: rotate(-35deg);
+    transform-origin: top center;
+
+    box-shadow:
+        0.03125rem 0.03125rem rgba(209, 88, 88, 0.8),
+        var(--box-shadow-softer);
+    }
 
 /* ------------------------------------------------
     Animations
