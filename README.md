@@ -44,6 +44,8 @@ Steps:
 3. If you want to see an interpretation, click "Interpret" and wait a few seconds. This will show you which parts of the image were most important for the model to classify the image.
 4. To repeat, hit "Clear" and take a new photo.
 
+Disclaimer: At the time this is written, the model can classify 20 classes with an accuracy of about 90%. Due to data mismatch (trained on downloaded stock photos, queried on your realistic user images), it will still make lots of mistakes and is likely to misclassify many images. In the future, provided we are able to get more and better data, this might be improved.
+
 ### Fully Assembled App
 
 
