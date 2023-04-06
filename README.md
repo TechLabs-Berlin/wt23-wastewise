@@ -23,6 +23,7 @@ Obviously, feel free to change and beautify stuff! This is just a suggestion and
 
 ## Summary 
 
+WasteWise is an app that helps its users to conveniently dispose of their waste. Based on a photo of the respective object, it recommends the correct way of disposal to help our environment clean and green. This feature relies on a fine-tuned residual neural network image classifier coupled with a function providing the recommendations for each class.
 
 ## How to run the demo
 
@@ -30,21 +31,17 @@ Obviously, feel free to change and beautify stuff! This is just a suggestion and
 
 To quickly get an impression of the waste recognition and disposal recommendation feature, follow this link and enable your webcam: https://huggingface.co/spaces/fabianjkrueger/WasteWise
 
-<figure>
 <p align = "center">
 <img src = "images_blog/gradio_hgfs_demo.GIF">
-<figcaption align = "center">Demo of the minimal app and steps to follow
-</figcaption>
-</figure>
 
-Steps: 
+__Steps:__
 
 1. Take a photo of your waste. Make sure to present only one object at a time and that your background is neutral.
 2. Start inference by pressing "Submit". After a few seconds, you can see the results.
 3. If you want to see an interpretation, click "Interpret" and wait a few seconds. This will show you which parts of the image were most important for the model to classify the image.
 4. To repeat, hit "Clear" and take a new photo.
 
-Disclaimer: At the time this is written, the model can classify 20 classes with an accuracy of about 90%. Due to data mismatch (trained on downloaded stock photos, queried on your realistic user images), it will still make lots of mistakes and is likely to misclassify many images. In the future, provided we are able to get more and better data, this might be improved.
+__Disclaimer:__ At the time this is written, the model can classify 20 classes with an accuracy of about 90%. Due to data mismatch (trained on downloaded stock photos, queried on your realistic user images), it will still make lots of mistakes and is likely to misclassify many images. In the future, provided we are able to get more and better data, this might be improved.
 
 ### Fully Assembled App
 
