@@ -97,12 +97,6 @@ p {
     margin: 0 0 1em 0;
 }
 
-.u-bigger {
-    font-size: 1.5em;
-    position: relative;
-    bottom: -0.0625em;
-}
-
 /* --------------- Links --------------- */
 
 a {
@@ -717,6 +711,26 @@ iframe {
     .m-fail h3 {
         color: var(--color-fail);
     }
+    
+    .showresult__label {
+        display: inline-block;
+        padding: 0.1875em 0.5em 0.125em 0.5em;
+        border-radius: var(--border-radius-d4);
+        background-color: var(--color-pri);
+        color: var(--color-bright);
+        font-size: 1rem;
+        line-height: 1.25em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .showresult__sad-smiley {
+        font-size: 1.5em;
+        position: relative;
+        bottom: -0.125em;
+        padding-left: 0.125em;
+    }
 
 /* ----- Refresh Button ----- */
 
@@ -746,19 +760,6 @@ iframe {
 
 .showresult__button__icon {
     fill: currentColor;
-}
-
-.showresult__label {
-    display: inline-block;
-    padding: 0.1875em 0.5em 0.125em 0.5em;
-    border-radius: 0.25em;
-    background-color: var(--color-pri);
-    color: var(--color-bright);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1em;
 }
 
 /* ----- Modifier classes to change background color according to result ----- */

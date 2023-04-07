@@ -1,67 +1,59 @@
-const ShowResult = ({dataURL, category, handleReset}) => {
+const ShowResult = ({dataURL, identifiedItem, handleReset}) => {
 
-    const output = [
-        {
-            class: 'm-fail',
-            label: null,
-            h3: <>Sorry, I couldn’t find a match. <span className="u-bigger">😞</span></>,
-            p: <><b>Please try again.</b> Make sure you only scan a single item at a time. Also placing the object on a plain background like a tabletop or a wall can help me make a suggestion.</>
-        },
-        {   
-            class: 'm-cat1',
-            label: <>Recyclable Waste</>,
-            h3: <>You can dispose of it in the recycling bin.</>,
-            p: <>Such a bin is usually either <b>orange</b> or <b>yellow</b> (or has such a lid or sticker) and is labeled <b><i>Wertstoffe</i></b>. There should be one in your courtyard.</>
-        },
-        {
-            class: 'm-cat2',
-            label: <>Organic Waste</>,
-            h3: <>You can dispose of it in the organic waste bin.</>,
-            p: <>Such a bin is usually <b>brown</b> (or has such a lid or sticker) and is labeled <b><i>Biogut</i></b>. There should be one in your courtyard.</>
-        },
-        {
-            class: 'm-cat3',
-            label: <>Paper Waste</>,
-            h3: <>You can dispose of it in the <b>paper and cardboard bin</b>.</>,
-            p: <>Such a bin is usually <b>blue</b> (or has such a lid or sticker) and is labeled <b><i>Papier</i></b> or <i>Papier Pappe</i> or <i>Papiertiger</i>. There should be one in your courtyard.</>
-        },
-        {
-            class: 'm-cat4',
-            label: <>Household Waste</>,
-            h3: <>Unfortunately, this cannot be recycled. You can dispose of it in the household waste bin.</>,
-            p: <>Such a bin is <b>dark grey</b> and labeled <b><i>Hausmüll</i></b> (or even not at all). There should be one in your courtyard.</>
-        },
-        {
-            class: 'm-cat5',
-            label: <>Electronic Waste</>,
-            h3: <>It is valuable electronic waste. Please take it to a <b>collection point</b>.</>,
-            p: <>You will find a so-called <b><i>BSR Recyclinghof</i></b> in almost every district. See a map of the locations <a href="https://www.bsr.de/recyclinghoefe-20503.php">here</a>. Small electronic devices are also accepted by <b>electronics shops</b>.</>
-        },
-        {
-            class: 'm-cat6',
-            label: <>Waste Glass</>,
-            h3: <>Please be sure to dispose of it <b>sorted by color</b> in <b>special waste glass containers</b> in public streets.</>,
-            p: <>See a map of the locations <a href="https://www.bsr.de/recyclinghoefe-20503.php?activeLayer=glas">here</a>. There may also be bins in your courtyard. The bins are usually <b>green</b>, but also can match the colour of the glass (<b><i>Glas</i></b>). Always check the label as there is white (<i>weiß</i> or <i>WEISS</i>), amber (<i>braun</i>), green (<i>grün</i>), and coloured glass incl. brown and green (<i>bunt</i>).</>
-        }
-    ];
+    const items = {
+        "x": { "type":"x"},
+        "aluminum_foil": { "description":"this is aluminium foil", "type":1},
+        "apples": { "description":"these are apple leftovers", "type":2},
+        "banana_peels": { "description":"these are banana peels", "type":2},
+        "cardboard": { "description":"this is cardboard", "type":3},
+        "condoms": { "description":"this is a condom", "type":4},
+        "diapers": { "description":"these are diapers", "type":4},
+        "food_waste": { "description":"this is food waste", "type":2},
+        "glass_bottle": { "description":"this is a glass bottle", "type":6},
+        "old_books": { "description":"this is an old book", "type":3},
+        "oranges": { "description":"these are orange leftovers", "type":2},
+        "pans": { "description":"this is a pan", "type":1},
+        "pizza_box": { "description":"this is a pizza box", "type":3},
+        "plastic_bags": { "description":"this is a plastic bag", "type":1},
+        "plastic_packaging": { "description":"this is plastic packaging", "type":1},
+        "plastic_toys": { "description":"this is a plastic toy", "type":1},
+        "smartphone": { "description":"this is a smartphone", "type":5},
+        "tampons": { "description":"this is a tampon", "type":4},
+        "tea_bags": { "description":"this is a tea bag", "type":2},
+        "tetrapack": { "description":"this is a Tetra Pack", "type":1},
+        "toothbrush": { "description":"this is a tooth brush", "type":1},
+    }
+      
+    const types = {
+        "x": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, I’m not sure what this is.", "info":<><b>Please try again.</b> Make sure you only scan a single item at a time. Placing it on a plain background like a tabletop or wall can also help me identify.</>},
+        "1": { "cssClass":"m-cat1", "title":"Recyclable Waste", "instructions":"Please dispose of it in the recycling bin.", "info":<>Such a bin is usually either <b>orange</b> or <b>yellow</b> (or has such a lid or sticker) and is labeled <b><i>Wertstoffe</i></b>. There should be one in your courtyard.</>},
+        "2": { "cssClass":"m-cat2", "title":"Organic waste", "instructions":"Please dispose of it in the organic waste bin.", "info":<>Such a bin is usually <b>brown</b> (or has such a lid or sticker) and is labeled <b><i>Biogut</i></b>. There should be one in your courtyard.</>},
+        "3": { "cssClass":"m-cat3", "title":"Paper waste", "instructions":"Please dispose of it in the paper and cardboard bin.", "info":<>Such a bin is usually <b>blue</b> (or has such a lid or sticker) and is labeled <b><i>Papier</i></b> or <i>Papier Pappe</i> or <i>Papiertiger</i>. There should be one in your courtyard.</>},
+        "4": { "cssClass":"m-cat4", "title":"Household waste", "instructions":"Unfortunately, this cannot be recycled. Please dispose of it in the household waste bin.", "info":<>Such a bin is <b>dark grey</b> and labeled <b><i>Hausmüll</i></b> (or even not at all). There should be one in your courtyard.</>},
+        "5": { "cssClass":"m-cat5", "title":"Electronic waste", "instructions":"It is valuable electronic waste. Please take it to a collection point.", "info":<>You will find a so-called <b><i>BSR Recyclinghof</i></b> in almost every district. See a map of the locations <a href='https://www.bsr.de/recyclinghoefe-20503.php'>here</a>. Small electronic devices are also accepted by <b>electronics shops</b>.</>},
+        "6": { "cssClass":"m-cat6", "title":"Waste glass", "instructions":"Please be sure to dispose of it sorted by color in special waste glass containers in public streets.", "info":<>See a map of the locations <a href='https://www.bsr.de/recyclinghoefe-20503.php?activeLayer=glas'>here</a>. There may also be bins in your courtyard. The bins are usually <b>green</b>, but also can match the colour of the glass (<b><i>Glas</i></b>). Always check the label as there is white (<i>weiß</i> or <i>WEISS</i>), amber (<i>braun</i>), green (<i>grün</i>), and coloured glass incl. brown and green (<i>bunt</i>).</>},
+    }
 
-    const getCategoryDetails = (cat) => {
-        if (cat === 'x') { return output[0] };
-        return output[cat];
-    };
-
-    const result = getCategoryDetails(category);
+    const type = items[identifiedItem].type;
 
     return (
         <main className="showresult">
-            <div className={`showresult__flexbox ${result.class}`}>
+            <div className={`showresult__flexbox ${types[type].cssClass}`}>
                 <img src={dataURL} alt="Your captured photo" className="showresult__photo" />
                 <div className="showresult__text-box">
-                    {result.label ? (
-                        <h2 className="showresult__label">{result.label}</h2>
-                    ) : null}
-                    <h3>{result.h3}</h3>
-                    <p>{result.p}</p>
+                    <h2>
+                        <span className="showresult__label">{types[type].title}</span>
+                        {type === 'x' ? (
+                            <> <span className="showresult__sad-smiley">😞</span></>
+                        ) : null}
+                    </h2>
+                    <h3>
+                        {items[identifiedItem].description ? (
+                            <>Apparently, {items[identifiedItem].description}. </>
+                        ) : null}
+                        {types[type].instructions}
+                    </h3>
+                    <p>{types[type].info}</p>
                 </div>
             </div>
             <button className="showresult__button" onClick={handleReset}>

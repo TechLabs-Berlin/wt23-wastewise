@@ -3,19 +3,42 @@ import Webcam from 'react-webcam';
 import TakePictureAnimation from './TakePictureAnimation';
 import ShowResult from './ShowResult';
 
-
 const TakePicture = () => {
 
     const camRef = useRef(null);
     const [dataURL, setDataURL] = useState(null);
     const [camReady, setCamReady] = useState(false);
-    const [category, setCategory] = useState(null);
+    const [identifiedItem, setIdentifiedItem] = useState(null);
 
     const videoConstraints = {
         width: 2000,
         height: 2000,
         facingMode: "environment"
     };
+
+    const itemNames = [
+        'x',
+        'aluminum_foil', 
+        'apples', 
+        'banana_peels', 
+        'cardboard', 
+        'condoms', 
+        'diapers', 
+        'food_waste', 
+        'glass_bottle', 
+        'old_books', 
+        'oranges', 
+        'pans', 
+        'pizza_box', 
+        'plastic_bags', 
+        'plastic_packaging', 
+        'plastic_toys', 
+        'smartphone', 
+        'tampons', 
+        'tea_bags', 
+        'tetrapack', 
+        'toothbrush',
+    ]
 
     const captureImage = () => {
         const img = camRef.current.getScreenshot();
@@ -25,28 +48,23 @@ const TakePicture = () => {
     };
 
     const handleReset = () => {
-        setCategory(null);
+        setIdentifiedItem(null);
         setDataURL(null);
     };
 
     useEffect(() => {
         // don't run initially, run only after user has taken a picture
         if (!dataURL) return;
-        
-        // calling AI MAGIC → hook not working yet
-        // const result = useIdentifyItem(dataURL);
 
-            /* Temporary: Faking/pretending AI MAGIC with setTimeout and a random category value */
-            const randomTime = Math.floor(Math.random() * 3000 + 1000);
-            setTimeout(() => {
-                if (Math.random() < 0.4) setCategory('x');
-                else {
-                    const random2 = Math.floor(Math.random() * 6 + 1);
-                    setCategory(random2);
-                };
-            }, randomTime);
-
-            // setCategory(6);
+        /* Temporary: Set random identifiedItem value after random time of processing */
+        const randomTime = Math.floor(Math.random() * 3000 + 1000);
+        setTimeout(() => {
+            if (Math.random() < 0.4) setIdentifiedItem('x');
+            else {
+                const randomItem = Math.floor(Math.random() * itemNames.length + 1);
+                setIdentifiedItem(`${itemNames[randomItem]}`);
+            };
+        }, randomTime);
 
     }, [dataURL]);
 
@@ -101,12 +119,12 @@ const TakePicture = () => {
                 </main>
             )}
 
-            {dataURL && !category && (
+            {dataURL && !identifiedItem && (
                 <TakePictureAnimation dataURL={dataURL} />
             )}
 
-            {dataURL && category && (  
-                <ShowResult dataURL={dataURL} category={category} handleReset={handleReset} />
+            {dataURL && identifiedItem && (  
+                <ShowResult dataURL={dataURL} identifiedItem={identifiedItem} handleReset={handleReset} />
             )}
         </>
     );
