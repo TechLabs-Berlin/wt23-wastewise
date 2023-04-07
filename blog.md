@@ -45,7 +45,7 @@ Considering that in both cases the model had very good accuracy scores (> 98% i 
 Both models have specific input requirements and since the training data have been web-scraped from internet, some preprocessing was necessary before feeding the images to the model.
 
 <p align = "center">
-<img src = "images_blog/table_req1.png" width = "600">
+<img src = "images_blog/table_req1.png" width = "700">
 </p>
 
 For both models the images have been properly preprocessed to ensure their optimal use.
@@ -59,7 +59,7 @@ Since both architectures have proven to be quite strong with much more complex t
 After having preprocessed the data, we prepared the model. We chose to load  the Xception model with the Imagenet weights, as the Imagenet dataset shares common classes with the classes we wanted to train. 
 
 <p align = "center">
-<img src = "images_blog/Xception_1.png" width = "500">
+<img src = "images_blog/Xception_1.png" width = "700">
 </p>
 
 The average pooling layer was introduced before the dense layer in order to limit the output of the Xception model, since its feature vector output is very large. This measure was taken to prevent overfitting.
@@ -69,7 +69,7 @@ Since we have a multiclassification problem, we used categorical cross-entropy a
 Now only one parameter needed to be determined: the learning rate. This hyperparameter is essential for the successful training of any DL model. According to the paper “Cyclical Learning Rates for Training Neural Networks” by Leslie Smith, we applied a methos (lr_finder) to find the optimal learning rate for our model. After 50 epochs this is the result.
 
 <p align = "center">
-<img src = "images_blog/lr_finder_Xception.png" width = "300">
+<img src = "images_blog/lr_finder_Xception.png" width = "600">
 </p>
 
 The optimal learning rate is found at the point of steepest decline of the loss. This should be about 0.0005 and this value was used for training.
@@ -79,7 +79,7 @@ In the initial iterations of the training, contrary to what the previous prototy
 To combat the overfitting, a drop-out layer and l2 regularization were added to the model.
 
 <p align = "center">
-<img src = "images_blog/Xception_drop_out.png" width = "500">
+<img src = "images_blog/Xception_drop_out.png" width = "700">
 </p>
 
 This yielded a positive effect, as the validation accuracy increased to ca. 93 %. However, some overfitting was still present. At this point, other techniques as e.g., different data augmentation and early stopping could have been applied, we decided against that as we suspected that the biggest issues was the scarce quality of the dataset and not the architecture of the model. Instead, we opted for investigating the misclassified images and classes, which we will discuss more in detail in the interpretation section.  
