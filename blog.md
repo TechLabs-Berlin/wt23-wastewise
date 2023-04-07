@@ -20,9 +20,56 @@ Afterwards, I suggest that each track writes one section.
 
 ## Artificial Intelligence
 
+test 
+
+<!--- @Andrea: Please pull, then work and commit, then push frequently! 
+Since we're on the same branch now, not doing this will lead to disaster^^ --->
+
 ### Members
 [Andrea Torcianti](https://github.com/trc729)\
 [Fabian Janosch Krüger](https://github.com/fabianjkrueger)
+
+### Intro
+<!--- to be written by Fabian ; remove this comment later on, just helpful while writing--->
+
+### Training
+<!--- to be written by Andrea --->
+
+### Interpretation
+<!--- both write here --->
+
+#### Regarding the split
+Some reservations here: Models built in different frameworks (fastai, tensorflow) do not have the same train/test split, because of different methods used to make these. Setting seed will not help this, because the method itself is different.
+
+
+#### Misclassifications/confusion matrices, greatest losses, why is that?
+
+
+#### Interpretability/explainability/XAI etc.
+
+
+#### Data mismatch
+
+<p align = "center">
+<img src = "images_blog/WasteWise_Bernie_Crowdsource.png" width = "400">
+</p>
+
+
+### Deployment
+<!--- to be written by Fabian --->
+
+
+### Conclusion
+<!--- both write here --->
+
+#### ...
+
+#### Outlook
+
+
+### Personal notes
+<!--- both write here --->
+
 
 ## Data Science
 

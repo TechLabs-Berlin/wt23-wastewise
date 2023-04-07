@@ -4,7 +4,3 @@ This directory contains the work related to the deployment of the different imag
 
 ## tensorflow_js
 Conversion of the exported TensorFlow (Python) models to JavaScript and the tutorial regarding integration with the app. The tutorial can be found at "tensorflow_js/tensorflow_js.ipynb".
-
-## deploy_fastai
-- Make a mini-website demonstrating the image classifier made with fastai
-- Planned: Convert from fastai to pure PyTorch to TensorFlow to TensorFlow.js, then provide the model to the WebDevs for inserting it into the app.
