@@ -50,6 +50,10 @@ Some reservations here: Models built in different frameworks (fastai, tensorflow
 
 #### Data mismatch
 
+<p align = "center">
+<img src = "images_blog/WasteWise_Bernie_Crowdsource.png" width = "400">
+</p>
+
 
 ### Deployment
 <!--- to be written by Fabian --->
