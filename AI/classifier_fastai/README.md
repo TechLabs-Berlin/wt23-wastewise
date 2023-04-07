@@ -7,10 +7,9 @@ Code is based on the "fastbook", a.k.a. "Deep Learning for Coders with fastai an
 
 ## Files
 
-For each version of the classifier, there is a Jupyter notebook used to train it. It ends with ".ipynb". In this file you can find the Python code as well as the results.
+For each version of the classifier, there is a Jupyter notebook used to train it. It ends with ".ipynb". In this file you can find the Python code as well as the results. the prototype was mainly there to see if the procedure worked in general, which is why there is minimal interpretation only. For the upscaled version 2, however, a more detailed interpretation of the results was added.
 
 Beyond that, each version was exported to a ".pkl" file. This contains the trained model with all its weights and can be deployed in an application.
-
 
 ## Versions
 
@@ -19,5 +18,11 @@ Beyond that, each version was exported to a ".pkl" file. This contains the train
 - Notebook: prototype_waste_recogniser_fastai_v1.ipynb
 
 - Export: prototype_waste_recogniser_fastai_v1.pkl
+
+### Version 2
+
+- Notebook: waste_recogniser_fastai_v2.ipynb
+
+- Export: The exported file is too large (170 MB) for a regular GitHub repository. Even using git large file storage, it does not work, because GitHub charges for storing files this size. I deployed the classifier in two version in Huggingface Spaces. Here, you can see the file repository of the minimal version, where you can download the exported classifier. https://huggingface.co/spaces/fabianjkrueger/WasteWise_API/tree/main
 
 
