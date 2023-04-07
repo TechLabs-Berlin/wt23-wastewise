@@ -1,7 +1,8 @@
 const ShowResult = ({dataURL, identifiedItem, handleReset}) => {
 
     const items = {
-        "x": { "type":"x"},
+        "error-x": { "type":"error-x"},
+        "error-y": { "type":"error-y"},
         "aluminum_foil": { "description":"this is aluminium foil", "type":1},
         "apples": { "description":"these are apple leftovers", "type":2},
         "banana_peels": { "description":"these are banana peels", "type":2},
@@ -25,7 +26,8 @@ const ShowResult = ({dataURL, identifiedItem, handleReset}) => {
     }
       
     const types = {
-        "x": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, I’m not sure what this is.", "info":<><b>Please try again.</b> Make sure you only scan a single item at a time. Placing it on a plain background like a tabletop or wall can also help me identify.</>},
+        "error-x": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, I’m not sure what this is.", "info":<><b>Please try again.</b> Make sure you only scan a single item at a time. Placing it on a plain background like a tabletop or wall can also help me identify.</>},
+        "error-y": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, an error has occurred.", "info":<><b>Please try again.</b> Make sure your device is connected to the internet.</>},
         "1": { "cssClass":"m-cat1", "title":"Recyclable Waste", "instructions":"Please dispose of it in the recycling bin.", "info":<>Such a bin is usually either <b>orange</b> or <b>yellow</b> (or has such a lid or sticker) and is labeled <b><i>Wertstoffe</i></b>. There should be one in your courtyard.</>},
         "2": { "cssClass":"m-cat2", "title":"Organic waste", "instructions":"Please dispose of it in the organic waste bin.", "info":<>Such a bin is usually <b>brown</b> (or has such a lid or sticker) and is labeled <b><i>Biogut</i></b>. There should be one in your courtyard.</>},
         "3": { "cssClass":"m-cat3", "title":"Paper waste", "instructions":"Please dispose of it in the paper and cardboard bin.", "info":<>Such a bin is usually <b>blue</b> (or has such a lid or sticker) and is labeled <b><i>Papier</i></b> or <i>Papier Pappe</i> or <i>Papiertiger</i>. There should be one in your courtyard.</>},
@@ -43,7 +45,7 @@ const ShowResult = ({dataURL, identifiedItem, handleReset}) => {
                 <div className="showresult__text-box">
                     <h2>
                         <span className="showresult__label">{types[type].title}</span>
-                        {type === 'x' ? (
+                        {type === 'x' || type === 'y' ? (
                             <> <span className="showresult__sad-smiley">😞</span></>
                         ) : null}
                     </h2>

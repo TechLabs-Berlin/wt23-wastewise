@@ -16,34 +16,10 @@ const TakePicture = () => {
         facingMode: "environment"
     };
 
-    const itemNames = [
-        'x',
-        'aluminum_foil', 
-        'apples', 
-        'banana_peels', 
-        'cardboard', 
-        'condoms', 
-        'diapers', 
-        'food_waste', 
-        'glass_bottle', 
-        'old_books', 
-        'oranges', 
-        'pans', 
-        'pizza_box', 
-        'plastic_bags', 
-        'plastic_packaging', 
-        'plastic_toys', 
-        'smartphone', 
-        'tampons', 
-        'tea_bags', 
-        'tetrapack', 
-        'toothbrush',
-    ]
-
     const captureImage = () => {
         const img = camRef.current.getScreenshot();
-        // console.log(img);
-        // console.log(camRef.current)
+            // console.log(img);
+            // console.log(camRef.current)
         setDataURL(img);
     };
 
@@ -52,20 +28,35 @@ const TakePicture = () => {
         setDataURL(null);
     };
 
-    useEffect(() => {
+    const fetchData = async () => {
+        try { 
+            const response = await fetch("https://fabianjkrueger-wastewise-api.hf.space/run/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    data: [
+                        dataURL,
+                    ],
+                }),
+            });
+            const data = await response.json();
+                console.log(data);
+            const result = data.data[0].label;
+                console.log(result);
+            setIdentifiedItem(result);
+        } catch (e) {
+            console.error(e);
+            setIdentifiedItem('error-y');
+                // console.log("Error", e.stack);
+                // console.log("Error", e.name);
+                // console.log("Error", e.message);
+        }
+    }
+    
+    useEffect( () => {
         // don't run initially, run only after user has taken a picture
         if (!dataURL) return;
-
-        /* Temporary: Set random identifiedItem value after random time of processing */
-        const randomTime = Math.floor(Math.random() * 3000 + 1000);
-        setTimeout(() => {
-            if (Math.random() < 0.4) setIdentifiedItem('x');
-            else {
-                const randomItem = Math.floor(Math.random() * itemNames.length + 1);
-                setIdentifiedItem(`${itemNames[randomItem]}`);
-            };
-        }, randomTime);
-
+        fetchData();
     }, [dataURL]);
 
     return (
