@@ -8,7 +8,8 @@ const TakePicture = () => {
     const camRef = useRef(null);
     const [dataURL, setDataURL] = useState(null);
     const [camReady, setCamReady] = useState(false);
-    const [identifiedItem, setIdentifiedItem] = useState(null);
+    // const [identifiedItem, setIdentifiedItem] = useState(null);
+    const [result, setResult] = useState(null);
 
     const videoConstraints = {
         width: 2000,
@@ -24,7 +25,8 @@ const TakePicture = () => {
     };
 
     const handleReset = () => {
-        setIdentifiedItem(null);
+        setResult(null);
+        // setIdentifiedItem(null);
         setDataURL(null);
     };
 
@@ -41,12 +43,14 @@ const TakePicture = () => {
             });
             const data = await response.json();
                 console.log(data);
-            const result = data.data[0].label;
-                console.log(result);
-            setIdentifiedItem(result);
+                setResult(data);
+            // const label = data.data[0].label;
+            //     console.log(label);
+            // setIdentifiedItem(label);
         } catch (e) {
             console.error(e);
-            setIdentifiedItem('error-y');
+            setResult('error');
+            // setIdentifiedItem('error-y');
                 // console.log("Error", e.stack);
                 // console.log("Error", e.name);
                 // console.log("Error", e.message);
@@ -110,12 +114,12 @@ const TakePicture = () => {
                 </main>
             )}
 
-            {dataURL && !identifiedItem && (
+            {dataURL && !result && (
                 <TakePictureAnimation dataURL={dataURL} />
             )}
 
-            {dataURL && identifiedItem && (  
-                <ShowResult dataURL={dataURL} identifiedItem={identifiedItem} handleReset={handleReset} />
+            {dataURL && result && (
+                <ShowResult dataURL={dataURL} result={result} handleReset={handleReset} />
             )}
         </>
     );

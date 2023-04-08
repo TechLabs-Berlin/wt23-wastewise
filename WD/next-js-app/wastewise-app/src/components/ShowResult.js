@@ -1,33 +1,33 @@
-const ShowResult = ({dataURL, identifiedItem, handleReset}) => {
+const ShowResult = ({dataURL, result, handleReset}) => {
 
     const items = {
         "error-x": { "type":"error-x"},
         "error-y": { "type":"error-y"},
-        "aluminum_foil": { "description":"this is aluminium foil", "type":1},
-        "apples": { "description":"these are apple leftovers", "type":2},
-        "banana_peels": { "description":"these are banana peels", "type":2},
-        "cardboard": { "description":"this is cardboard", "type":3},
-        "condoms": { "description":"this is a condom", "type":4},
-        "diapers": { "description":"these are diapers", "type":4},
-        "food_waste": { "description":"this is food waste", "type":2},
-        "glass_bottle": { "description":"this is a glass bottle", "type":6},
-        "old_books": { "description":"this is an old book", "type":3},
-        "oranges": { "description":"these are orange leftovers", "type":2},
-        "pans": { "description":"this is a pan", "type":1},
-        "pizza_box": { "description":"this is a pizza box", "type":3},
-        "plastic_bags": { "description":"this is a plastic bag", "type":1},
-        "plastic_packaging": { "description":"this is plastic packaging", "type":1},
-        "plastic_toys": { "description":"this is a plastic toy", "type":1},
-        "smartphone": { "description":"this is a smartphone", "type":5},
-        "tampons": { "description":"this is a tampon", "type":4},
-        "tea_bags": { "description":"this is a tea bag", "type":2},
-        "tetrapack": { "description":"this is a Tetra Pack", "type":1},
-        "toothbrush": { "description":"this is a tooth brush", "type":1},
+        "aluminum_foil": { "name":"aluminium foil", "description":"this is", "type":1},
+        "apples": { "name":"apple leftovers", "description":"these are", "type":2},
+        "banana_peels": { "name":"banana peels", "description":"these are", "type":2},
+        "cardboard": { "name":"cardboard", "description":"this is", "type":3},
+        "condoms": { "name":"condom", "description":"this is a", "type":4},
+        "diapers": { "name":"diapers", "description":"these are", "type":4},
+        "food_waste": { "name":"food waste", "description":"this is", "type":2},
+        "glass_bottle": { "name":"glass bottle", "description":"this is a", "type":6},
+        "old_books": { "name":"old book", "description":"this is an", "type":3},
+        "oranges": { "name":"orange leftovers", "description":"these are", "type":2},
+        "pans": { "name":"pan", "description":"this is a", "type":1},
+        "pizza_box": { "name":"pizza box", "description":"this is a", "type":3},
+        "plastic_bags": { "name":"plastic bag", "description":"this is a", "type":1},
+        "plastic_packaging": { "name":"plastic packaging", "description":"this is", "type":1},
+        "plastic_toys": { "name":"plastic toy", "description":"this is a", "type":1},
+        "smartphone": { "name":"smartphone", "description":"this is a", "type":5},
+        "tampons": { "name":"tampon", "description":"this is a", "type":4},
+        "tea_bags": { "name":"tea bag", "description":"this is a", "type":2},
+        "tetrapack": { "name":"Tetra Pack", "description":"this is a", "type":1},
+        "toothbrush": { "name":"tooth brush", "description":"this is a", "type":1},
     }
       
     const types = {
-        "error-x": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, I’m not sure what this is.", "info":<><b>Please try again.</b> Make sure you only scan a single item at a time. Placing it on a plain background like a tabletop or wall can also help me identify.</>},
-        "error-y": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, an error has occurred.", "info":<><b>Please try again.</b> Make sure your device is connected to the internet.</>},
+        "error-x": { "cssClass":"m-fail", "title":"failed", "instructions":"Sorry, an error has occurred.", "info":<><b>Please try again.</b> Make sure your device is connected to the internet.</>},
+        "error-y": { "cssClass":"m-fail", "title":"failed", "instructions":<>Sorry, I’m not sure what this is.&#8239;<span className="u-weight-normal u-asterisk">*</span></>, "info":<><b>Please try again.</b> Make sure you only scan a single item at a time. Placing it on a plain background like a tabletop or wall can also help me identify.</>},
         "1": { "cssClass":"m-cat1", "title":"Recyclable Waste", "instructions":"Please dispose of it in the recycling bin.", "info":<>Such a bin is usually either <b>orange</b> or <b>yellow</b> (or has such a lid or sticker) and is labeled <b><i>Wertstoffe</i></b>. There should be one in your courtyard.</>},
         "2": { "cssClass":"m-cat2", "title":"Organic waste", "instructions":"Please dispose of it in the organic waste bin.", "info":<>Such a bin is usually <b>brown</b> (or has such a lid or sticker) and is labeled <b><i>Biogut</i></b>. There should be one in your courtyard.</>},
         "3": { "cssClass":"m-cat3", "title":"Paper waste", "instructions":"Please dispose of it in the paper and cardboard bin.", "info":<>Such a bin is usually <b>blue</b> (or has such a lid or sticker) and is labeled <b><i>Papier</i></b> or <i>Papier Pappe</i> or <i>Papiertiger</i>. There should be one in your courtyard.</>},
@@ -36,26 +36,65 @@ const ShowResult = ({dataURL, identifiedItem, handleReset}) => {
         "6": { "cssClass":"m-cat6", "title":"Waste glass", "instructions":"Please be sure to dispose of it sorted by color in special waste glass containers in public streets.", "info":<>See a map of the locations <a href='https://www.bsr.de/recyclinghoefe-20503.php?activeLayer=glas'>here</a>. There may also be bins in your courtyard. The bins are usually <b>green</b>, but also can match the colour of the glass (<b><i>Glas</i></b>). Always check the label as there is white (<i>weiß</i> or <i>WEISS</i>), amber (<i>braun</i>), green (<i>grün</i>), and coloured glass incl. brown and green (<i>bunt</i>).</>},
     }
 
-    const type = items[identifiedItem].type;
+    let item = '';
+    let label = '';
+    let phrase = '';
+    let confidence = null;
+    let annotation = null;
+
+    if (result === 'error') label = 'error-x';
+    else {
+        label = result.data[0].label;
+
+        confidence = Math.round(result.data[0].confidences[0].confidence * 100);
+        if (confidence < 70) label = 'error-y';
+        
+        if (confidence < 80) { phrase = 'Possibly'; }
+        else if (confidence < 90) { phrase = 'Probably'; }
+        else { phrase = 'No doubt'; }
+        
+        if (label === 'error-y') {
+            const label_1 = result.data[0].confidences[0].label;
+            const confidence_1 = confidence;
+            const label_2 = result.data[0].confidences[1].label;
+            const confidence_2 = Math.round(result.data[0].confidences[1].confidence * 100);
+            const label_3 = result.data[0].confidences[2].label;
+            const confidence_3 = Math.round(result.data[0].confidences[2].confidence * 100);
+
+            annotation = (<>  
+                * My confidence:&ensp;
+                {items[label_1].name.toUpperCase()}:&nbsp;{confidence_1}&#8239;%&ensp;&ndash;&ensp;
+                {items[label_2].name.toUpperCase()}:&nbsp;{confidence_2}&#8239;%&ensp;&ndash;&ensp;
+                {items[label_3].name.toUpperCase()}:&nbsp;{confidence_3}&#8239;%
+            </>);
+        } else {
+            annotation = <>* I’m {confidence}&#8239;% sure about that.</>;
+        }
+    }
+
+    item = items[label];
+    let type = item.type;
+    type = types[type];
 
     return (
         <main className="showresult">
-            <div className={`showresult__flexbox ${types[type].cssClass}`}>
+            <div className={`showresult__flexbox ${type.cssClass}`}>
                 <img src={dataURL} alt="Your captured photo" className="showresult__photo" />
                 <div className="showresult__text-box">
                     <h2>
-                        <span className="showresult__label">{types[type].title}</span>
-                        {type === 'x' || type === 'y' ? (
+                        <span className="showresult__label">{type.title}</span>
+                        {item.type === 'error-x' || item.type === 'error-x' ? (
                             <> <span className="showresult__sad-smiley">😞</span></>
                         ) : null}
                     </h2>
                     <h3>
-                        {items[identifiedItem].description ? (
-                            <>Apparently, {items[identifiedItem].description}. </>
+                        {item.description ? (
+                            <>{phrase}, {item.description} {item.name}.&#8239;<span className="u-weight-normal u-asterisk">*</span> &mdash; </>
                         ) : null}
-                        {types[type].instructions}
+                        {type.instructions}
                     </h3>
-                    <p>{types[type].info}</p>
+                    <p>{type.info}</p>
+                    <p className="u-size-mini">{annotation}</p>
                 </div>
             </div>
             <button className="showresult__button" onClick={handleReset}>
