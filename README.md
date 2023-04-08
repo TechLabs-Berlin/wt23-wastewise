@@ -9,7 +9,10 @@ WasteWise logo
 
 ## Summary 
 
-WasteWise is an app that helps its users to conveniently dispose of their waste. Based on a photo of the respective object, it recommends the correct way of disposal to help our environment clean and green. This feature relies on a fine-tuned residual neural network image classifier coupled with a function providing the recommendations for each class.
+WasteWise is an app designed to make waste management and recycling more accessible, engaging and user-friendly. With WasteWise, users can scan their waste and receive immediate information about which bin it belongs in. 
+Based on a photo of the respective object, it recommends the correct way of disposal to help our environment clean and green. 
+This feature relies on a fine-tuned residual neural network image classifier coupled with a function providing the recommendations for each class.
+The app also provides valuable insights into waste management and recycling, including recycling rates and waste production per capita starting from 2022 and predicted up to the year 2026 using polynomial regression. The information is accessible through interactive and user-friendly dashboards.
 
 ## How to run the demo
 
