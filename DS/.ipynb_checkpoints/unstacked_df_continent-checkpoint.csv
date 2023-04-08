@@ -1,0 +1,937 @@
+,type_of_waste,continents,percentage
+0,Organic,Africa,51.8
+1,Organic,Europe,51.4
+2,Organic,Europe,31.2
+3,Organic,Asia,39.0
+4,Organic,South America,38.74
+5,Organic,Asia,57.0
+6,Organic,Oceania,19.7
+7,Organic,North America,46.0
+8,Organic,Oceania,48.44
+9,Organic,Europe,31.4
+10,Organic,Asia,45.19
+11,Organic,Africa,81.0
+12,Organic,Europe,14.18
+13,Organic,Africa,52.1
+14,Organic,Africa,21.0
+15,Organic,Asia,80.57999999999998
+16,Organic,Europe,24.35
+17,Organic,Asia,59.1
+18,Organic,North America,46.0
+19,Organic,Europe,30.0
+20,Organic,North America,47.0
+21,Organic,North America,17.0
+22,Organic,South America,55.19691119691119
+23,Organic,South America,51.4
+24,Organic,North America,18.3
+25,Organic,Asia,36.0
+26,Organic,Asia,58.0
+27,Organic,North America,24.0
+28,Organic,Europe,29.0
+29,Organic,South America,53.3
+30,Organic,Asia,61.2
+31,Organic,Africa,83.4
+32,Organic,South America,59.58
+33,Organic,Africa,50.0
+34,Organic,North America,58.0
+35,Organic,North America,68.9
+36,Organic,North America,10.9
+37,Organic,Asia,41.47
+38,Organic,Europe,62.3
+39,Organic,Europe,30.0
+40,Organic,North America,45.0
+41,Organic,Europe,12.78
+42,Organic,North America,51.0
+43,Organic,Africa,54.4
+44,Organic,South America,58.67
+45,Organic,Africa,56.0
+46,Organic,Europe,49.0
+47,Organic,Europe,36.7
+48,Organic,Africa,87.6
+49,Organic,Europe,35.88
+50,Organic,Oceania,33.2
+51,Organic,Europe,32.0
+52,Organic,Oceania,23.83
+53,Organic,Europe,16.7
+54,Organic,Asia,39.0
+55,Organic,Africa,67.0
+56,Organic,Europe,24.57
+57,Organic,Africa,58.0
+58,Organic,Europe,40.0
+59,Organic,North America,27.1
+60,Organic,North America,42.8
+61,Organic,Oceania,27.3
+62,Organic,South America,50.1
+63,Organic,Asia,35.0
+64,Organic,North America,57.9
+65,Organic,Europe,30.9
+66,Organic,North America,61.3
+67,Organic,Europe,22.5
+68,Organic,Asia,53.8
+69,Organic,Europe,16.6
+70,Organic,Asia,72.9
+71,Organic,Asia,68.7
+72,Organic,Asia,34.0
+73,Organic,Europe,34.4
+74,Organic,North America,62.22
+75,Organic,Asia,50.0
+76,Organic,Asia,36.0
+77,Organic,Asia,30.0
+78,Organic,Africa,57.0
+79,Organic,Asia,66.6
+80,Organic,Oceania,43.6
+81,Organic,North America,27.2
+82,Organic,Asia,45.0
+83,Organic,Asia,16.9
+84,Organic,Asia,52.5
+85,Organic,Africa,70.1
+86,Organic,North America,45.0
+87,Organic,Europe,37.6
+88,Organic,Asia,62.0
+89,Organic,Europe,40.4
+90,Organic,Europe,30.0
+91,Organic,Europe,46.7
+92,Organic,Asia,3.1
+93,Organic,Africa,60.0
+94,Organic,Europe,55.0
+95,Organic,North America,52.4
+96,Organic,Oceania,8.0
+97,Organic,Europe,29.3
+98,Organic,Africa,17.5
+99,Organic,Europe,52.0
+100,Organic,Europe,33.82
+101,Organic,Oceania,43.6
+102,Organic,Africa,4.8
+103,Organic,Asia,46.0
+104,Organic,Oceania,43.6
+105,Organic,Europe,35.0
+106,Organic,Europe,15.49
+107,Organic,Asia,52.39
+108,Organic,Oceania,43.6
+109,Organic,Oceania,28.0
+110,Organic,Asia,30.0
+111,Organic,North America,46.4
+112,Organic,South America,50.43
+113,Organic,Asia,52.31
+114,Organic,Oceania,26.0
+115,Organic,Europe,37.27
+116,Organic,North America,13.1
+117,Organic,Europe,36.49
+118,Organic,Asia,59.1
+119,Organic,Oceania,47.0
+120,Organic,Asia,57.0
+121,Organic,Europe,56.26
+122,Organic,Europe,28.41
+123,Organic,Asia,45.5
+124,Organic,Africa,51.4
+125,Organic,Africa,12.0
+126,Organic,Asia,10.51
+127,Organic,Oceania,42.8
+128,Organic,North America,65.0
+129,Organic,Europe,5.35
+130,Organic,Europe,37.62
+131,Organic,Europe,42.0
+132,Organic,Africa,48.5
+133,Organic,Asia,57.0
+134,Organic,North America,21.8
+135,Organic,Africa,70.0
+136,Organic,Africa,38.0
+137,Organic,Asia,65.52
+138,Organic,Oceania,51.3
+139,Organic,North America,27.15
+140,Organic,Africa,68.0
+141,Organic,Asia,64.0
+142,Organic,Oceania,43.6
+143,Organic,Africa,74.5
+144,Organic,Europe,37.0
+145,Organic,South America,53.5
+146,Organic,North America,14.9
+147,Organic,Asia,40.0
+148,Organic,North America,49.6
+149,Organic,North America,6.5
+150,Organic,Asia,61.9
+151,Organic,Oceania,73.4
+152,Organic,Oceania,42.6
+153,Organic,Asia,65.0
+154,Organic,Africa,16.381654627302726
+155,Organic,Africa,36.0
+156,Glass,Africa,6.7
+157,Glass,Europe,4.5
+158,Glass,Europe,8.2
+159,Glass,Asia,4.0
+160,Glass,South America,3.16
+161,Glass,Asia,3.2
+162,Glass,Oceania,3.4
+163,Glass,North America,7.0
+164,Glass,Oceania,3.81
+165,Glass,Europe,7.0
+166,Glass,Asia,5.28
+167,Glass,Africa,2.9
+168,Glass,Europe,3.1
+169,Glass,Africa,1.6
+170,Glass,Africa,1.0
+171,Glass,Asia,0.44
+172,Glass,Europe,5.83
+173,Glass,Asia,3.4
+174,Glass,North America,7.0
+175,Glass,Europe,8.0
+176,Glass,North America,8.0
+177,Glass,North America,9.0
+178,Glass,South America,2.9034749034749034
+179,Glass,South America,2.4
+180,Glass,North America,3.7
+181,Glass,Asia,3.0
+182,Glass,Asia,4.0
+183,Glass,North America,6.0
+184,Glass,Europe,4.0
+185,Glass,South America,6.6
+186,Glass,Asia,2.1
+187,Glass,Africa,0.1
+188,Glass,South America,2.35
+189,Glass,Africa,2.0
+190,Glass,North America,1.0
+191,Glass,North America,4.6
+192,Glass,North America,3.5
+193,Glass,Asia,2.66
+194,Glass,Europe,2.4
+195,Glass,Europe,10.0
+196,Glass,North America,8.0
+197,Glass,Europe,5.78
+198,Glass,North America,6.0
+199,Glass,Africa,1.2
+200,Glass,South America,3.01
+201,Glass,Africa,4.0
+202,Glass,Europe,8.0
+203,Glass,Europe,8.3
+204,Glass,Africa,0.8
+205,Glass,Europe,9.24
+206,Glass,Oceania,4.1
+207,Glass,Europe,10.0
+208,Glass,Oceania,7.07
+209,Glass,Europe,2.2
+210,Glass,Asia,3.0
+211,Glass,Africa,0.0
+212,Glass,Europe,4.42
+213,Glass,Africa,1.0
+214,Glass,Europe,3.0
+215,Glass,North America,3.1
+216,Glass,North America,7.1
+217,Glass,Oceania,4.6
+218,Glass,South America,4.7
+219,Glass,Asia,3.0
+220,Glass,North America,1.27
+221,Glass,Europe,3.7
+222,Glass,North America,1.6
+223,Glass,Europe,3.5
+224,Glass,Asia,2.5
+225,Glass,Europe,8.5
+226,Glass,Asia,1.9
+227,Glass,Asia,2.3
+228,Glass,Asia,3.0
+229,Glass,Europe,7.6
+230,Glass,North America,2.81
+231,Glass,Asia,2.0
+232,Glass,Asia,5.0
+233,Glass,Asia,5.0
+234,Glass,Africa,3.0
+235,Glass,Asia,2.6
+236,Glass,Oceania,5.5
+237,Glass,North America,8.1
+238,Glass,Asia,4.0
+239,Glass,Asia,9.3
+240,Glass,Asia,3.5
+241,Glass,Africa,3.1
+242,Glass,North America,7.0
+243,Glass,Europe,5.0
+244,Glass,Asia,2.0
+245,Glass,Europe,8.65
+246,Glass,Europe,4.0
+247,Glass,Europe,21.4
+248,Glass,Asia,3.3
+249,Glass,Africa,2.0
+250,Glass,Europe,4.0
+251,Glass,North America,5.9
+252,Glass,Oceania,2.0
+253,Glass,Europe,4.1
+254,Glass,Africa,1.0
+255,Glass,Europe,6.0
+256,Glass,Europe,8.97
+257,Glass,Oceania,5.5
+258,Glass,Africa,4.0
+259,Glass,Asia,3.0
+260,Glass,Oceania,5.5
+261,Glass,Europe,5.4
+262,Glass,Europe,4.6
+263,Glass,Asia,4.36
+264,Glass,Oceania,5.5
+265,Glass,Oceania,4.0
+266,Glass,Asia,6.0
+267,Glass,North America,5.8
+268,Glass,South America,3.05
+269,Glass,Asia,2.34
+270,Glass,Oceania,5.0
+271,Glass,Europe,10.07
+272,Glass,North America,2.4
+273,Glass,Europe,6.73
+274,Glass,Asia,2.4
+275,Glass,Oceania,3.0
+276,Glass,Asia,4.0
+277,Glass,Europe,4.89
+278,Glass,Europe,16.82
+279,Glass,Asia,4.0
+280,Glass,Africa,3.5
+281,Glass,Africa,2.0
+282,Glass,Asia,0.93
+283,Glass,Oceania,6.65
+284,Glass,North America,4.0
+285,Glass,Europe,5.61
+286,Glass,Europe,5.44
+287,Glass,Europe,19.0
+288,Glass,Africa,5.2
+289,Glass,Asia,3.0
+290,Glass,North America,20.5
+291,Glass,Africa,1.0
+292,Glass,Africa,2.0
+293,Glass,Asia,3.04
+294,Glass,Oceania,5.9
+295,Glass,North America,10.15
+296,Glass,Africa,2.0
+297,Glass,Asia,2.0
+298,Glass,Oceania,5.5
+299,Glass,Africa,0.8
+300,Glass,Europe,5.0
+301,Glass,South America,3.0
+302,Glass,North America,4.4
+303,Glass,Asia,3.0
+304,Glass,North America,5.6
+305,Glass,North America,18.1
+306,Glass,Asia,2.18
+307,Glass,Oceania,5.4
+308,Glass,Oceania,2.2
+309,Glass,Asia,1.0
+310,Glass,Africa,5.200216370472019
+311,Glass,Africa,5.0
+312,Metal,Africa,4.4
+313,Metal,Europe,4.8
+314,Metal,Europe,2.6
+315,Metal,Asia,3.0
+316,Metal,South America,1.84
+317,Metal,Asia,3.4
+318,Metal,Oceania,7.9
+319,Metal,North America,7.0
+320,Metal,Oceania,19.38
+321,Metal,Europe,4.4
+322,Metal,Asia,3.49
+323,Metal,Africa,2.1
+324,Metal,Europe,1.91
+325,Metal,Africa,1.6
+326,Metal,Africa,1.0
+327,Metal,Asia,0.5
+328,Metal,Europe,1.98
+329,Metal,Asia,2.1
+330,Metal,North America,7.0
+331,Metal,Europe,2.0
+332,Metal,North America,5.0
+333,Metal,North America,6.0
+334,Metal,South America,2.501930501930502
+335,Metal,South America,2.9
+336,Metal,North America,4.9
+337,Metal,Asia,4.0
+338,Metal,Asia,1.0
+339,Metal,North America,13.0
+340,Metal,Europe,3.0
+341,Metal,South America,2.3
+342,Metal,Asia,1.1
+343,Metal,Africa,0.7
+344,Metal,South America,1.1
+345,Metal,Africa,4.0
+346,Metal,North America,2.0
+347,Metal,North America,1.6
+348,Metal,North America,6.2
+349,Metal,Asia,3.25
+350,Metal,Europe,8.4
+351,Metal,Europe,1.4
+352,Metal,North America,5.0
+353,Metal,Europe,6.29
+354,Metal,North America,3.0
+355,Metal,Africa,2.8
+356,Metal,South America,1.53
+357,Metal,Africa,2.0
+358,Metal,Europe,3.0
+359,Metal,Europe,2.6
+360,Metal,Africa,1.2
+361,Metal,Europe,1.7
+362,Metal,Oceania,1.9
+363,Metal,Europe,3.0
+364,Metal,Oceania,16.73
+365,Metal,Europe,3.5
+366,Metal,Asia,5.0
+367,Metal,Africa,1.0
+368,Metal,Europe,4.37
+369,Metal,Africa,1.0
+370,Metal,Europe,3.0
+371,Metal,North America,2.4
+372,Metal,North America,2.0
+373,Metal,Oceania,9.0
+374,Metal,South America,4.2
+375,Metal,Asia,2.0
+376,Metal,North America,2.11
+377,Metal,Europe,2.1
+378,Metal,North America,2.5
+379,Metal,Europe,1.8
+380,Metal,Asia,1.8
+381,Metal,Europe,3.7
+382,Metal,Asia,2.3
+383,Metal,Asia,0.98
+384,Metal,Asia,3.0
+385,Metal,Europe,4.3
+386,Metal,North America,2.38
+387,Metal,Asia,1.5
+388,Metal,Asia,4.0
+389,Metal,Asia,3.0
+390,Metal,Africa,1.0
+391,Metal,Asia,2.0
+392,Metal,Oceania,10.0
+393,Metal,North America,8.8
+394,Metal,Asia,2.0
+395,Metal,Asia,3.7
+396,Metal,Asia,5.5
+397,Metal,Africa,4.3
+398,Metal,North America,5.0
+399,Metal,Europe,12.5
+400,Metal,Asia,3.0
+401,Metal,Europe,2.75
+402,Metal,Europe,2.0
+403,Metal,Europe,2.6
+404,Metal,Asia,1.7
+405,Metal,Africa,2.5
+406,Metal,Europe,3.0
+407,Metal,North America,3.4
+408,Metal,Oceania,6.0
+409,Metal,Europe,2.5
+410,Metal,Africa,3.5
+411,Metal,Europe,4.0
+412,Metal,Europe,2.9
+413,Metal,Oceania,10.0
+414,Metal,Africa,4.2
+415,Metal,Asia,3.0
+416,Metal,Oceania,10.0
+417,Metal,Europe,4.3
+418,Metal,Europe,6.12
+419,Metal,Asia,1.9
+420,Metal,Oceania,10.0
+421,Metal,Oceania,4.5
+422,Metal,Asia,4.0
+423,Metal,North America,3.8
+424,Metal,South America,2.64
+425,Metal,Asia,4.22
+426,Metal,Oceania,10.0
+427,Metal,Europe,2.17
+428,Metal,North America,10.4
+429,Metal,Europe,1.85
+430,Metal,Asia,2.7
+431,Metal,Oceania,3.0
+432,Metal,Asia,9.0
+433,Metal,Europe,2.5
+434,Metal,Europe,1.83
+435,Metal,Asia,5.0
+436,Metal,Africa,1.7
+437,Metal,Africa,2.0
+438,Metal,Asia,19.12
+439,Metal,Oceania,13.15
+440,Metal,North America,2.0
+441,Metal,Europe,0.9
+442,Metal,Europe,1.38
+443,Metal,Europe,2.0
+444,Metal,Africa,4.6
+445,Metal,Asia,4.0
+446,Metal,North America,7.6
+447,Metal,Africa,2.0
+448,Metal,Africa,4.0
+449,Metal,Asia,1.85
+450,Metal,Oceania,9.0
+451,Metal,North America,3.74
+452,Metal,Africa,4.0
+453,Metal,Asia,1.0
+454,Metal,Oceania,10.0
+455,Metal,Africa,0.6
+456,Metal,Europe,4.0
+457,Metal,South America,5.0
+458,Metal,North America,9.0
+459,Metal,Asia,2.0
+460,Metal,North America,3.8
+461,Metal,North America,8.6
+462,Metal,Asia,0.58
+463,Metal,Oceania,3.8
+464,Metal,Oceania,8.8
+465,Metal,Asia,6.0
+466,Metal,Africa,16.9104608968452
+467,Metal,Africa,6.0
+468,Other,Africa,11.7
+469,Other,Europe,19.810000000000002
+470,Other,Europe,11.6
+471,Other,Asia,10.0
+472,Other,South America,27.66
+473,Other,Asia,18.299999999999997
+474,Other,Oceania,29.8
+475,Other,North America,12.0
+476,Other,Oceania,3.46
+477,Other,Europe,26.4
+478,Other,Asia,27.23
+479,Other,Africa,3.2
+480,Other,Europe,48.54
+481,Other,Africa,34.3
+482,Other,Africa,61.0
+483,Other,Asia,10.79
+484,Other,Europe,41.53
+485,Other,Asia,15.2
+486,Other,North America,12.0
+487,Other,Europe,43.0
+488,Other,North America,5.0
+489,Other,North America,26.0
+490,Other,South America,22.702702702702705
+491,Other,South America,16.7
+492,Other,North America,36.300000000000004
+493,Other,Asia,23.0
+494,Other,Asia,7.0
+495,Other,North America,7.0
+496,Other,Europe,29.0
+497,Other,South America,16.0
+498,Other,Asia,16.2
+499,Other,Africa,10.4
+500,Other,South America,15.74
+501,Other,Africa,32.0
+502,Other,North America,7.0
+503,Other,North America,3.0
+504,Other,North America,37.3
+505,Other,Asia,12.17
+506,Other,Europe,15.599999999999996
+507,Other,Europe,21.599999999999998
+508,Other,North America,14.0
+509,Other,Europe,61.96
+510,Other,North America,14.0
+511,Other,Africa,14.9
+512,Other,South America,15.08
+513,Other,Africa,15.0
+514,Other,Europe,16.0
+515,Other,Europe,16.3
+516,Other,Africa,4.300000000000001
+517,Other,Europe,13.930000000000001
+518,Other,Oceania,40.8
+519,Other,Europe,26.0
+520,Other,Oceania,12.92
+521,Other,Europe,38.5
+522,Other,Asia,16.0
+523,Other,Africa,25.0
+524,Other,Europe,17.18
+525,Other,Africa,27.0
+526,Other,Europe,11.0
+527,Other,North America,37.4
+528,Other,North America,34.3
+529,Other,Oceania,18.2
+530,Other,South America,16.099999999999998
+531,Other,Asia,17.0
+532,Other,North America,6.92
+533,Other,Europe,17.2
+534,Other,North America,17.80000000000001
+535,Other,Europe,45.8
+536,Other,Asia,13.0
+537,Other,Europe,33.8
+538,Other,Asia,7.1
+539,Other,Asia,13.1
+540,Other,Asia,18.0
+541,Other,Europe,19.3
+542,Other,North America,5.63
+543,Other,Asia,15.5
+544,Other,Asia,11.0
+545,Other,Asia,12.0
+546,Other,Africa,9.0
+547,Other,Asia,16.2
+548,Other,Oceania,13.5
+549,Other,North America,12.2
+550,Other,Asia,9.0
+551,Other,Asia,61.2
+552,Other,Asia,11.0
+553,Other,Africa,9.5
+554,Other,North America,11.0
+555,Other,Europe,9.2
+556,Other,Asia,19.0
+557,Other,Europe,28.049999999999997
+558,Other,Europe,27.0
+559,Other,Europe,15.5
+560,Other,Asia,25.3
+561,Other,Africa,18.5
+562,Other,Europe,23.0
+563,Other,North America,13.6
+564,Other,Oceania,60.0
+565,Other,Europe,37.400000000000006
+566,Other,Africa,72.5
+567,Other,Europe,8.0
+568,Other,Europe,22.16
+569,Other,Oceania,13.5
+570,Other,Africa,59.7
+571,Other,Asia,19.0
+572,Other,Oceania,13.5
+573,Other,Europe,20.34
+574,Other,Europe,44.95
+575,Other,Asia,8.02
+576,Other,Oceania,13.5
+577,Other,Oceania,48.5
+578,Other,Asia,38.0
+579,Other,North America,5.7
+580,Other,South America,25.9
+581,Other,Asia,21.919999999999998
+582,Other,Oceania,12.0
+583,Other,Europe,27.09
+584,Other,North America,44.3
+585,Other,Europe,30.580000000000002
+586,Other,Asia,11.5
+587,Other,Oceania,29.0
+588,Other,Asia,5.0
+589,Other,Europe,12.68
+590,Other,Europe,19.03
+591,Other,Asia,7.5
+592,Other,Africa,18.9
+593,Other,Africa,70.0
+594,Other,Asia,44.0
+595,Other,Oceania,8.600000000000001
+596,Other,North America,7.0
+597,Other,Europe,69.36
+598,Other,Europe,29.22
+599,Other,Europe,1.0
+600,Other,Africa,25.900000000000006
+601,Other,Asia,22.0
+602,Other,North America,2.3
+603,Other,Africa,18.0
+604,Other,Africa,42.0
+605,Other,Asia,4.44
+606,Other,Oceania,13.0
+607,Other,North America,17.19
+608,Other,Africa,5.0
+609,Other,Asia,24.0
+610,Other,Oceania,13.5
+611,Other,Africa,10.5
+612,Other,Europe,22.0
+613,Other,South America,7.5
+614,Other,North America,32.2
+615,Other,Asia,35.0
+616,Other,North America,10.5
+617,Other,North America,27.0
+618,Other,Asia,17.98
+619,Other,Oceania,6.9
+620,Other,Oceania,26.2
+621,Other,Asia,11.0
+622,Other,Africa,45.02064556592234
+623,Other,Africa,3.0
+624,Paper,Africa,11.9
+625,Paper,Europe,9.9
+626,Paper,Europe,35.1
+627,Paper,Asia,25.0
+628,Paper,South America,13.96
+629,Paper,Asia,6.7
+630,Paper,Oceania,26.4
+631,Paper,North America,15.0
+632,Paper,Oceania,17.3
+633,Paper,Europe,19.7
+634,Paper,Asia,10.93
+635,Paper,Africa,7.3
+636,Paper,Europe,18.38
+637,Paper,Africa,3.1
+638,Paper,Africa,7.0
+639,Paper,Asia,3.04
+640,Paper,Europe,14.18
+641,Paper,Asia,12.8
+642,Paper,North America,15.0
+643,Paper,Europe,5.0
+644,Paper,North America,16.0
+645,Paper,North America,29.0
+646,Paper,South America,6.501930501930501
+647,Paper,South America,13.1
+648,Paper,North America,19.7
+649,Paper,Asia,18.0
+650,Paper,Asia,17.0
+651,Paper,North America,47.0
+652,Paper,Europe,20.0
+653,Paper,South America,12.4
+654,Paper,Asia,9.6
+655,Paper,Africa,2.1
+656,Paper,South America,8.4
+657,Paper,Africa,7.0
+658,Paper,North America,21.0
+659,Paper,North America,12.3
+660,Paper,North America,31.1
+661,Paper,Asia,25.7
+662,Paper,Europe,9.1
+663,Paper,Europe,24.0
+664,Paper,North America,12.0
+665,Paper,Europe,11.57
+666,Paper,North America,16.0
+667,Paper,Africa,9.8
+668,Paper,South America,10.25
+669,Paper,Africa,10.0
+670,Paper,Europe,15.0
+671,Paper,Europe,17.5
+672,Paper,Africa,3.8
+673,Paper,Europe,37.83
+674,Paper,Oceania,12.5
+675,Paper,Europe,20.0
+676,Paper,Oceania,13.3
+677,Paper,Europe,18.9
+678,Paper,Asia,34.0
+679,Paper,Africa,3.0
+680,Paper,Europe,33.65
+681,Paper,Africa,9.0
+682,Paper,Europe,29.0
+683,Paper,North America,13.6
+684,Paper,North America,11.4
+685,Paper,Oceania,28.5
+686,Paper,South America,10.7
+687,Paper,Asia,22.0
+688,Paper,North America,17.36
+689,Paper,Europe,23.2
+690,Paper,North America,4.1
+691,Paper,Europe,13.4
+692,Paper,Asia,14.9
+693,Paper,Europe,25.0
+694,Paper,Asia,7.3
+695,Paper,Asia,9.6
+696,Paper,Asia,24.0
+697,Paper,Europe,22.8
+698,Paper,North America,14.73
+699,Paper,Asia,15.0
+700,Paper,Asia,33.0
+701,Paper,Asia,25.0
+702,Paper,Africa,11.3
+703,Paper,Asia,4.0
+704,Paper,Oceania,10.9
+705,Paper,North America,20.5
+706,Paper,Asia,20.0
+707,Paper,Asia,2.8
+708,Paper,Asia,16.0
+709,Paper,Africa,5.5
+710,Paper,North America,10.0
+711,Paper,Europe,30.3
+712,Paper,Asia,7.0
+713,Paper,Europe,10.05
+714,Paper,Europe,19.0
+715,Paper,Europe,6.1
+716,Paper,Asia,58.7
+717,Paper,Africa,9.0
+718,Paper,Europe,5.0
+719,Paper,North America,13.8
+720,Paper,Oceania,11.0
+721,Paper,Europe,12.8
+722,Paper,Africa,3.5
+723,Paper,Europe,18.0
+724,Paper,Europe,13.72
+725,Paper,Oceania,10.9
+726,Paper,Africa,7.3
+727,Paper,Asia,14.0
+728,Paper,Oceania,10.9
+729,Paper,Europe,21.0
+730,Paper,Europe,26.57
+731,Paper,Asia,18.21
+732,Paper,Oceania,10.9
+733,Paper,Oceania,7.0
+734,Paper,Asia,13.0
+735,Paper,North America,26.3
+736,Paper,South America,7.44
+737,Paper,Asia,8.7
+738,Paper,Oceania,15.0
+739,Paper,Europe,11.27
+740,Paper,North America,19.4
+741,Paper,Europe,13.64
+742,Paper,Asia,10.1
+743,Paper,Oceania,16.0
+744,Paper,Asia,11.0
+745,Paper,Europe,11.34
+746,Paper,Europe,19.7
+747,Paper,Asia,27.0
+748,Paper,Africa,11.8
+749,Paper,Africa,5.0
+750,Paper,Asia,14.86
+751,Paper,Oceania,6.45
+752,Paper,North America,12.0
+753,Paper,Europe,13.21
+754,Paper,Europe,13.57
+755,Paper,Europe,25.0
+756,Paper,Africa,5.9
+757,Paper,Asia,7.0
+758,Paper,North America,31.5
+759,Paper,Africa,3.0
+760,Paper,Africa,4.0
+761,Paper,Asia,7.6
+762,Paper,Oceania,7.4
+763,Paper,North America,22.6
+764,Paper,Africa,10.0
+765,Paper,Asia,6.0
+766,Paper,Oceania,10.9
+767,Paper,Africa,6.0
+768,Paper,Europe,25.0
+769,Paper,South America,20.0
+770,Paper,North America,26.6
+771,Paper,Asia,17.5
+772,Paper,North America,22.1
+773,Paper,North America,33.5
+774,Paper,Asia,5.2
+775,Paper,Oceania,4.05
+776,Paper,Oceania,7.2
+777,Paper,Asia,7.0
+778,Paper,Africa,9.396918237794267
+779,Paper,Africa,27.0
+780,Plastic,Africa,13.5
+781,Plastic,Europe,9.6
+782,Plastic,Europe,11.3
+783,Plastic,Asia,19.0
+784,Plastic,South America,14.61
+785,Plastic,Asia,11.4
+786,Plastic,Oceania,12.8
+787,Plastic,North America,13.0
+788,Plastic,Oceania,7.61
+789,Plastic,Europe,11.1
+790,Plastic,Asia,7.87
+791,Plastic,Africa,3.5
+792,Plastic,Europe,13.94
+793,Plastic,Africa,7.3
+794,Plastic,Africa,9.0
+795,Plastic,Asia,4.67
+796,Plastic,Europe,12.15
+797,Plastic,Asia,7.4
+798,Plastic,North America,13.0
+799,Plastic,Europe,12.0
+800,Plastic,North America,19.0
+801,Plastic,North America,13.0
+802,Plastic,South America,10.193050193050194
+803,Plastic,South America,13.5
+804,Plastic,North America,17.1
+805,Plastic,Asia,16.0
+806,Plastic,Asia,13.0
+807,Plastic,North America,3.0
+808,Plastic,Europe,15.0
+809,Plastic,South America,9.4
+810,Plastic,Asia,9.8
+811,Plastic,Africa,3.3
+812,Plastic,South America,12.83
+813,Plastic,Africa,5.0
+814,Plastic,North America,11.0
+815,Plastic,North America,9.6
+816,Plastic,North America,11.0
+817,Plastic,Asia,14.77
+818,Plastic,Europe,2.2
+819,Plastic,Europe,13.0
+820,Plastic,North America,16.0
+821,Plastic,Europe,1.61
+822,Plastic,North America,10.0
+823,Plastic,Africa,16.9
+824,Plastic,South America,11.44
+825,Plastic,Africa,13.0
+826,Plastic,Europe,9.0
+827,Plastic,Europe,18.6
+828,Plastic,Africa,2.3
+829,Plastic,Europe,1.45
+830,Plastic,Oceania,7.5
+831,Plastic,Europe,9.0
+832,Plastic,Oceania,26.17
+833,Plastic,Europe,20.2
+834,Plastic,Asia,3.0
+835,Plastic,Africa,4.0
+836,Plastic,Europe,15.86
+837,Plastic,Africa,4.0
+838,Plastic,Europe,14.0
+839,Plastic,North America,16.4
+840,Plastic,North America,2.4
+841,Plastic,Oceania,12.4
+842,Plastic,South America,14.2
+843,Plastic,Asia,21.0
+844,Plastic,North America,14.41
+845,Plastic,Europe,22.9
+846,Plastic,North America,12.7
+847,Plastic,Europe,13.0
+848,Plastic,Asia,14.0
+849,Plastic,Europe,12.4
+850,Plastic,Asia,8.5
+851,Plastic,Asia,5.29
+852,Plastic,Asia,18.0
+853,Plastic,Europe,11.6
+854,Plastic,North America,12.2
+855,Plastic,Asia,16.0
+856,Plastic,Asia,11.0
+857,Plastic,Asia,25.0
+858,Plastic,Africa,18.7
+859,Plastic,Asia,8.6
+860,Plastic,Oceania,16.5
+861,Plastic,North America,23.2
+862,Plastic,Asia,20.0
+863,Plastic,Asia,6.1
+864,Plastic,Asia,11.5
+865,Plastic,Africa,7.5
+866,Plastic,North America,22.0
+867,Plastic,Europe,5.4
+868,Plastic,Asia,7.0
+869,Plastic,Europe,10.15
+870,Plastic,Europe,18.0
+871,Plastic,Europe,7.7
+872,Plastic,Asia,7.9
+873,Plastic,Africa,8.0
+874,Plastic,Europe,10.0
+875,Plastic,North America,10.9
+876,Plastic,Oceania,13.0
+877,Plastic,Europe,13.900000000000002
+878,Plastic,Africa,2.0
+879,Plastic,Europe,12.0
+880,Plastic,Europe,18.42
+881,Plastic,Oceania,16.5
+882,Plastic,Africa,20.0
+883,Plastic,Asia,15.0
+884,Plastic,Oceania,16.5
+885,Plastic,Europe,14.0
+886,Plastic,Europe,2.25
+887,Plastic,Asia,15.14
+888,Plastic,Oceania,16.5
+889,Plastic,Oceania,8.0
+890,Plastic,Asia,9.0
+891,Plastic,North America,12.0
+892,Plastic,South America,10.52
+893,Plastic,Asia,10.55
+894,Plastic,Oceania,32.0
+895,Plastic,Europe,12.13
+896,Plastic,North America,10.4
+897,Plastic,Europe,10.72
+898,Plastic,Asia,14.2
+899,Plastic,Oceania,2.0
+900,Plastic,Asia,14.0
+901,Plastic,Europe,12.33
+902,Plastic,Europe,14.21
+903,Plastic,Asia,11.0
+904,Plastic,Africa,12.7
+905,Plastic,Africa,9.0
+906,Plastic,Asia,10.58
+907,Plastic,Oceania,22.35
+908,Plastic,North America,10.0
+909,Plastic,Europe,5.6
+910,Plastic,Europe,12.73
+911,Plastic,Europe,11.0
+912,Plastic,Africa,9.9
+913,Plastic,Asia,7.0
+914,Plastic,North America,16.3
+915,Plastic,Africa,6.0
+916,Plastic,Africa,10.0
+917,Plastic,Asia,17.59
+918,Plastic,Oceania,13.4
+919,Plastic,North America,19.17
+920,Plastic,Africa,11.0
+921,Plastic,Asia,3.0
+922,Plastic,Oceania,16.5
+923,Plastic,Africa,7.6
+924,Plastic,Europe,7.0
+925,Plastic,South America,11.0
+926,Plastic,North America,12.9
+927,Plastic,Asia,2.5
+928,Plastic,North America,8.4
+929,Plastic,North America,6.3
+930,Plastic,Asia,12.15
+931,Plastic,Oceania,6.45
+932,Plastic,Oceania,13.0
+933,Plastic,Asia,10.0
+934,Plastic,Africa,7.090104301663434
+935,Plastic,Africa,23.0
