@@ -1,25 +1,11 @@
 # WasteWise
 
 <!--- 
-add the WasteWise logo and align it to the center, adjust size using "width"
+WasteWise logo
 --->
 <p align = "center">
 <img src = "UX/logo-color.png" width = "250">
 </p>
-
-## Brainstorm 
-
-Hey @all! 
-
-In this "Brainstorm" section, I just added some info collection about the requirements of the README as well as some suggestions. We need to delete this "Brainstorm" section before final hand in.
-
-Obviously, feel free to change and beautify stuff! This is just a suggestion and just a first version.
-
-### How to fill individual sections:
-
-- Summary: Short project description of not more than 130 words to add to the certificate.
-- How to run the demo: Explain what needs to be done for anyone to try the demo. Navigate to the corresponding WD directory, npm install, then npm run dev and so on, but explained in a better way.
-- Contributors: Everyone who participated needs to add their name here. If you like, also provide a link to your GitHub profile.
 
 ## Summary 
 
@@ -45,6 +31,14 @@ __Disclaimer:__ At the time this is written, the model can classify 20 classes w
 
 ### Fully Assembled App
 
+1. Node.js and npm must be installed on your computer. Check this in a terminal window using the `node -v` and `npm -v` commands. For both you will get back either the version number or an error message. If npm or even both is not installed yet, do that first → see https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+2. In a terminal window go to the root folder of our repository and make sure to `git pull` the main branch
+3. Navigate to the app directory with `cd WD/next-js-app/wastewise-app/`
+4. Run `npm install` → this will download some packages to your computer
+5. Run `npm run dev` → this will start a server service
+6. Open a browser window, resize it to fit a mobile phone, and then navigate to `http://localhost:3000` → Voilà! (please make sure in your terminal if it is the same local host address)
+7. In order to stop the server go back to the terminal window and press the keys `control` + `c`
+
 
 ## Contributors
 
@@ -59,6 +53,7 @@ __Disclaimer:__ At the time this is written, the model can classify 20 classes w
 [Marina Zaitseva](https://github.com/zaitsevam)
 
 ### User Experience Design
+[Vincent Oluwadamilare Akinyoyenu](https://github.com/OluwadamilareAkin)
 
 ### Web Development
 [Andreas](https://github.com/crftwrks)
