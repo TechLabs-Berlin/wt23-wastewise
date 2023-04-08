@@ -3,6 +3,15 @@
 <!---
 I suggest that we first make a shared section of the blog post right here in which we describe the idea, the app and the project in some detail. At least more detail than in the README.
 Afterwards, I suggest that each track writes one section.
+
+
+Similar to our summary:
+WasteWise is an app designed to make waste management and recycling more accessible, engaging and user-friendly. With WasteWise, users can scan their waste and receive immediate information about which bin it belongs in. 
+Based on a photo of the respective object, it recommends the correct way of disposal to help our environment clean and green. 
+This feature relies on a fine-tuned residual neural network image classifier coupled with a function providing the recommendations for each class.
+The app also provides valuable insights into waste management and recycling, including recycling rates and waste production per capita starting from 2022 and predicted up to the year 2026 using polynomial regression. The information is accessible through interactive and user-friendly dashboards.
+
+
 --->
 
 
@@ -15,7 +24,49 @@ Afterwards, I suggest that each track writes one section.
 [Fabian Janosch Krüger](https://github.com/fabianjkrueger)
 
 ### Intro
-<!--- to be written by Fabian ; remove this comment later on, just helpful while writing--->
+
+Draft (this section is not finished yet):
+
+We're the AI track
+Right from the start, it was pretty obvious how we will contribute to the team 
+We were to provide the image recognition feature
+
+We needed to come up with a strategy for this 
+
+Either we could have labels as waste bin
+then we have less classes and we can just throw in stuff together
+also we have an immediate output
+
+Or we could have labels as specific waste objects like banana peel 
+then we need to have more classes and we do not have an immediate output
+
+We thought about this for a while
+
+Then two things came to our mind:
+if we used the waste bin as label, our data would have a very coarse granularity 
+we need fine granularity, however
+If we have all the objects belonging into the bio waste in one class, they would look very different from another and the algorithm would have a hard time distinguishing between them
+
+(this is a spoiler right now, but in the end it was proven that this approach was correct and that label as waste bin would not have worked as well. See e.g. food waste or plastic toys. I can include this in the conclusion later on.)
+
+because of that, we went for objects as labels instead of bins
+
+
+
+
+
+Next, we needed to choose an architecture
+
+It's obvious that for image recognition, we would use a CNN
+Explain why we need a CNN
+
+We went for transfer learning and fine tuning a pre trained architecture/model
+Instead of training everything from scratch.
+That makes sense to reuse ressources and to save time. Also, the pre trained nets have very good performance on a wide range of classes already 
+
+Decided to use two different frameworks. 
+TensorFlow, this one is well known
+fastai, a high level library built on top of PyTorch
 
 ### Training
 As already clarified in the previous section, two different model architectures were trained and tested within the development of the Wastewise app: Xception and Resnet. Both models serve well for multiclassification problems, and Xception was especially chosen for its computationally efficient architecture.	
@@ -155,6 +206,10 @@ Finally, we would like to add some reservations before you try out WasteWise: As
 
 ### Conclusion
 <!--- both write here --->
+
+Draft:
+
+It was shown that the approach to have labels as waste object type instead of waste bin did work better than the other one would have worked. An example for this is the class "food waste".
 
 #### ...
 
