@@ -1,16 +1,6 @@
 # WasteWise
 
 <!---
-Hey everyone! Just some short notes.
-By commenting out text, it will not be rendered in markdown.
-To make a comment in markdown just surround your text using this: <!--- --->
-
-<!---
-You can find a very nice markdown resource following this link: https://www.markdown-cheatsheet.com/
- --->
-
-
-<!---
 I suggest that we first make a shared section of the blog post right here in which we describe the idea, the app and the project in some detail. At least more detail than in the README.
 Afterwards, I suggest that each track writes one section.
 --->
@@ -20,9 +10,6 @@ Afterwards, I suggest that each track writes one section.
 
 ## Artificial Intelligence
 
-<!--- @Andrea: Please pull, then work and commit, then push frequently! 
-Since we're on the same branch now, not doing this will lead to disaster^^ --->
-
 ### Members
 [Andrea Torcianti](https://github.com/trc729)\
 [Fabian Janosch Krüger](https://github.com/fabianjkrueger)
@@ -31,7 +18,6 @@ Since we're on the same branch now, not doing this will lead to disaster^^ --->
 <!--- to be written by Fabian ; remove this comment later on, just helpful while writing--->
 
 ### Training
-<!--- to be written by Andrea --->
 As already clarified in the previous section, two different model architectures were trained and tested within the development of the Wastewise app: Xception and Resnet. Both models serve well for multiclassification problems, and Xception was especially chosen for its computationally efficient architecture.	
 
 The 2 team members tackled the problem from different sides. On the one hand, one focused on training and comparing different versions of the Resnet architecture to investigate the effect that a growing CNN would have on the metrics for our dataset. On the other hand, the other concentrated his efforts on one individual architecture looking deeply into interpretation of the result with XAI techniques. 
@@ -41,7 +27,6 @@ The training took place similarly in both cases. Both team members scaled the mo
 Considering that in both cases the model had very good accuracy scores (> 98% i n the validation dataset), we will only include in the blogpost the training and result of the 20 classes prototypes. 
 
 #### Data preparation
-
 Both models have specific input requirements and since the training data have been web-scraped from internet, some preprocessing was necessary before feeding the images to the model.
 
 <p align = "center">
@@ -55,7 +40,7 @@ Considering the low amount of training data (620 images for 20 classes) no data 
 #### Pretraining considerations
 Since both architectures have proven to be quite strong with much more complex tasks (e.g. Imagenet dataset, with 20.000 classes), we assumed the trained activation maps to be sufficiently complex to achieve the desired goal of 20 classes. For this reason we planned to perform a fine-tuning of the last layer only, while freezing the rest of the network. 
 
-#### Xception training
+#### Training Xception
 After having preprocessed the data, we prepared the model. We chose to load  the Xception model with the Imagenet weights, as the Imagenet dataset shares common classes with the classes we wanted to train. 
 
 <p align = "center">
@@ -66,7 +51,7 @@ The average pooling layer was introduced before the dense layer in order to limi
 
 Since we have a multiclassification problem, we used categorical cross-entropy as a loss function and accuracy as a metric. Given its adaptivity of the learning rate and efficiency, ADAM was chosen as optimizer for the gradient descent. 
 
-Now only one parameter needed to be determined: the learning rate. This hyperparameter is essential for the successful training of any DL model. According to the paper “Cyclical Learning Rates for Training Neural Networks” by Leslie Smith, we applied a methos (lr_finder) to find the optimal learning rate for our model. After 50 epochs this is the result.
+Now only one parameter needed to be determined: the learning rate. This hyperparameter is essential for the successful training of any DL model. According to the paper “Cyclical Learning Rates for Training Neural Networks” by Leslie Smith, we applied a method (lr_finder) to find the optimal learning rate for our model. After 50 epochs this is the result.
 
 <p align = "center">
 <img src = "images_blog/lr_finder_Xception.png" width = "500">
@@ -84,9 +69,13 @@ To combat the overfitting, a drop-out layer and l2 regularization were added to 
 
 This yielded a positive effect, as the validation accuracy increased to ca. 93 %. However, some overfitting was still present. At this point, other techniques as e.g., different data augmentation and early stopping could have been applied, we decided against that as we suspected that the biggest issues was the scarce quality of the dataset and not the architecture of the model. Instead, we opted for investigating the misclassified images and classes, which we will discuss more in detail in the interpretation section.  
 
+#### Training Resnet
+
+
 
 ### Interpretation
 <!--- both write here --->
+
 #### Interpretation Xception
 Considering that we have web-scraped all the training images, it seems reasonable to assume that part of the overfitting is due to the poor quality of the data. First, we produce a confusion matrix to see which classes seem to be the most problematic to classify.
 
@@ -128,27 +117,41 @@ The LIME algorithm fits an explainable linear model to the CNN and uses the coef
 
 Also according to LIME, the model is picking up mostly on the plastic packaging, but also on the hands and the upper arm of person in the picture. The similarity of the packing to the diapers and the inclusion of the hands seems to be the likely cause of the misclassification. To solve this problem, the picture of diapers should be filtered of any containing hands.
 
-
-#### Regarding the split
-Some reservations here: Models built in different frameworks (fastai, tensorflow) do not have the same train/test split, because of different methods used to make these. Setting seed will not help this, because the method itself is different.
+#### Interpretation Resnet
 
 
-#### Misclassifications/confusion matrices, greatest losses, why is that?
+
+##### Misclassifications/confusion matrices, greatest losses, why is that?
 
 
-#### Interpretability/explainability/XAI etc.
-
-
-#### Data mismatch
+##### Data mismatch
 
 <p align = "center">
-<img src = "images_blog/WasteWise_Bernie_Crowdsource.png" width = "400">
+<img src = "images_blog/WasteWise_Bernie_Crowdsource.png" width = 400>
 </p>
 
 
 ### Deployment
-<!--- to be written by Fabian --->
+One of the main goals of our journey at TechLabs was to acquire and expand our knowledge about neural networks as well as to apply and consolidate it in a real world deep learning project. This included the whole process starting from laying out plans and selecting features to implement over the acquisition of data to the training and interpretation of the neural networks themselves. But of course, the other central part of our mission was to assemble all parts and finish the project phase with the production of an app that provides actual value to its users. In order to make all of this happen, we needed to work in close coordination with the rest of our team, especially the members from the web development (WebDev) track, which was an invaluable experience in its own right. Another challenge was that, while there was no lack of a frontend developer, we did not have one for the backend. Because of this, we decided to take charge of and deploy the model ourselves.
 
+The first consideration we had to make was whether to make use of the cloud (deploy on server) or run the model on individual edge devices (include in app code and run locally). Both options are viable and come with a list of pros and contras. While deployment of the model on the cloud necessitates a network connection and adds some latency, it allows to make use of strong hardware running one version for all users that can be updated quickly if a new version of the model is made. On the other hand, running the model locally requires that the code runs natively on a multitude of different mobile devices, but enables offline use and enhanced data security. Our initial approach was to make use of edge devices, because our project mentor had some previous experience using converted TensorFlow models in Javascript. We converted the Xception model, which was trained in TensorFlow, to Tensorflow.js and, together with our WebDev, were able to load the weights inside of JavaScript. Unfortunately, however, preprocessing of the inputs in JavaScript did not work as smoothly as we had hoped initially and adapting all the code to run natively on different devices seemed like too much of a hurdle to take for us within the scope of this project phase. Because of this, we decided to switch strategy and deploy the model on a server.
+
+<p align = "center">
+<img src = "images_blog/data_flow_pipeline_wastewise.png" width = 600>
+</p>
+
+For this, we selected the Resnet model. We chose this one, since it was trained using the fastai library and thus comes with an integrated image preprocessing function. For accessing it, we created a user interface with Gradio and deployed it on Hugginface Spaces. We decided to make two versions. A minimal version which can be accessed via an API from within JavaScript that was handed over to the WebDev team for integration with the remaining parts of the app. A data frow graph of our pipeline can be seen above. The user takes a photo within the JavaScript app. This is then converted to Base64. Via an API, it is handed as input to the image classifier and the most probable class is returned. Based on this, a way of disposal is recommended.
+Also, we made a __standalone version that *you* can use without downloading anything__ by just following the link posted below. It lets you take your own photos using your webcam and outputs the probabilities of the top three classes as well as a recommendation of which bin to use. 
+Usage is explained at the top of the linked page and demonstrated in the GIF below. A special feature exclusively integrated in our standalone version is that a class activation map (CAM) can be added to the uploaded image. As described in the chapter about neural network training, this is a method contributing to machine learning interpretability. Parts of the image contributing to the confidence of the model during classification are marked in red. The intensity of the color is proportional to the relevance of the respetive part of the image. In the deployed version, a basic CAM algorithm is used. We also tested a Shapley-based interpretation, but this was associated with significantly longer computation. While it would have provided additional insights, we figured a user would not want to wait this long.
+
+Finally, we would like to add some reservations before you try out WasteWise: As the deployed model currently still is just a prototype, it can only distinguish between 20 classes and still makes a lot of mistakes. The reasons for this are described in the previous chapters. In case we will be able to acquire more realistic user data in the future, we might further improve accuracy and add more classes.
+
+<p align = "center">
+<img src = "images_blog/gradio_hgfs_demo.GIF">
+
+#### Links to the deployed models in Huggingface Spaces:
+- Standalone version: https://huggingface.co/spaces/fabianjkrueger/WasteWise
+- Minimal API version for integration with the JavaScript app: https://huggingface.co/spaces/fabianjkrueger/WasteWise_API
 
 ### Conclusion
 <!--- both write here --->
