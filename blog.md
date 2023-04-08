@@ -168,7 +168,7 @@ Finally, we would like to add some reservations before you try out WasteWise: As
 ## Data Science
   
 ### Members
-[Juliana Belen Quiroga](https://github.com/julianabquiroga)
+[Juliana Belen Quiroga](https://github.com/julianabquiroga)\
 [Marina Zaitseva](https://github.com/zaitsevam)
   
 ### DATA
