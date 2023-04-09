@@ -13,20 +13,19 @@ WasteWise is an app designed to make waste management and recycling more accessi
 Based on a photo of the respective object, it recommends the correct way of disposal to help keep our environment clean and green.
 This feature relies on a fine-tuned residual neural network image classifier coupled with a translator function providing the recommendations for each class.
 The app also provides valuable insights into waste management and recycling, including recycling rates and waste production per capita starting from 2000 and predicted up to the year 2026 using linear and polynomial regression. The information is accessible through interactive and user-friendly dashboards.
-All features are assembled into one application using JavaScript.
+All features are assembled into one web application using React.
 
 ## How to run the demo
 
-### Fully Assembled App
+### Web App
 
 To see all the features, take a tour through the fully assembled app. Please clone this repository to your local computer and follow the steps below.
 
-1. Node.js and npm must be installed on your computer. Check this in a terminal window using the `node -v` and `npm -v` commands. For both you will get back either the version number or an error message. If npm or even both is not installed yet, do that first → see https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-2. In a terminal window go to the root folder of our repository and make sure to `git pull` the main branch
-3. Navigate to the app directory with `cd WD/next-js-app/wastewise-app/`
-4. Run `npm install` → this will download some packages to your computer
-5. Run `npm run dev` → this will start a server service
-6. Open a browser window, resize it to fit a mobile phone, and then navigate to `http://localhost:3000` → Voilà! (please make sure in your terminal if it is the same local host address)
+1. *Node.js* and *npm* must be installed on your computer. Check this in a terminal window using the `node -v` and `npm -v` commands. For both you will get back either the version number or an error message. If *npm* or even both is not installed yet, do that first → see instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+2. In a terminal window navigate to the app directory with `cd WD/next-js-app/`
+3. Run `npm install` → this will download some packages to your computer
+4. Run `npm run dev` → this will start a server service
+5. Open a browser window, resize it to fit a mobile phone, and then navigate to `http://localhost:3000` → Voilà! (please make sure in your terminal if it is the same localhost address)
 7. In order to stop the server go back to the terminal window and press the keys `control` + `c`
 
 ### Minimal Waste Image Classifier App in Huggingface Spaces
@@ -63,4 +62,4 @@ At the time this is written, the image classifier model can classify 20 classes 
 [Olayinka Florence Ojo](https://github.com/ojoflorence)
 
 ### Web Development
-[Andreas](https://github.com/crftwrks)
+[crftwrks](https://github.com/crftwrks)
