@@ -39,10 +39,6 @@ Before data acquisition, we thought about which would be the best way to compile
 
 For training the classifier on recognising waste, acquisition of sufficient image data was necessary. Together, we decided to train a first prototype capable of discriminating between 7 classes, then upscale to 20 and potentially even more than that to gradually increase complexity and performance. The classes were selected to represent common types of waste as well as rare types that many users probably do not know how to correctly dispose of. Both of this is important. If WasteWise was not able to recognize the most basic types of waste, user would get the impression that it was just a bad app. On the other hand, however, most user will likely know how to dispose of common waste types and the majority of use cases for the app will be rare and uncommon types of waste, so it is these classes, that will provide the most value to our users. 
 
-
-IN ADDITION TO THIS, WE MUST BE ABLE TO FIND IMAGE DATA FOR THE CLASSES
-
-
 Classes included in the 7 class prototype:
 ```
 ['apples', 
@@ -53,7 +49,7 @@ Classes included in the 7 class prototype:
 'plastic_packaging', 
 'smartphone']
 ```
-Further classes included in the 20 class prototype:
+Additional classes included in the 20 class prototype:
 ```
 ['aluminum_foil',
  'condoms',
@@ -69,37 +65,13 @@ Further classes included in the 20 class prototype:
  'tetrapack',
  'toothbrush']
 ```
+There are many more classes that could have been used for this and in the future, we might implement some of them. We downloaded the image data using the Bing and DuckDuckGo image search APIs. Both worked very well for this approach. We recommend to use DuckDuckGo, however, since it is free, while Bing is only free for a limited amount of time. One problem that came with this was that we had serious data mismatch (we found stock photos with perfect lighting etc. in the image search, but users will query the classifier on very different photos) as well as some images that did not fit the class, so we took a pre-selection. Also, we shared the data set between the two of us so to increase reproducibility and comparability between the classifiers we were about to train.
 
-APART FROM THESE, WE HAVE MANY MORE. SAY THAT THEY CAN BE FOUND IN OUR AI DIRECTORY.
+#### Architectures and frameworks
 
+We decided to make use of transfer learning and fine tune an existing model to profit of the already high performance, to reuse resources previously invested in the training of these and to save valuable time during our project phase so we could focus on further tasks like interpretation and deployment.
 
-
-Name the initial 7 and 20 classes, but that we have even more in our brainstorm
-
-How we gathered the data -->  why we expected web scraping to be a problem (data mismatch)  
-
-
-
-
-Prototype scaling approach: from small to big --> why?  
-
-Why we needed a CNN  
-It's obvious that for image recognition, we would use a CNN
-Explain why we need a CNN
-
-Why we opted for the fine tuning/transfer learning of an already trained model 
-We went for transfer learning and fine tuning a pre trained architecture/model
-Instead of training everything from scratch.
-That makes sense to reuse ressources and to save time. Also, the pre trained nets have very good performance on a wide range of classes already 
-
-Next, we needed to choose an architecture, framework and so on
-
-Decided to use two different frameworks. 
-TensorFlow, this one is well known
-fastai, a high level library built on top of PyTorch
-Experiment with initial frameworks (fastAi and tensorflow)
-
-    
+In order to broaden the range of exploration, we agreed that each one of us would train an individual classifier and that we used different frameworks for this. An Xception model would be trained using TensorFlow and a Resnet using fastai, a high level library built on top of PyTorch. After training was done, we would compare both models and select one for deployment.
 
 ### Training
 As already clarified in the previous section, two different model architectures were trained and tested within the development of the Wastewise app: Xception and Resnet. Both models serve well for multiclassification problems, and Xception was especially chosen for its computationally efficient architecture.	
