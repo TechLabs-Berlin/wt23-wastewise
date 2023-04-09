@@ -182,11 +182,24 @@ Also according to LIME, the model is picking up mostly on the plastic packaging,
 
 ### Data mismatch and crowdsourcing image data
 
-We expected to witness a drop in performance once we deployed the model due to the data mismatch, so we started an image data crowdsourcing initiative. 
-Our goal was to get people to help us by taking photos of their waste and uploading it to a cloud, where it can be accessed by us. We, the members of the WasteWise team also contributed, but in order to prevent overfitting, we tried to collect as many different waste objects in as many different setups as possible. 
+We expected a performance drop once we deployed the model due to data mismatch, so we started an image data crowdsourcing initiative. This is the text we sent out to the TechLabs Berlin community:
 
-In order to motivate people to contribute, we put a lot of effort in our call and even made use of a meme. You can find the text and the associated meme in this directory: "wt23-wastewise/AI/DL_data_preparation".
-This way, we were able to collect a little more than 100 additional images, that we would love to use in a future round of fine tuning and testing our models.
+Hey guys! WasteWise here.
+TLDR: Help us crowdsourcing data for training our models on images of waste 🤗
+Detailed:
+As you know from the midterm presentations, we train an image classifier to recognize objects of waste and recommend the correct way of disposal for each class. They work quite well on the training/validation data already and can distinguish multiple classes 🎯 However, we have a data problem. Since we downloaded the images from the web, most of them do not represent realistic user data. For example, we mostly have pictures of beautifully shaped banana peels 🍌 or glass bottles in perfect lighting and a clean background instead of a photo of something anyone would like to throw away taken in a real world scenario.
+Every model can be only as good as the data it has been trained on. So, as soon as it comes to real users uploading their images, our models might underperform :diagramm_abwärtstrend:, because their pictures look quite differently. For the app to really take off, we need realistic data!
+But there's good news! You can help us out a lot by providing some photos of stuff you would like to throw away! 🙌
+If everyone just uploads a couple of photos, we will most likely already be able to considerably improve accuracy. The more pictures we collect, the better. It's important that the photos simulate what a user might upload. To be more specific, please make sure to only include single objects instead of, for example, a pile of waste or too many different things in one photo. Just act as if you were using the app to get help determining which garbage container to use for your waste. Feel free to get creative and upload whatever waste you have at hand, especially things you do not know where to get rid of! 🌈
+You can filedrop the pictures following this link:
+https://tubcloud.tu-berlin.de/s/6e9AjyTwNfbGJtW
+Thanks a lot for helping out! 🫶
+
+<p align = "center">
+<img src = "images_blog/WasteWise_Bernie_Crowdsource.png" width = 400>
+</p>
+
+This way, we were able to collect a little more than 100 additional images, that we would love to use in a future round of fine tuning our models.
 
 ### Deployment
 One of the main goals of our journey at TechLabs was to acquire and expand our knowledge about neural networks as well as to apply and consolidate it in a real world deep learning project. This included the whole process starting from laying out plans and selecting features to implement over the acquisition of data to the training and interpretation of the neural networks themselves. But of course, the other central part of our mission was to assemble all parts and finish the project phase with the production of an app that provides actual value to its users. In order to make all of this happen, we needed to work in close coordination with the rest of our team, especially the members from the web development (WebDev) track, which was an invaluable experience in its own right. Another challenge was that, while there was no lack of a frontend developer, we did not have one for the backend. Because of this, we decided to take charge of and deploy the model ourselves.
@@ -220,7 +233,6 @@ We have tried out and compared different architectures, Resnet and Xception, und
 
 #### Outlook
 
-
 So, what are the future steps if we are to make this app successful?
 
 Two main points come into play: 
@@ -231,6 +243,8 @@ In order to increase the quality and confidence of our predictions we need to ga
 
 Concerning scalability, we estimate our model to be able to robustly classify at least 50-100 common and uncommon objects to be used in real-life scenarios. Given its proven capability, we expect Xception to tend to score better than Resnet with increasing complexity in the data set. 
 However, we are confident that once the quality of our dataset reaches a satisfactory level, paired with RLHF, many available architectures will be able to satisfy our needs. 
+
+
 
 
 ### Personal notes
