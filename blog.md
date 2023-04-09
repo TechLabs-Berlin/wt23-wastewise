@@ -350,6 +350,14 @@ The application was designed to provide a simple and user-friendly interface. Th
 [Figma link](https://www.figma.com/file/M3DfeJwBaxWMzSuO5D3bZ3/WasteWise?node-id=26%3A2&t=nNC0G2r2JxWK8vxt-1)
  
 ![Research Answer 1](/images_blog/Gf1.png)
+![Research Answer 2](/images_blog/Gf2.png)
+![Research Answer 3](/images_blog/Gf3.png)
+![Research Answer 4](/images_blog/Gf4.png)
+![Research Answer 5](/images_blog/Gf5.png)
+![Research Answer 1](/images_blog/Gf5.1.png)
+![Research Answer 6](/images_blog/Gf6.png)
+![Research Answer 7](/images_blog/gf7.png)
+[Others can be found here](https://docs.google.com/forms/d/e/1FAIpQLSc7bfBOPOfv6cjUKSkfUpk2AImRm7yU0SJSAZ3MqB457EYqbw/viewform?usp=sharing)
  
 | Value/strategic opportunity | Description | Importance 1-10 | Feasibility 1-10 |
 |---|------|------|------|
