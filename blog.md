@@ -1,13 +1,11 @@
 # WasteWise
 
 <h5 align="center">
-  <a href="#Artificial Intelligence">Artificial Intelligence</a> |
-  <a href="#Data Science">Data Science</a> |
-  <a href="#User Experience Design">User Experience Design</a> |
-  <a href="#Web Development">Web Development</a>
+  <a href="#artificial-intelligence">Artificial Intelligence</a> |
+  <a href="#data-science">Data Science</a> |
+  <a href="#user-experience Design">User Experience Design</a> |
+  <a href="#web-development">Web Development</a>
 </h5>
-
----
 
 ---
 
