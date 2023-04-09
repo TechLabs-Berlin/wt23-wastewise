@@ -134,13 +134,27 @@ The following Resnet versions can be chosen from and passed to the fastai vision
 
 The goal was to keep number of layers rather low to allow for quick execution and avoid extensive computation once the model is deployed as well as overfitting due to model complexity, while at the same time ensuring high accuracy.
 
+In the following, the setup and procedure is described in general for all version, while the figure only shows the results for the final version.
+
 For the first prototype trained on 7 classes, the default learning rate was used. For the upscaled version trained on 20 classes, a learning rate finder was used to determine the optimum learning rate.
+
+<p align = "center">
+<img src = "images_blog/lrfinder_fastai.png" width = "500">
+</p>
 
 Training was done for more epochs than we expect to need to see the point at which training loss decreases while validation loss converges. This was interpreted as the point at which the model starts to overfit and for training the final model, the number of epochs was adapted to prevent overfitting.
 
-#### Metric and loss function
-Error rate is used as metric (default).
-Cross entropy loss is used as loss function (default).
+<p align = "center">
+<img src = "images_blog/epochs_fastai.png" width = "300">
+</p>
+
+Error rate was used as metric and cross entropy loss was used as loss function.
+
+Finally the Resnet101 was selected and trained for 5 epochs. It showed the best performance measured by error rate (= 0.0645 -> accuracy = 0.9355) and this was already reached after training for 5 epochs. After training for longer, validation loss started to converge slowly, while training loss still continued to decrease for a while and converged much later. This is a sign of overfitting.
+
+In deployment, 101 layers took more time per inference query than a smaller network, but even using a CPU it still was reasonably fast and took about 0.4 seconds for classifying one image.
+
+One drawback, however, was its size. With 101 layers it needed 170 MB of memory, while the first prototype with 18 layers only needed 50 MB of memory.
 
 ### Interpretation
 <!--- both write here --->
@@ -226,25 +240,14 @@ Finally, we would like to add some reservations before you try out WasteWise: As
 
 ### Conclusion
 
-In conclusion, we can say that the goal we set for ourselves at the beginning of the project have been fulfilled. We had to overcome difficult phases, from not working code, to collaborating with different tracks, to the usual problems that such end-to-end projects entail. 
+Draft:
 
-We have tried out and compared different architectures, Resnet and Xception, under different aspects. With Resnet we mostly investigated which effect an increasingly deep network has on the evaluation metrics. With Xception, on the other hand, we dove more deeply into explainability of the neural network with XAI algorithms. Both approaches reached comparably good and satisfying results (validation accuracy > 90%) on the dataset at hand. The interpretation of the misclassification led to the same conclusion: the dataset is simply not good enough to allow for a robust applicability of the models for our use-case. 
+It was shown that the approach to have labels as waste object type instead of waste bin did work better than the other one would have worked. An examples for this are the classes "food waste" or "plastic toys".
 
 
 #### Outlook
 
-
-So, what are the future steps if we are to make this app successful?
-
-Two main points come into play: 
-1. solving the data mismatch 
-2. scalability
-
-In order to increase the quality and confidence of our predictions we need to gather data that matches what would be the user input of our app. First, we can crowd-source further data with the program already started by one of our team members. This would allow us to both expand the classes our model can classify and to solve the data mismatch problem. Second, opening our model to grading from the user could vastly increase its capability. A a technique known as Reinforcement Learning from Human Feedback (RLHF) entails giving the users of the app the ability to grade the predictions of the model. This will enable our model to get better and better with increasing number of users. 
-
-Concerning scalability, we estimate our model to be able to robustly classify at least 50-100 common and uncommon objects to be used in real-life scenarios. Given its proven capability, we expect Xception to tend to score better than Resnet with increasing complexity in the data set. 
-However, we are confident that once the quality of our dataset reaches a satisfactory level, paired with RLHF, many available architectures will be able to satisfy our needs. 
-
+While we were able to realise the majority of our plans, there is still a lot that could have been done in order to improve the app even more. One idea that we had was to enable the users flagging the misclassified images and save them for being reviewed by the human in the loop.
 
 ### Personal notes
 <!--- both write here --->
