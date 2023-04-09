@@ -33,6 +33,12 @@ We were to provide the image recognition feature
 
 We needed to come up with a strategy for this 
 
+The very general things we planned
+like 
+Constrain of recognizing one object at the time. Multiclassification problem but not object detection 
+Why did we not choose the labels to be the waste bins but the objects directly? --> too high granularity 
+First recognize the class, then decide the correct bin with a function (dictionary) 
+
 Either we could have labels as waste bin
 then we have less classes and we can just throw in stuff together
 also we have an immediate output
@@ -51,22 +57,31 @@ If we have all the objects belonging into the bio waste in one class, they would
 
 because of that, we went for objects as labels instead of bins
 
+How we gathered the data -->  why we expected web scraping to be a problem (data mismatch)  
 
+How we selected the classes? A mixture of common and uncommon (stuff that people would be unsure on how to dispose) objects  
 
+Name the initial 7 and 20 classes, but that we have even more in our brainstorm
 
+Prototype scaling approach: from small to big --> why?  
 
-Next, we needed to choose an architecture
-
+Why we needed a CNN  
 It's obvious that for image recognition, we would use a CNN
 Explain why we need a CNN
 
+Why we opted for the fine tuning/transfer learning of an already trained model 
 We went for transfer learning and fine tuning a pre trained architecture/model
 Instead of training everything from scratch.
 That makes sense to reuse ressources and to save time. Also, the pre trained nets have very good performance on a wide range of classes already 
 
+Next, we needed to choose an architecture, framework and so on
+
 Decided to use two different frameworks. 
 TensorFlow, this one is well known
 fastai, a high level library built on top of PyTorch
+Experiment with initial frameworks (fastAi and tensorflow)
+
+    
 
 ### Training
 As already clarified in the previous section, two different model architectures were trained and tested within the development of the Wastewise app: Xception and Resnet. Both models serve well for multiclassification problems, and Xception was especially chosen for its computationally efficient architecture.	
