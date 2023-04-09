@@ -3,13 +3,13 @@ import Webcam from 'react-webcam';
 import TakePictureAnimation from './TakePictureAnimation';
 import ShowResult from './ShowResult';
 
-
 const TakePicture = () => {
 
     const camRef = useRef(null);
     const [dataURL, setDataURL] = useState(null);
     const [camReady, setCamReady] = useState(false);
-    const [category, setCategory] = useState(null);
+    // const [identifiedItem, setIdentifiedItem] = useState(null);
+    const [result, setResult] = useState(null);
 
     const videoConstraints = {
         width: 2000,
@@ -19,35 +19,48 @@ const TakePicture = () => {
 
     const captureImage = () => {
         const img = camRef.current.getScreenshot();
-        // console.log(img);
-        // console.log(camRef.current)
+            // console.log(img);
+            // console.log(camRef.current)
         setDataURL(img);
     };
 
     const handleReset = () => {
-        setCategory(null);
+        setResult(null);
+        // setIdentifiedItem(null);
         setDataURL(null);
     };
 
-    useEffect(() => {
+    const fetchData = async () => {
+        try { 
+            const response = await fetch("https://fabianjkrueger-wastewise-api.hf.space/run/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    data: [
+                        dataURL,
+                    ],
+                }),
+            });
+            const data = await response.json();
+                console.log(data);
+                setResult(data);
+            // const label = data.data[0].label;
+            //     console.log(label);
+            // setIdentifiedItem(label);
+        } catch (e) {
+            console.error(e);
+            setResult('error');
+            // setIdentifiedItem('error-y');
+                // console.log("Error", e.stack);
+                // console.log("Error", e.name);
+                // console.log("Error", e.message);
+        }
+    }
+    
+    useEffect( () => {
         // don't run initially, run only after user has taken a picture
         if (!dataURL) return;
-        
-        // calling AI MAGIC → hook not working yet
-        // const result = useIdentifyItem(dataURL);
-
-            /* Temporary: Faking/pretending AI MAGIC with setTimeout and a random category value */
-            const randomTime = Math.floor(Math.random() * 3000 + 1000);
-            setTimeout(() => {
-                if (Math.random() < 0.4) setCategory('x');
-                else {
-                    const random2 = Math.floor(Math.random() * 6 + 1);
-                    setCategory(random2);
-                };
-            }, randomTime);
-
-            // setCategory(6);
-
+        fetchData();
     }, [dataURL]);
 
     return (
@@ -101,12 +114,12 @@ const TakePicture = () => {
                 </main>
             )}
 
-            {dataURL && !category && (
+            {dataURL && !result && (
                 <TakePictureAnimation dataURL={dataURL} />
             )}
 
-            {dataURL && category && (  
-                <ShowResult dataURL={dataURL} category={category} handleReset={handleReset} />
+            {dataURL && result && (
+                <ShowResult dataURL={dataURL} result={result} handleReset={handleReset} />
             )}
         </>
     );
