@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /* ------------------------------------------------
     Reset & General Styles
 ------------------------------------------------ */
@@ -11,14 +13,16 @@
 
     --footer-height: clamp(3rem, 10vh, 5rem); /* global because used in several classes */
     --footer-padding: calc(var(--footer-height) * 0.15); /* global because used in several classes */
+
+    --main-padding: 1rem;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 body {
@@ -27,12 +31,97 @@ body {
     
     background: var(--color-bright);
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+/* --------------- Typography --------------- */
+
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--color-dark);
+}
+
+h1, h2 {
+    line-height: 1.25em;
+}
+
+h3, h4, h5, h6 {
+    line-height: 1.5em;
+}
+
+h1 {
+    color: var(--color-1);
+}
+
+h2 {
+    color: var(--color-2);
+}
+
+h3 {
+    color: var(--color-3);
+}
+
+/* --------------- Links --------------- */
+
+a {
+    color: var(--color-2);
+    /* font-weight: bold; */
+    text-decoration: underline dotted;
+    text-decoration-color: inherit;
+    text-underline-offset: 0.125em;
+}
+
+h1 a,
+h2 a,
+h3 a {
+    color: inherit;
+}
+
+a:hover {
+    /* color: var(--color-1); */
+    text-decoration: underline double;
+    text-decoration-color: var(--color-1);
+
+}
+
+/* --------------- misc --------------- */
+
+button {
+    width: min-content;
+    aspect-ratio: 1;
+
+    padding: 1em;
+    
+    background-color: var(--color-2);
+    color: var(--color-bright);
+    
+    border: none;
+    border-radius: 99999em;
+    
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+
+    transform: rotate(-8deg);
+}
+
+button:hover {
+    background-color: var(--color-1);
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    border-top: 0.125rem solid var(--color-1);
 }
 
 /* ------------------------------------------------
     General Layout
 ------------------------------------------------ */
+
+h1 {
+    margin-top: 0;
+    padding-top: 0.67em;
+}
 
 header {
     position: sticky;
@@ -49,19 +138,20 @@ header {
 main {
     background: var(--color-bright);
 
-    padding: 0 1rem 1rem 1rem;
-    margin-bottom: calc(var(--footer-height) * 1); /* otherwise some content might be hidden under the footer */
+    padding: var(--main-padding);
+    margin-bottom: calc(var(--footer-height) * 1.5); /* otherwise some content might be hidden under the footer */
 }
 
 /* ------------------------------------------------
-    Component: footer-nav
+    Component: NavBar
 ------------------------------------------------ */
 
-/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container'S ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
+/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container's ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
 
-.footer-nav {
+.navbar {
     position: fixed;
     bottom: 0;
+    z-index: 998;
 
     width: 100%;
     height: var(--footer-height);
@@ -73,7 +163,7 @@ main {
     justify-content: space-evenly;
 }
 
-.footer-nav__a {
+.navbar__a {
     background-color: var(--color-1);
     color: var(--color-2);
 
@@ -86,20 +176,34 @@ main {
     border-radius: 99999rem;
 }
 
-.footer-nav__a:hover {
+.navbar__a:hover {
     background-color: var(--color-bright);
     color: var(--color-3);
 }
 
-.footer-nav__icon {
+.navbar__icon {
     fill: currentColor;
 }
 
+.navbar__a--big {
+    --scale: 1.6;
+    transform:
+        scale(var(--scale))
+        translate(0, calc(var(--footer-height) * -1 / var(--scale) / 2)); /* align vertical center with upper edge of footer */
+    box-shadow: 0 0 0 calc(var(--footer-height) * 0.025) var(--color-2);
+    }
+
 /* ------------------------------------------------
-    Component: startscreen
+    Component: SplashScreen
 ------------------------------------------------ */
 
-.startscreen {
+.splashscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    
+    width: 100%;
     height: 100vh;
     background: var(--color-2);
 
@@ -108,7 +212,7 @@ main {
     align-items: center;
 }
 
-.startscreen__logo-container {
+.splashscreen__logo-container {
     --dimensions: 62; /* width in % and height in vh – appending unit with calc trick */
     --ratio: 0.85;
     
@@ -125,10 +229,59 @@ main {
     align-items: center;
 }
 
-.startscreen__logo {
+.splashscreen__logo {
     height: 60%;
 
     position: relative;
     right: -3%;
     bottom: -8%
+}
+
+.splashscreen--fadeout {
+    /* animation: fadeout 0.3s linear 2s 1 forwards; */
+    animation-name: fadeout;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    /* animation-delay: will be assigned by the React component */
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* ------------------------------------------------
+    Component: TakePicture → EXPERIMENTAL
+------------------------------------------------ */
+
+.takepicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    min-height: calc(100vh - var(--footer-height));
+}
+
+.takepicture h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.takepicture video {
+    --frame-space-vertically: calc(var(--footer-height) + calc(var(--main-padding) * 2));
+    width: 100%;
+    max-height: calc(100vh - var(--frame-space-vertically));
+}
+
+/* ------------------------------------------------
+    Animations
+------------------------------------------------ */
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
