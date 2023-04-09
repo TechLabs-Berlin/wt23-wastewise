@@ -1,0 +1,37 @@
+,continents,type_of_waste,percentage
+0,Africa,Glass,2.4
+1,Africa,Metal,3.2
+2,Africa,Organic,51.5
+3,Africa,Other,25.9
+4,Africa,Paper,7.7
+5,Africa,Plastic,9.4
+6,Asia,Glass,3.2
+7,Asia,Metal,3.4
+8,Asia,Organic,48.7
+9,Asia,Other,17.7
+10,Asia,Paper,15.5
+11,Asia,Plastic,11.5
+12,Europe,Glass,7.0
+13,Europe,Metal,3.3
+14,Europe,Organic,33.6
+15,Europe,Other,26.2
+16,Europe,Paper,18.4
+17,Europe,Plastic,11.5
+18,North America,Glass,6.4
+19,North America,Metal,5.1
+20,North America,Organic,39.0
+21,North America,Other,17.0
+22,North America,Paper,19.8
+23,North America,Plastic,12.8
+24,Oceania,Glass,4.7
+25,Oceania,Metal,9.1
+26,Oceania,Organic,38.3
+27,Oceania,Other,20.9
+28,Oceania,Paper,12.6
+29,Oceania,Plastic,14.4
+30,South America,Glass,3.5
+31,South America,Metal,2.7
+32,South America,Organic,52.3
+33,South America,Other,18.2
+34,South America,Paper,11.4
+35,South America,Plastic,12.0

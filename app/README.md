@@ -1,1 +1,0 @@
-# Folder for our app… built together

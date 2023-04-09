@@ -1,0 +1,915 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/* ------------------------------------------------
+    Reset & General Styles
+------------------------------------------------ */
+
+:root {
+    --color-pri: #0e7b54;
+    --color-sec: #e7e8e3;
+    --color-pri-darker: #006F4A;
+    --color-bright-logo: #f7f2db;
+    --color-dark: #0e0e0e;
+    --color-bright: white;
+    --color-grey: #c9c9c9;
+
+    --color-fail: #f46767;
+    --color-cat1a: #f36917; /* Wertstoffe */
+    --color-cat1b: #fac607; /* Wertstoffe */
+    --color-cat2: #57332e; /* Biogut */
+    --color-cat3: #0d4a87; /* Papier */
+    --color-cat4: #444; /* Hausmüll */
+    --color-cat5: #f36917; /* Elektrogeräte */
+    --color-cat6: var(--color-pri-darker); /* Glas */
+
+    --header-height: 12vh;
+    --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP? */
+
+        --footer-padding: calc(var(--footer-height) * 0.175);
+        --main-height: calc(100vh - var(--header-height) - var(--footer-height));
+    
+    --main-padding: 1.5rem;
+
+        --main-padding-d2: calc(var(--main-padding) / 2);
+        --main-padding-m2: calc(var(--main-padding) * 2);
+    
+    --border-radius: 1rem;
+
+        --border-radius-d2: calc(var(--border-radius) / 2);
+        --border-radius-d3m2: calc(var(--border-radius) / 3 * 2);
+        --border-radius-d4: calc(var(--border-radius) / 4);
+
+    --box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    --box-shadow-softer: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    
+    background: var(--color-sec);
+
+/* --------------- Typography --------------- */
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--color-dark);
+}
+
+h1, h2 {
+    line-height: 1.25em;
+}
+
+h3, h4, h5, h6 {
+    line-height: 1.4375em;
+}
+
+h1 {
+    font-size: 3.25rem;
+    font-weight: 500;
+    color: var(--color-pri-darker);
+    margin: 0 0 0.375em 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-pri-darker);
+    margin: 0 0 1em 0;
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0 0 1em 0;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-dark);
+    margin: 0 0 1em 0;
+}
+
+.u-weight-normal {
+    font-weight: 400;
+}
+
+.u-size-mini {
+    font-size: 0.625em;
+    line-height: 1.25em;
+}
+
+.u-asterisk {
+    font-size: 0.75em;
+    vertical-align: top; /* This is needed in order to prevent a bigger line-height, even though the spanned font-size is smaller. */
+    position: relative;
+    top: -0.25em;
+}
+
+/* --------------- Links --------------- */
+
+a {
+    color: var(--color-pri);
+    /* font-weight: bold; */
+    text-decoration: underline;
+    text-decoration-color: var(--color-pri);
+    text-underline-offset: 0.125em;
+}
+
+h1 a,
+h2 a,
+h3 a {
+    color: inherit;
+}
+
+a:hover {
+    /* color: var(--color-pri); */
+    text-decoration: underline double;
+    text-decoration-color: var(--color-pri);
+
+}
+
+/* --------------- misc --------------- */
+
+button,
+.button {
+    width: max-content;
+
+    padding: 1em 3em;
+    
+    background-color: var(--color-pri);
+    color: var(--color-bright);
+    
+    border: none;
+    border-radius: var(--border-radius-d2);
+    box-shadow: var(--box-shadow);
+    
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.25em;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+}
+
+button:hover,
+.button:hover {
+    background-color: var(--color-pri-darker);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+hr {
+    border: none;
+    border-top: 0.125rem solid var(--color-pri);
+}
+
+img,
+svg,
+video {
+    display: block;
+}
+
+/* ------------------------------------------------
+    General Layout
+------------------------------------------------ */
+
+/* main is always used together with header and footer! */
+main {
+    background: var(--color-bright);
+    padding: var(--main-padding);
+    margin-bottom: var(--footer-height); 
+    /* otherwise some content might be hidden under the footer */
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+/* ------------------------------------------------
+    Component: Header
+------------------------------------------------ */
+
+.header {
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    background: var(--color-sec);
+
+    color: var(--color-dark);
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.header__title {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: inherit;
+
+    position: relative;
+    bottom: -0.25em;
+}
+
+/* ------------------------------------------------
+    Component: NavBar
+------------------------------------------------ */
+
+/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container's ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
+
+.navbar {
+    position: fixed;
+    bottom: 0;
+    z-index: 998;
+
+    width: 100%;
+    height: var(--footer-height);
+    padding: var(--footer-padding) 0;
+
+    background: var(--color-pri);
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar__a {
+    --footer-padding-double: calc(var(--footer-padding) * 2);
+    --height: calc(var(--footer-height) - var(--footer-padding-double));
+    height: var(--height);
+    aspect-ratio: 1;
+
+    color: var(--color-dark);
+    font-size: 0.75rem;
+    line-height: 1em;
+    text-decoration: none;
+    white-space: nowrap;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__a:hover,
+.navbar__a--active {
+    color: var(--color-sec);
+}
+
+.navbar__icon {
+    fill: currentColor;
+}
+
+/* ------------------------------------------------
+    Component: SplashScreen
+------------------------------------------------ */
+
+.splashscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    
+    width: 100%;
+    height: 100vh;
+    background: var(--color-pri);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--main-padding);
+}
+
+.splashscreen__logo-container {
+    --dimensions: 50; /* width in % and height in vh – appending unit with calc trick */
+    --ratio: 1;
+    
+    width: calc(var(--dimensions) * 1%);
+    max-width: calc(calc(var(--dimensions) * 1vh) * var(--ratio));
+    aspect-ratio: var(--ratio);
+    max-height: calc(var(--dimensions) * 1%);
+    /* clip-path: polygon(0% 3.5%, 100% 0%, 90.5% 98%, 14% 100%); */
+
+    /* padding: 3rem; */
+    border-radius: 5%;
+
+    background: var(--color-dark);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splashscreen__logo {
+    width: 75%;
+}
+
+.splashscreen__logo__pictogram {
+    fill: var(--color-bright-logo);
+}
+
+.splashscreen__logo__text {
+    fill: var(--color-pri);
+}
+
+.splashscreen__claim {
+    max-width: 75vw;
+    margin: 0;
+    font-weight: 400;
+    font-size: clamp(1rem, 5vw, 2rem);
+    text-align: center;
+    color: var(--color-sec);
+} 
+
+.splashscreen--fadeout {
+    /* animation: fadeout 0.3s linear 2s 1 forwards; */
+    animation-name: fadeout;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    /* animation-delay: will be assigned by the React component */
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* ------------------------------------------------
+    Component: Tour
+------------------------------------------------ */
+
+.tour {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.tour__slide-wrapper {    
+    width: 100%;
+    height: calc(100vh - calc(var(--main-padding) * 7));
+
+    padding-top: calc(var(--main-padding) * 2);
+    padding-bottom: 0;
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--main-padding);
+    justify-content: space-evenly;
+
+    position: relative;
+    overflow: hidden;
+}
+
+    .m-tour-2 {
+        background: url("/images/greencornerblob.svg") right top no-repeat; /* !!! path must start with / in next-js-app !!! */
+        background-size: 100% auto;
+    }
+
+    .m-tour-3 {
+        background: url("/images/greencornerblob.svg") right top no-repeat; /* !!! path must start with / in next-js-app !!! */
+        background-size: 75% auto;
+        /* text-align: center; */
+    }
+
+    .tour__text-wrapper {
+        flex-basis: auto;
+        flex-grow: 2;
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+        .tour__text__h1 {
+            line-height: 0.875em;
+        }
+
+        .tour__text__p {
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+
+            .tour__text__p a {
+                font-weight: 700;
+            }
+
+    .tour__image-container {
+        flex-basis: auto;
+        flex-grow: 10;
+        flex-shrink: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .tour__image {
+            /* make it scale with the size of the parent container */
+            height: 0;
+            min-height: 100%;
+            max-width: 100%;
+        }
+
+.tour__pagination,
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: calc(var(--main-padding) * 1.75);
+}
+    .swiper-pagination {
+        /* override of swiper styles */
+        position: relative !important;
+        bottom: 0 !important;
+    }
+
+.tour__pagination__item {
+    display: block;
+    width: 2rem;
+    height: 0.5rem;
+    border-radius: 99999rem;
+    background-color: var(--color-bright);
+}
+
+.tour__pagination__item:hover,
+.tour__pagination__item--active {
+    cursor: pointer;
+    background-color: var(--color-pri);
+}
+
+.tour__button {
+    position: absolute;
+    bottom: calc(var(--main-padding) * 1.5);
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+/* ------------------------------------------------
+    Component: iFrame
+------------------------------------------------ */
+
+.iframe {
+    height: calc(var(--main-height) - calc(var(--main-padding) * 2));
+    
+    background: var(--color-sec); /* temporary */
+}
+
+/* ------------------------------------------------
+    Component: TakePicture
+------------------------------------------------ */
+
+.takepicture {
+    --button-height: 12vh; /* needed due to general height constraints and calculate proper sizes of other elements */
+    
+    height: var(--main-height);
+    background: linear-gradient(to bottom, #f0f0ed 0%, var(--color-sec) calc(100% - var(--border-radius)));
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: calc(var(--main-padding) * 0.5);
+}
+
+.takepicture__question {
+    text-align: center;
+}
+
+.takepicture__media-box {
+    /* ----- make it always a square ----- */
+    width: calc(var(--main-height) - var(--button-height) - calc(var(--main-padding) * 2.5)); /* 2.5 = padding top and bottom + flex gap */
+    max-width: calc(100vw - calc(var(--main-padding) * 2));
+    max-height: calc(100vw - calc(var(--main-padding) * 2)); 
+    flex: 1;
+
+    position: relative;
+}
+
+.takepicture__frame {
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1;
+    
+    /* ----- Border only at the 4 corners ----- */
+    
+    --b: 0.1875rem; /* border thickness */
+    --c: transparent 90deg, var(--color-pri) 0; /* border color */
+    --p: 0.625rem; /* used also in other class down below*/
+
+    padding: var(--p);
+    
+    background:
+        conic-gradient(from 90deg  at top    var(--b) left  var(--b), var(--c)) 0 0,
+        conic-gradient(from 180deg at top    var(--b) right var(--b), var(--c)) 100% 0,
+        conic-gradient(from 0deg   at bottom var(--b) left  var(--b), var(--c)) 0 100%,
+        conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--c)) 100% 100%;
+    background-size: 10% 10%; /* border length */
+    background-repeat: no-repeat;
+}
+
+.takepicture__canvas { 
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #f4f4f4;
+    border-radius: var(--border-radius);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+}
+
+.takepicture__loader {
+    width: 10%;
+    aspect-ratio: 1;
+    animation: loader-0 1s infinite steps(1);
+}
+    .takepicture__loader::before,
+    .takepicture__loader::after {
+        content: "";
+        position: absolute;
+        inset:0 50% 50% 0;
+        transform-origin: bottom right; 
+        animation: 
+            loader-1 0.5s infinite linear alternate,
+            loader-2 0.5s infinite steps(1) alternate;
+    }
+    .takepicture__loader::after {
+    --s:-1,-1;
+    }
+  
+    @keyframes loader-0 {
+        0%   {transform:scale(1, 1) rotate(0deg)}
+        50%  {transform:scale(1,-1) rotate(90deg)}
+    }
+    @keyframes loader-1 {
+        0%   {transform:scale(var(--s,1)) perspective(150px) rotateX(  0deg)}
+        100% {transform:scale(var(--s,1)) perspective(150px) rotateX(180deg)}
+    }
+    @keyframes loader-2 {
+        0%   {background: var(--color-pri)}
+        50%  {background: var(--color-dark)}
+    }
+
+.takepicture__waiting {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    padding: var(--main-padding);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+}
+
+.takepicture__waiting__headline {
+    font-size: clamp(1rem, 8vi, 5vb);
+    font-weight: 500;
+}
+
+.takepicture__waiting__text {
+    margin: 0;
+}
+
+.takepicture__video,
+.takepicture__photo {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.takepicture__processing-box {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: clip;
+
+    position: relative;
+}
+
+.u-blur {
+    filter: blur(0.75rem);
+}
+
+.takepicture__processing-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    animation-name: processing-image;
+    animation-duration: 4000ms;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.takepicture__button-box {
+    display: flex;
+    justify-content: center;
+}
+
+.takepicture__button {
+    width: var(--button-height);
+}
+.takepicture__button__background {
+    fill: var(--color-pri);
+}
+.takepicture__button__icon {
+    fill: var(--color-bright);
+}
+
+.takepicture__button:hover {
+    cursor: pointer;
+}
+.takepicture__button:hover .takepicture__button__background {
+    fill: var(--color-pri-darker);
+}
+
+/* Append toggle class .t-inactive to .takepicture__button element to make the button inactive */
+
+.takepicture__button.t-inactive .takepicture__button__background {
+    fill: var(--color-grey);
+}
+.takepicture__button.t-inactive .takepicture__button__icon {
+    fill: transparent;
+}
+.takepicture__button:hover.t-inactive  {
+    cursor: default;
+}
+.takepicture__button:hover.t-inactive .takepicture__button__background {
+    fill: var(--color-grey);
+}
+
+/* ------------------------------------------------
+    Component: ShowResult
+------------------------------------------------ */
+
+.showresult {
+    height: var(--main-height);
+    max-width: calc(var(--main-height) - var(--footer-height));
+    background: var(--color-sec);
+
+    margin: 0 auto;
+
+    /* TO DO: solve conflict of global main-padding, keep main tag! */
+    padding: 0; 
+}
+
+.showresult__flexbox {
+    height: calc(var(--main-height) - var(--footer-height));
+    padding: var(--main-padding-d2) var(--main-padding-d2) var(--main-padding) var(--main-padding-d2);
+    /* padding: var(--main-padding); */
+
+    border-radius: var(--border-radius);
+    overflow: clip; /* for when the failed image is extremely blurred */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0;
+}
+
+.showresult__photo {
+    background-color: #f4f4f4;
+    width: 100%;
+    flex-grow: 1;
+    object-fit: cover;
+    overflow: hidden;
+    /* border-radius: var(--border-radius) var(--border-radius) 0 0; */
+    border-radius: var(--border-radius-d3m2) var(--border-radius-d3m2) 0 0;
+    /* border: 0.0625rem solid var(--color-bright); */
+}
+    .m-fail .showresult__photo {
+        filter: blur(1.5rem);
+    }
+
+.showresult__text-box {
+    background-color: var(--color-bright);
+    padding: var(--main-padding) var(--main-padding) calc(var(--main-padding) / 2) ;
+    border-radius: 0 0 var(--border-radius-d3m2) var(--border-radius-d3m2);
+}
+    /* -- Place it in the middle when there's no result -- */
+
+    .m-fail .showresult__text-box {
+        position: absolute;
+        margin: 0 auto;
+        left: var(--main-padding);
+        right: var(--main-padding);
+        max-width: calc(var(--main-height) - var(--footer-height) - calc(var(--main-padding) * 2));
+        border-radius: var(--border-radius);
+    }
+
+    .m-fail h3 {
+        color: var(--color-fail);
+    }
+    
+    .showresult__label {
+        display: inline-block;
+        padding: 0.1875em 0.5em 0.125em 0.5em;
+        border-radius: var(--border-radius-d4);
+        background-color: var(--color-pri);
+        color: var(--color-bright);
+        font-size: 1rem;
+        line-height: 1.25em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .showresult__sad-smiley {
+        font-size: 1.5em;
+        position: relative;
+        bottom: -0.125em;
+        padding-left: 0.125em;
+    }
+
+/* ----- Refresh Button ----- */
+
+.showresult__button {
+    --button-height: var(--footer-height);
+
+    height: var(--button-height);
+    aspect-ratio: 1;
+
+    position: relative;
+    top: calc(-1 * calc(var(--main-padding) / 2));
+
+    display: block;
+    margin: 0 auto;
+
+    background-color: var(--color-pri);
+    color: var(--color-bright);
+
+    padding: calc(var(--button-height) * 0.25);
+    border-radius: 99999rem;
+    box-shadow: var(--box-shadow);
+}
+
+.showresult__button:hover {
+    background-color: var(--color-pri-darker);
+}
+
+.showresult__button__icon {
+    fill: currentColor;
+}
+
+/* ----- Modifier classes to change background color according to result ----- */
+
+.m-fail,
+.m-fail .showresult__label { background-color: var(--color-fail); }
+.m-cat1,
+.m-cat1 .showresult__label { background: linear-gradient(var(--color-cat1a), var(--color-cat1b)); } 
+.m-cat2,
+.m-cat2 .showresult__label { background-color: var(--color-cat2); }
+.m-cat3,
+.m-cat3 .showresult__label { background-color: var(--color-cat3); }
+.m-cat4,
+.m-cat4 .showresult__label { background-color: var(--color-cat4); }
+.m-cat5,
+.m-cat5 .showresult__label { background-color: var(--color-cat5); }
+.m-cat6,
+.m-cat6 .showresult__label { background-color: var(--color-cat6); }
+
+/* ------------------------------------------------
+    Component: Predictions
+------------------------------------------------ */
+
+.predictions {
+    height: var(--main-height);
+    max-height: var(--main-height);
+    background: linear-gradient(to bottom, #f0f0ed 0%, var(--color-sec) calc(100% - var(--border-radius)));
+    padding-top: calc((var(--main-padding) * 2));
+    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.predictions__img {
+    flex-grow: 1;
+    max-width: 100%;
+    height: 0;
+    max-height: 100%;
+}
+
+/* ------------------------------------------------
+    Component: Info
+------------------------------------------------ */
+
+.info {
+    height: var(--main-height);
+    padding: 0;
+}
+
+.info__iframe {
+    height: var(--main-height);
+}
+
+/* ------------------------------------------------
+    Component: Badge 'Coming soon'
+------------------------------------------------ */
+
+.u-badge-coming-soon {
+    position: absolute;
+    left: -9.1rem;
+    top: 2.2rem;
+
+    display: block;
+    width: 25rem;
+   
+    background-color: var(--color-fail);
+    color: var(--color-bright);
+
+    padding: 0.55em;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    display: grid;
+    place-content: center;
+
+    transform: rotate(-35deg);
+    transform-origin: top center;
+
+    box-shadow:
+        0.03125rem 0.03125rem rgba(209, 88, 88, 0.8),
+        var(--box-shadow-softer);
+    }
+
+/* ------------------------------------------------
+    Animations
+------------------------------------------------ */
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes processing-image {
+    0% {
+        height: 100%;
+    }
+    50% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+/* ------------------------------------------------
+    Responsive adaptions
+------------------------------------------------ */
+
+@media screen and (height < 40em) {
+
+    html {
+        font-size: 80%;
+    }
+
+    .u-hide-when-small-vh:not(:focus):not(:active) {
+        /* Hiding class, making content visible only to screen readers but not visually */
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+}
