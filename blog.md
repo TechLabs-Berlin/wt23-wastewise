@@ -353,10 +353,10 @@ The application was designed to provide a simple and user-friendly interface. Th
  
 | Value/strategic opportunity | Description | Importance 1-10 | Feasibility 1-10 |
 |---|------|------|------|
-|Camera scanner | Hello | Hello | Hello |
-|Camera scanner | Hello | Hello | Hello |
-  
-
+|Camera scanner | Access to a camera scanner with user’s phone makes it easy to give result | 9 | 8 |
+|Bin colour | The main focus of the application is to sort out waste, giving a bin colour is a good way to help users understand the necessary steps. | 10 | 9 |
+|Predictions | Users will have access to how they produce waste and future predictions to help cut down waste production. | 8 | 7 |  
+|Waste Information | The app can provide localised and international news  on waste based on the city or region the user wants. | 7 | 8 |
 
 
 ## Web Development
