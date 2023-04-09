@@ -127,7 +127,20 @@ This yielded a positive effect, as the validation accuracy increased to ca. 93 %
 
 #### Training Resnet
 
+The Resnet was trained using the fastai library's function "vision_learner", which automatically sests up the vast majority of parameters. We decided to take advantage of the simplicity and convenience of this function by training and evaluating several different Resnet models with different numbers of layers and selecting the one showing best performance.
 
+The following Resnet versions can be chosen from and passed to the fastai vision learner using the "arch" argument: 
+`resnet18, resnet34, resnet50, resnet101, resnet152`
+
+The goal was to keep number of layers rather low to allow for quick execution and avoid extensive computation once the model is deployed as well as overfitting due to model complexity, while at the same time ensuring high accuracy.
+
+For the first prototype trained on 7 classes, the default learning rate was used. For the upscaled version trained on 20 classes, a learning rate finder was used to determine the optimum learning rate.
+
+Training was done for more epochs than we expect to need to see the point at which training loss decreases while validation loss converges. This was interpreted as the point at which the model starts to overfit and for training the final model, the number of epochs was adapted to prevent overfitting.
+
+#### Metric and loss function
+Error rate is used as metric (default).
+Cross entropy loss is used as loss function (default).
 
 ### Interpretation
 <!--- both write here --->
