@@ -365,13 +365,16 @@ The application was designed to provide a simple and user-friendly interface. Th
 
 ### Preparation and steps.
 The first step we took in designing the application was to define the scope and goals of the project. This involves understanding the purpose and objectives of the application, as well as its target audience and market. After this, we went straight into the project phase where we conducted market research to gain insights into the industry trends, user needs, and competition. This involved researching similar applications, analyzing user feedback and reviews, and gathering data on user behaviours and preferences. We then developed user personas to help understand the needs, goals, and behaviours of the application's target audience. Our goal was to establish a clear understanding of the project goals, user needs, and market context, so that we can create a design strategy that aligns with the project's objectives and meets the user's needs.
+  
 ![Empathy map](/images_blog/EM.png)
-![User flow](/images_blog/UF.png)
+![User Persona](/images_blog/UP1.png)
+
 The second step in designing this application was research and analysis. This step involved gathering information about the user's needs and preferences, the competition, and industry trends, to inform the design of the application.We conducted several types of research during this phase, such as:
 1. User research: This involved conducting user surveys, to gain insights into the user's needs, behaviours, and pain points. User research helped us understand what the users are looking for in the application, and how they might use it in their daily lives.
 2. Market research: This involves analysing the competition and industry trends, to gain insights into the market landscape and user expectations. We couldn't find any close one but we got relevant data from wikipedia and google searches. 
 3. Data analysis: The data analysis team helped us with necessary data needed to understand waste in Europe. 
 For the third phase, we developed a simple information architecture that revealed all the needed features for the application. From there we defined the user flows or pathways that users will follow to accomplish their tasks in the application. At first it was complex but we had to go back and adjust removing unneeded features.
+
 ![Information architecture](/images_blog/IA.png)
 ![User Flow](/images_blog/UF.png)
 
