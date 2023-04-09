@@ -213,14 +213,25 @@ Finally, we would like to add some reservations before you try out WasteWise: As
 
 ### Conclusion
 
-Draft:
+In conclusion, we can say that the goal we set for ourselves at the beginning of the project have been fulfilled. We had to overcome difficult phases, from not working code, to collaborating with different tracks, to the usual problems that such end-to-end projects entail. 
 
-It was shown that the approach to have labels as waste object type instead of waste bin did work better than the other one would have worked. An examples for this are the classes "food waste" or "plastic toys".
+We have tried out and compared different architectures, Resnet and Xception, under different aspects. With Resnet we mostly investigated which effect an increasingly deep network has on the evaluation metrics. With Xception, on the other hand, we dove more deeply into explainability of the neural network with XAI algorithms. Both approaches reached comparably good and satisfying results (validation accuracy > 90%) on the dataset at hand. The interpretation of the misclassification led to the same conclusion: the dataset is simply not good enough to allow for a robust applicability of the models for our use-case. 
 
 
 #### Outlook
 
-While we were able to realise the majority of our plans, there is still a lot that could have been done in order to improve the app even more. One idea that we had was to enable the users flagging the misclassified images and save them for being reviewed by the human in the loop.
+
+So, what are the future steps if we are to make this app successful?
+
+Two main points come into play: 
+1. solving the data mismatch 
+2. scalability
+
+In order to increase the quality and confidence of our predictions we need to gather data that matches what would be the user input of our app. First, we can crowd-source further data with the program already started by one of our team members. This would allow us to both expand the classes our model can classify and to solve the data mismatch problem. Second, opening our model to grading from the user could vastly increase its capability. A a technique known as Reinforcement Learning from Human Feedback (RLHF) entails giving the users of the app the ability to grade the predictions of the model. This will enable our model to get better and better with increasing number of users. 
+
+Concerning scalability, we estimate our model to be able to robustly classify at least 50-100 common and uncommon objects to be used in real-life scenarios. Given its proven capability, we expect Xception to tend to score better than Resnet with increasing complexity in the data set. 
+However, we are confident that once the quality of our dataset reaches a satisfactory level, paired with RLHF, many available architectures will be able to satisfy our needs. 
+
 
 ### Personal notes
 <!--- both write here --->
