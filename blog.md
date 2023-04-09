@@ -302,7 +302,7 @@ Link: https://julianabquiroga-streamlit-testing-streamlit-5s44p4.streamlit.app/
 ## User Experience Design
 ### Team
 Vincent Oluwadamilare Akinyoyenu and 
-Oluwayinka Ojo
+Oluwayinka Ojo (NB: We both worked on every stage of this project since we are two. It was easy to work at the same time.)
 
 #### Mentor
 Sam Dewey
@@ -354,10 +354,7 @@ The application was designed to provide a simple and user-friendly interface. Th
 ![Research Answer 3](/images_blog/Gf3.png)
 ![Research Answer 4](/images_blog/Gf4.png)
 ![Research Answer 5](/images_blog/Gf5.png)
-![Research Answer 1](/images_blog/Gf5.1.png)
-![Research Answer 6](/images_blog/Gf6.png)
-![Research Answer 7](/images_blog/gf7.png)
-[Others can be found here](https://docs.google.com/forms/d/e/1FAIpQLSc7bfBOPOfv6cjUKSkfUpk2AImRm7yU0SJSAZ3MqB457EYqbw/viewform?usp=sharing)
+[Other results can be found here](https://docs.google.com/forms/d/e/1FAIpQLSc7bfBOPOfv6cjUKSkfUpk2AImRm7yU0SJSAZ3MqB457EYqbw/viewform?usp=sharing)
  
 | Value/strategic opportunity | Description | Importance 1-10 | Feasibility 1-10 |
 |---|------|------|------|
@@ -366,45 +363,42 @@ The application was designed to provide a simple and user-friendly interface. Th
 |Predictions | Users will have access to how they produce waste and future predictions to help cut down waste production. | 8 | 7 |  
 |Waste Information | The app can provide localised and international news  on waste based on the city or region the user wants. | 7 | 8 |
 
-Preparation and steps.
+### Preparation and steps.
 The first step we took in designing the application was to define the scope and goals of the project. This involves understanding the purpose and objectives of the application, as well as its target audience and market. After this, we went straight into the project phase where we conducted market research to gain insights into the industry trends, user needs, and competition. This involved researching similar applications, analyzing user feedback and reviews, and gathering data on user behaviours and preferences. We then developed user personas to help understand the needs, goals, and behaviours of the application's target audience. Our goal was to establish a clear understanding of the project goals, user needs, and market context, so that we can create a design strategy that aligns with the project's objectives and meets the user's needs.
-![Research Answer 1](/images_blog/Gf1.png)
-![Research Answer 1](/images_blog/Gf1.png)
-
-The second step in designing this application was research and analysis. This step involved gathering information about the user's needs and preferences, the competition, and industry trends, to inform the design of the application.
-We conducted several types of research during this phase, such as:
+![Empathy map](/images_blog/EM.png)
+![User flow](/images_blog/UF.png)
+The second step in designing this application was research and analysis. This step involved gathering information about the user's needs and preferences, the competition, and industry trends, to inform the design of the application.We conducted several types of research during this phase, such as:
 1. User research: This involved conducting user surveys, to gain insights into the user's needs, behaviours, and pain points. User research helped us understand what the users are looking for in the application, and how they might use it in their daily lives.
 2. Market research: This involves analysing the competition and industry trends, to gain insights into the market landscape and user expectations. We couldn't find any close one but we got relevant data from wikipedia and google searches. 
 3. Data analysis: The data analysis team helped us with necessary data needed to understand waste in Europe. 
-
 For the third phase, we developed a simple information architecture that revealed all the needed features for the application. From there we defined the user flows or pathways that users will follow to accomplish their tasks in the application. At first it was complex but we had to go back and adjust removing unneeded features.
-![Research Answer 1](/images_blog/Gf1.png)
+![Information architecture](/images_blog/IA.png)
+![User Flow](/images_blog/UF.png)
 
+### Typography
 We decided on the colour, font type and style to use. We chose #0E7B54, a dark shade of green. We chose this colour because 
 1. Green is often associated with environmentalism and sustainability. Using a green colour for your application can help convey its purpose and mission to users.
 2. We believe the colour will add a sense of sophistication and professionalism to our application. This can help to establish trust with users and make them more likely to use the application for their waste sorting needs.
 3. Green is also a calming and soothing colour, which can help to create a positive user experience. By using a darker shade of green, you can add a sense of depth and richness to your application design, while still maintaining a calming and inviting colour scheme.
-
 Overall, #0E7B54 is a great choice for the primary colour of our waste sorting application, as it conveys a sense of environmentalism, professionalism, and calmness.
-
 We chose roboto font type because of its easy understanding and professional usage. We created a responsive design system and components to make our task easy, professional and effective.
 
-##Application Features
-##Waste Sorting Tool:
+### Application Features
+### Waste Sorting Tool:
 The waste sorting tool is the main feature of the application. It is designed to help users sort their waste effectively by identifying the type of waste and providing the right bin with colour. The tool is easy to use, and users can quickly sort their waste with just a few taps on their mobile devices. The sorting tool uses machine learning and image recognition technology to identify the type of waste accurately. 
-##Design: We got inspiration from how the camera and bar code works. The goal is to take a picture of the waste and the machine will determine what type of waste and suggest the right bin based on the Berlin bin colour code. We encountered a problem with this feature; what happens when the machine cannot recognise the waste? We decided to create an error screen that would lead the users back to the home page where they can type in the name of the waste and get the right bin. 
+### Design: We got inspiration from how the camera and bar code works. The goal is to take a picture of the waste and the machine will determine what type of waste and suggest the right bin based on the Berlin bin colour code. We encountered a problem with this feature; what happens when the machine cannot recognise the waste? We decided to create an error screen that would lead the users back to the home page where they can type in the name of the waste and get the right bin. 
 
-##Waste Prediction Tool
+### Waste Prediction Tool
 The waste prediction feature provides users with a graphical view of the waste generated by them. The feature also predicts future waste behaviour based on the user's previous waste patterns. The feature provides a detailed breakdown of the waste generated by the user, including the type of waste and the amount generated. We planned to include a feature that allows users to set goals for reducing waste and track their progress over time.
-##Design: This design depends on the data science team as we need information and data from them. Not to affect the time frame of the project, we decided to create sample barchart, pie charts and maps to show how the feature should look and function. 
-##Waste Information
+### Design: This design depends on the data science team as we need information and data from them. Not to affect the time frame of the project, we decided to create sample barchart, pie charts and maps to show how the feature should look and function. 
+### Waste Information
 The waste information feature provides users with information on waste in Berlin and around the world. The feature includes articles, videos, and infographics on waste management, recycling, and environmental conservation. The feature also provides users with information on the different types of waste and how to dispose of them correctly. The waste information feature is designed to educate users on the importance of proper waste management and inspire them to take action to reduce their waste footprint.
-##Design: Just like the waste prediction tool, this feature leans on the data science team. We applied the same approach to create a sample graph and short information on how the feature should work and what it should look like. 
+### Design: Just like the waste prediction tool, this feature leans on the data science team. We applied the same approach to create a sample graph and short information on how the feature should work and what it should look like. 
 
-##Limitation
+### Limitation
 1. Transferring  our information to GitHub and understanding NMD and Node Js was a huge problem at first, but thanks to Fabian Janosch Krüger and Andreas who took their time to explain how Github and Node Js work and how to use them.
 2. Time and communication.
-##Success
+### Success
 1. With the awesome guidance of our mentor, we were able to finish our design before the scheduled time, and made all suggestions and corrections from our mentor. 
 2. We had a sucessful user testing although documentation was diffcult and not successful, we were able to observe users use the application. 
 
