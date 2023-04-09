@@ -3,7 +3,7 @@
 <h5 align="center">
   <a href="#artificial-intelligence">Artificial Intelligence</a> |
   <a href="#data-science">Data Science</a> |
-  <a href="#user-experience Design">User Experience Design</a> |
+  <a href="#user-experience-design">User Experience Design</a> |
   <a href="#web-development">Web Development</a>
 </h5>
 
