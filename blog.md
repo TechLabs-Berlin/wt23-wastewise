@@ -3,6 +3,15 @@
 <!---
 I suggest that we first make a shared section of the blog post right here in which we describe the idea, the app and the project in some detail. At least more detail than in the README.
 Afterwards, I suggest that each track writes one section.
+
+
+Similar to our summary:
+WasteWise is an app designed to make waste management and recycling more accessible, engaging and user-friendly. With WasteWise, users can scan their waste and receive immediate information about which bin it belongs in. 
+Based on a photo of the respective object, it recommends the correct way of disposal to help our environment clean and green. 
+This feature relies on a fine-tuned residual neural network image classifier coupled with a function providing the recommendations for each class.
+The app also provides valuable insights into waste management and recycling, including recycling rates and waste production per capita starting from 2022 and predicted up to the year 2026 using polynomial regression. The information is accessible through interactive and user-friendly dashboards.
+
+
 --->
 
 
@@ -15,7 +24,54 @@ Afterwards, I suggest that each track writes one section.
 [Fabian Janosch Krüger](https://github.com/fabianjkrueger)
 
 ### Intro
-<!--- to be written by Fabian ; remove this comment later on, just helpful while writing--->
+
+Hey everyone! We are Andrea and Janosch from the AI track of this semester's TechLabs project "WasteWise". In this blog post, we will guide you through our journey and explain to you our deep learning strategy, some of the most important decisions we had to take and tell you about our experiences being part of our interdisciplinary team.
+
+#### Our approach
+
+Right from the start, it was rather obvious what was expected of us. WasteWise aimed to be an app allowing its users to take a photo of their waste and, based on that, receive a recommendation of how to correctly dispose of it and we would be the ones contributing the image recognition features.
+
+Before starting to code, we needed to come up with a strategy. Together, we decided to approach our task as a single object recognition and multiclassification problem, but not to focus object detection and multiple object recognition. 
+
+Before data acquisition, we thought about which would be the best way to compile the classes. In general, there are two options. One option was to join multiple types of objects in one class and use the type of waste bin as a label. This would have simplified data collection. Also, the outputted class could have been used as a recommendation directly. However, we decided not to follow this approach. This way, the waste objects in our classes would have been inhomogenous and the data granularity too coarse, which would have caused problems during image classification. Because of that, we took another route. We decided that each class would contain just one specific type of waste object, e.g., banana or orange peel. This way, our data had much finer granularity and an image classifier would likely perform a lot better on it. Unfortunately, however, this approach required using much more classes and the output could not be used directly as a recommendation, so the implementation of a function for translating from waste type to waste bin became necessary. For this, we planned to use a dictionary in which the classes function as keys and the recommendations are stored as values, coupled with a basic function returning the value for an inputted key.
+
+#### Getting the data
+
+For training the classifier on recognising waste, acquisition of sufficient image data was necessary. Together, we decided to train a first prototype capable of discriminating between 7 classes, then upscale to 20 and potentially even more than that to gradually increase complexity and performance. The classes were selected to represent common types of waste as well as rare types that many users probably do not know how to correctly dispose of. Both of this is important. If WasteWise was not able to recognize the most basic types of waste, user would get the impression that it was just a bad app. On the other hand, however, most user will likely know how to dispose of common waste types and the majority of use cases for the app will be rare and uncommon types of waste, so it is these classes, that will provide the most value to our users. 
+
+Classes included in the 7 class prototype:
+```
+['apples', 
+'banana_peels', 
+'cardboard', 
+'glass_bottle', 
+'oranges', 
+'plastic_packaging', 
+'smartphone']
+```
+Additional classes included in the 20 class prototype:
+```
+['aluminum_foil',
+ 'condoms',
+ 'diapers',
+ 'food_waste',
+ 'old_books',
+ 'pans',
+ 'pizza_box',
+ 'plastic_bags',
+ 'plastic_toys',
+ 'tampons',
+ 'tea_bags',
+ 'tetrapack',
+ 'toothbrush']
+```
+There are many more classes that could have been used for this and in the future, we might implement some of them. We downloaded the image data using the Bing and DuckDuckGo image search APIs. Both worked very well for this approach. We recommend to use DuckDuckGo, however, since it is free, while Bing is only free for a limited amount of time. One problem that came with this was that we had serious data mismatch (we found stock photos with perfect lighting etc. in the image search, but users will query the classifier on very different photos) as well as some images that did not fit the class, so we took a pre-selection. Also, we shared the data set between the two of us so to increase reproducibility and comparability between the classifiers we were about to train.
+
+#### Architectures and frameworks
+
+We decided to make use of transfer learning and fine tune an existing model to profit of the already high performance, to reuse resources previously invested in the training of these and to save valuable time during our project phase so we could focus on further tasks like interpretation and deployment.
+
+From the "No Free Lunch Theorem", we know that no approach is inherently superior to all others and that to find the one suited for our problem, we need to make some assumptions and explore different architectures. In our case, we had to evaluate different CNNs. Because of this, we agreed that each one of us would train an individual classifier and that we used different frameworks for this. An Xception model would be trained using TensorFlow and a Resnet using fastai, a high level library built on top of PyTorch. After training was done, we would compare both models and select one for deployment.
 
 ### Training
 As already clarified in the previous section, two different model architectures were trained and tested within the development of the Wastewise app: Xception and Resnet. Both models serve well for multiclassification problems, and Xception was especially chosen for its computationally efficient architecture.	
@@ -124,12 +180,26 @@ Also according to LIME, the model is picking up mostly on the plastic packaging,
 ##### Misclassifications/confusion matrices, greatest losses, why is that?
 
 
-##### Data mismatch
+### Data mismatch and crowdsourcing image data
+
+We expected a performance drop once we deployed the model due to data mismatch, so we started an image data crowdsourcing initiative. This is the text we sent out to the TechLabs Berlin community:
+
+Hey guys! WasteWise here.
+TLDR: Help us crowdsourcing data for training our models on images of waste 🤗
+Detailed:
+As you know from the midterm presentations, we train an image classifier to recognize objects of waste and recommend the correct way of disposal for each class. They work quite well on the training/validation data already and can distinguish multiple classes 🎯 However, we have a data problem. Since we downloaded the images from the web, most of them do not represent realistic user data. For example, we mostly have pictures of beautifully shaped banana peels 🍌 or glass bottles in perfect lighting and a clean background instead of a photo of something anyone would like to throw away taken in a real world scenario.
+Every model can be only as good as the data it has been trained on. So, as soon as it comes to real users uploading their images, our models might underperform :diagramm_abwärtstrend:, because their pictures look quite differently. For the app to really take off, we need realistic data!
+But there's good news! You can help us out a lot by providing some photos of stuff you would like to throw away! 🙌
+If everyone just uploads a couple of photos, we will most likely already be able to considerably improve accuracy. The more pictures we collect, the better. It's important that the photos simulate what a user might upload. To be more specific, please make sure to only include single objects instead of, for example, a pile of waste or too many different things in one photo. Just act as if you were using the app to get help determining which garbage container to use for your waste. Feel free to get creative and upload whatever waste you have at hand, especially things you do not know where to get rid of! 🌈
+You can filedrop the pictures following this link:
+https://tubcloud.tu-berlin.de/s/6e9AjyTwNfbGJtW
+Thanks a lot for helping out! 🫶
 
 <p align = "center">
 <img src = "images_blog/WasteWise_Bernie_Crowdsource.png" width = 400>
 </p>
 
+This way, we were able to collect a little more than 100 additional images, that we would love to use in a future round of fine tuning our models.
 
 ### Deployment
 One of the main goals of our journey at TechLabs was to acquire and expand our knowledge about neural networks as well as to apply and consolidate it in a real world deep learning project. This included the whole process starting from laying out plans and selecting features to implement over the acquisition of data to the training and interpretation of the neural networks themselves. But of course, the other central part of our mission was to assemble all parts and finish the project phase with the production of an app that provides actual value to its users. In order to make all of this happen, we needed to work in close coordination with the rest of our team, especially the members from the web development (WebDev) track, which was an invaluable experience in its own right. Another challenge was that, while there was no lack of a frontend developer, we did not have one for the backend. Because of this, we decided to take charge of and deploy the model ourselves.
@@ -140,8 +210,9 @@ The first consideration we had to make was whether to make use of the cloud (dep
 <img src = "images_blog/data_flow_pipeline_wastewise.png" width = 600>
 </p>
 
-For this, we selected the Resnet model. We chose this one, since it was trained using the fastai library and thus comes with an integrated image preprocessing function. For accessing it, we created a user interface with Gradio and deployed it on Hugginface Spaces. We decided to make two versions. A minimal version which can be accessed via an API from within JavaScript that was handed over to the WebDev team for integration with the remaining parts of the app. A data frow graph of our pipeline can be seen above. The user takes a photo within the JavaScript app. This is then converted to Base64. Via an API, it is handed as input to the image classifier and the most probable class is returned. Based on this, a way of disposal is recommended.
-Also, we made a __standalone version that *you* can use without downloading anything__ by just following the link posted below. It lets you take your own photos using your webcam and outputs the probabilities of the top three classes as well as a recommendation of which bin to use. 
+For this, we selected the Resnet model. We chose this one, since it was trained using the fastai library and thus comes with an integrated image preprocessing function. For accessing it, we created a user interface with Gradio and deployed it on Hugginface Spaces. We decided to make two versions. A minimal version which can be accessed via an API from within JavaScript that was handed over to the WebDev team for integration with the remaining parts of the app. A data frow graph of our pipeline can be seen above. The user takes a photo within the JavaScript app. This is then converted to Base64. Via an API, it is handed as input to the image classifier and the most probable class is returned. Based on this, a way of disposal is recommended using the proposed function returning the recommendation (value) from a dictionary upon passing a waste class (key).
+
+Also, we made a __standalone version that *you* can use without downloading anything__ by just following the link posted below. This version is implemented in Python only. It allows you to use the image recognition feature, but it lacks the beautiful design and user friendlyness implemented by our WebDevs and user experience designers. It lets you take your own photos using your webcam and outputs the probabilities of the top three classes as well as a recommendation of which bin to use. 
 Usage is explained at the top of the linked page and demonstrated in the GIF below. A special feature exclusively integrated in our standalone version is that a class activation map (CAM) can be added to the uploaded image. As described in the chapter about neural network training, this is a method contributing to machine learning interpretability. Parts of the image contributing to the confidence of the model during classification are marked in red. The intensity of the color is proportional to the relevance of the respetive part of the image. In the deployed version, a basic CAM algorithm is used. We also tested a Shapley-based interpretation, but this was associated with significantly longer computation. While it would have provided additional insights, we figured a user would not want to wait this long.
 
 Finally, we would like to add some reservations before you try out WasteWise: As the deployed model currently still is just a prototype, it can only distinguish between 20 classes and still makes a lot of mistakes. The reasons for this are described in the previous chapters. In case we will be able to acquire more realistic user data in the future, we might further improve accuracy and add more classes.
@@ -154,11 +225,17 @@ Finally, we would like to add some reservations before you try out WasteWise: As
 - Minimal API version for integration with the JavaScript app: https://huggingface.co/spaces/fabianjkrueger/WasteWise_API
 
 ### Conclusion
-<!--- both write here --->
 
-#### ...
+Draft:
+
+It was shown that the approach to have labels as waste object type instead of waste bin did work better than the other one would have worked. An examples for this are the classes "food waste" or "plastic toys".
+
 
 #### Outlook
+
+Add here some more ideas for the future
+
+
 
 
 ### Personal notes
