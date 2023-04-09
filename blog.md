@@ -65,7 +65,8 @@ Additional classes included in the 20 class prototype:
  'tetrapack',
  'toothbrush']
 ```
-There are many more classes that could have been used for this and in the future, we might implement some of them. We downloaded the image data using the Bing and DuckDuckGo image search APIs. Both worked very well for this approach. We recommend to use DuckDuckGo, however, since it is free, while Bing is only free for a limited amount of time. One problem that came with this was that we had serious data mismatch (we found stock photos with perfect lighting etc. in the image search, but users will query the classifier on very different photos) as well as some images that did not fit the class, so we took a pre-selection. Also, we shared the data set between the two of us so to increase reproducibility and comparability between the classifiers we were about to train.
+There are many more classes that could have been used for this and in the future, we might implement some of them. We estimated that we needed about 30 images per class to do a first round of fine tuning. 
+We downloaded the image data using the Bing and DuckDuckGo image search APIs. Both worked very well for this approach. We recommend to use DuckDuckGo, however, since it is free, while Bing is only free for a limited amount of time. One problem that came with this was that we had serious data mismatch (we found stock photos with perfect lighting etc. in the image search, but users will query the classifier on very different photos) as well as some images that did not fit the class, so we took a pre-selection. Also, we shared the data set between the two of us so to increase reproducibility and comparability between the classifiers we were about to train.
 
 #### Architectures and frameworks
 
@@ -144,10 +145,6 @@ For the first prototype trained on 7 classes, the default learning rate was used
 
 Training was done for more epochs than we expect to need to see the point at which training loss decreases while validation loss converges. This was interpreted as the point at which the model starts to overfit and for training the final model, the number of epochs was adapted to prevent overfitting.
 
-<p align = "center">
-<img src = "images_blog/epochs_fastai.png" width = "300">
-</p>
-
 Error rate was used as metric and cross entropy loss was used as loss function.
 
 Finally the Resnet101 was selected and trained for 5 epochs. It showed the best performance measured by error rate (= 0.0645 -> accuracy = 0.9355) and this was already reached after training for 5 epochs. After training for longer, validation loss started to converge slowly, while training loss still continued to decrease for a while and converged much later. This is a sign of overfitting.
@@ -157,7 +154,6 @@ In deployment, 101 layers took more time per inference query than a smaller netw
 One drawback, however, was its size. With 101 layers it needed 170 MB of memory, while the first prototype with 18 layers only needed 50 MB of memory.
 
 ### Interpretation
-<!--- both write here --->
 
 #### Interpretation Xception
 Considering that we have web-scraped all the training images, it seems reasonable to assume that part of the overfitting is due to the poor quality of the data. First, we produce a confusion matrix to see which classes seem to be the most problematic to classify.
@@ -202,14 +198,41 @@ Also according to LIME, the model is picking up mostly on the plastic packaging,
 
 #### Interpretation Resnet
 
+Generally speaking, the model performed rather well on the validation set and, as for the Xception model, there are reasons to assume the majority of issues resulted from poor data quality.
 
+<p align = "center">
+<img src = "images_blog/confusionmatrix_fastai.png" width = "500">
+</p>
 
-##### Misclassifications/confusion matrices, greatest losses, why is that?
+The data set was compiled from image search results and contained mostly stock photos instead of realistic images of waste a user would take.
+For example, the class "oranges" shows perfect oranges and "plastic_packaging", often shows a large pile of trash instead of single objects. A good example of this is an image of a condom falsely classified for plastic packaging, because it still wrapped and not used yet. Strictly speaking, the classification was not even incorrect, since there is in fact plastic packaging in the image. A realistic user image of a condom would look pretty different from this. If we had sufficient data for training, it would be less likely that mistakes like this happened.
 
+<p align = "center">
+<img src = "images_blog/plasticcondoms_fastai.png" width = "300">
+</p>
+
+In addition to that, there are two types of problems that likely arise from bad class compilation. 
+First, the classifier had trouble with classes that contained a lot of inhomogenous objects within one class, e.g., "plastic_toys" or "food_waste". We suspect that the data granularity was too coarse and the differences between the objects contained in the images have been to large for the classifier to be sufficiently trained on just 30 images.
+We propose to split these classes into more smaller ones, so the classifier can be trained to be more specific. This also demonstrates, that the other one of our two initial ideas, choosing the waste bin as label, would not have worked as well. 
+
+<p align = "center">
+<img src = "images_blog/plastictoys_fastai.png" width = "450">
+</p>
+
+It also often mistaked classes that were very similar to another, e.g. "plastic_bags" and "aluminum_foil". 
+It becomes obvious why the classifier has difficulties. On a photo, the surface of a plastic bag and of aluminum foil may have very similar reflections. In this case, we recommend training on more images and, if possible, increasing the diversity of them. If no more images are available, consider additional data augmentation. 
+
+<p align = "center">
+<img src = "images_blog/plastic_aluminum.png" width = "300">
+</p>
+
+Finally, in the case of classes like paper and cardboard, that are actually physically similar to another, it might even make sense to combine them into one class, at least until there is a sufficient amount of realistic user data which can be used for training the classifiers.
+
+The last point we want to make here is about the missing of a test set. It is absolutely crucial to include one in a proper machine learning project. Due to lack of data, we did not. During all this hyperparameter tuning, we might have overfit the validation set. In case the app is ever launched, and we were to get our hands on more user data, we would love to perform more tests and to appropriately evaluate the models.
 
 ### Data mismatch and crowdsourcing image data
 
-We expected to witness a drop in performance once we deployed the model due to the data mismatch, so we started an image data crowdsourcing initiative. 
+We expected to witness a drop in performance once we deployed the model due to the data mismatch. As described previously, the images used for training differ strongly from what a user would query the model on. Because of that, we started an image data crowdsourcing initiative. 
 Our goal was to get people to help us by taking photos of their waste and uploading it to a cloud, where it can be accessed by us. We, the members of the WasteWise team also contributed, but in order to prevent overfitting, we tried to collect as many different waste objects in as many different setups as possible. 
 
 In order to motivate people to contribute, we put a lot of effort in our call and even made use of a meme. You can find the text and the associated meme in this directory: "wt23-wastewise/AI/DL_data_preparation".
@@ -240,14 +263,8 @@ Finally, we would like to add some reservations before you try out WasteWise: As
 
 ### Conclusion
 
-Draft:
-
-It was shown that the approach to have labels as waste object type instead of waste bin did work better than the other one would have worked. An examples for this are the classes "food waste" or "plastic toys".
-
 
 #### Outlook
-
-While we were able to realise the majority of our plans, there is still a lot that could have been done in order to improve the app even more. One idea that we had was to enable the users flagging the misclassified images and save them for being reviewed by the human in the loop.
 
 ### Personal notes
 <!--- both write here --->
