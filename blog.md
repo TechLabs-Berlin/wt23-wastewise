@@ -231,8 +231,6 @@ Draft:
 It was shown that the approach to have labels as waste object type instead of waste bin did work better than the other one would have worked. An examples for this are the classes "food waste" or "plastic toys".
 
 
-#### ...
-
 #### Outlook
 
 Add here some more ideas for the future
