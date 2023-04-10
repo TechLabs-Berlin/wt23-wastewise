@@ -15,17 +15,17 @@ This feature relies on a fine-tuned residual neural network image classifier cou
 The app also provides valuable insights into waste management and recycling, including recycling rates and waste production per capita starting from 2000 and predicted up to the year 2026 using linear and polynomial regression. The information is accessible through interactive and user-friendly dashboards.
 All features are assembled into one web application using React.
 
-## How to run the demo
+## How to run the app
 
-### Web App
+### React Web App
 
-To see all the features, take a tour through the fully assembled app. Please clone this repository to your local computer and follow the steps below.
+To run the app in development mode, please clone this repository to your local computer and follow the steps below.
 
 1. *Node.js* and *npm* must be installed on your computer. Check this in a terminal window using the `node -v` and `npm -v` commands. For both you will get back either the version number or an error message. If *npm* or even both is not installed yet, do that first → see instructions [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 2. In a terminal window navigate to the app directory with `cd WD/next-js-app/`
 3. Run `npm install` → this will download some packages to your computer
 4. Run `npm run dev` → this will start a server service
-5. Open a browser window, resize it to fit a mobile phone, and then navigate to `http://localhost:3000` → Voilà! (please make sure in your terminal if it is the same localhost address)
+5. Open a browser window, resize it to best fit the size of a mobile phone, then open `http://localhost:3000` (corresponding to the URL provided in your terminal)
 7. In order to stop the server go back to the terminal window and press the keys `control` + `c`
 
 ### Minimal Waste Image Classifier App in Huggingface Spaces
