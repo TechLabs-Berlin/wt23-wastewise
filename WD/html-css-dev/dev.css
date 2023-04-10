@@ -23,7 +23,7 @@
     --color-cat6: var(--color-pri-darker); /* Glas */
 
     --header-height: 12vh;
-    --footer-height: 7vh; /* global because used in several classes → TO DO: CLAMP? */
+    --footer-height: 7vh;
 
         --footer-padding: calc(var(--footer-height) * 0.175);
         --main-height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -132,7 +132,6 @@ h3 a {
 }
 
 a:hover {
-    /* color: var(--color-pri); */
     text-decoration: underline double;
     text-decoration-color: var(--color-pri);
 
@@ -228,8 +227,6 @@ iframe {
     Component: NavBar
 ------------------------------------------------ */
 
-/* Height is set extrinsicly by the global variable --footer-height → browser behaviours are quite divers when stretching SVGs properly vertically, especially to keep the container's ratio → therefore much calc and generally much code needed. An alternative would be setting the size intrinsicly by setting the SVG's sizes with em and font-size → probably less and less complicated code. */
-
 .navbar {
     position: fixed;
     bottom: 0;
@@ -301,11 +298,8 @@ iframe {
     max-width: calc(calc(var(--dimensions) * 1vh) * var(--ratio));
     aspect-ratio: var(--ratio);
     max-height: calc(var(--dimensions) * 1%);
-    /* clip-path: polygon(0% 3.5%, 100% 0%, 90.5% 98%, 14% 100%); */
 
-    /* padding: 3rem; */
     border-radius: 5%;
-
     background: var(--color-dark);
 
     display: flex;
@@ -335,7 +329,6 @@ iframe {
 } 
 
 .splashscreen--fadeout {
-    /* animation: fadeout 0.3s linear 2s 1 forwards; */
     animation-name: fadeout;
     animation-duration: 300ms;
     animation-timing-function: linear;
@@ -381,7 +374,6 @@ iframe {
     .m-tour-3 {
         background: url("images/greencornerblob.svg") right top no-repeat; /* !!! path must start with / in next-js-app !!! */
         background-size: 75% auto;
-        /* text-align: center; */
     }
 
     .tour__text-wrapper {
@@ -417,7 +409,6 @@ iframe {
     }
 
         .tour__image {
-            /* make it scale with the size of the parent container */
             height: 0;
             min-height: 100%;
             max-width: 100%;
@@ -457,16 +448,6 @@ iframe {
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
-}
-
-/* ------------------------------------------------
-    Component: iFrame
------------------------------------------------- */
-
-.iframe {
-    height: calc(var(--main-height) - calc(var(--main-padding) * 2));
-    
-    background: var(--color-sec); /* temporary */
 }
 
 /* ------------------------------------------------
@@ -510,7 +491,7 @@ iframe {
     
     --b: 0.1875rem; /* border thickness */
     --c: transparent 90deg, var(--color-pri) 0; /* border color */
-    --p: 0.625rem; /* used also in other class down below*/
+    --p: 0.625rem; /* padding */
 
     padding: var(--p);
     
@@ -676,15 +657,12 @@ iframe {
     background: var(--color-sec);
 
     margin: 0 auto;
-
-    /* TO DO: solve conflict of global main-padding, keep main tag! */
     padding: 0; 
 }
 
 .showresult__flexbox {
     height: calc(var(--main-height) - var(--footer-height));
     padding: var(--main-padding-d2) var(--main-padding-d2) var(--main-padding) var(--main-padding-d2);
-    /* padding: var(--main-padding); */
 
     border-radius: var(--border-radius);
     overflow: clip; /* for when the failed image is extremely blurred */
@@ -702,9 +680,7 @@ iframe {
     flex-grow: 1;
     object-fit: cover;
     overflow: hidden;
-    /* border-radius: var(--border-radius) var(--border-radius) 0 0; */
     border-radius: var(--border-radius-d3m2) var(--border-radius-d3m2) 0 0;
-    /* border: 0.0625rem solid var(--color-bright); */
 }
     .m-fail .showresult__photo {
         filter: blur(1.5rem);
@@ -821,7 +797,7 @@ iframe {
 }
 
 /* ------------------------------------------------
-    Component: Info
+    Component: Info / Charts
 ------------------------------------------------ */
 
 .info {

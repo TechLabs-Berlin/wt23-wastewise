@@ -8,7 +8,6 @@ const TakePicture = () => {
     const camRef = useRef(null);
     const [dataURL, setDataURL] = useState(null);
     const [camReady, setCamReady] = useState(false);
-    // const [identifiedItem, setIdentifiedItem] = useState(null);
     const [result, setResult] = useState(null);
 
     const videoConstraints = {
@@ -19,14 +18,11 @@ const TakePicture = () => {
 
     const captureImage = () => {
         const img = camRef.current.getScreenshot();
-            // console.log(img);
-            // console.log(camRef.current)
         setDataURL(img);
     };
 
     const handleReset = () => {
         setResult(null);
-        // setIdentifiedItem(null);
         setDataURL(null);
     };
 
@@ -44,21 +40,13 @@ const TakePicture = () => {
             const data = await response.json();
                 console.log(data);
                 setResult(data);
-            // const label = data.data[0].label;
-            //     console.log(label);
-            // setIdentifiedItem(label);
         } catch (e) {
             console.error(e);
             setResult('error');
-            // setIdentifiedItem('error-y');
-                // console.log("Error", e.stack);
-                // console.log("Error", e.name);
-                // console.log("Error", e.message);
         }
     }
     
     useEffect( () => {
-        // don't run initially, run only after user has taken a picture
         if (!dataURL) return;
         fetchData();
     }, [dataURL]);
@@ -86,13 +74,10 @@ const TakePicture = () => {
                                     videoConstraints={videoConstraints}
                                     mirrored={true}
                                     screenshotQuality={1}
-                                    // imageSmoothing={false}
                                     forceScreenshotSourceSize={true}
                                     
                                     onUserMedia={() => {setCamReady(true)}}
                                     onUserMediaError={() => {setCamReady(false)}}
-
-                                    // videoRef={videoRef}
                                     
                                     className={"takepicture__video"}
                                 />

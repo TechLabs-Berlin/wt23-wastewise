@@ -17,8 +17,6 @@ const Tour = () => {
             <Swiper
                 spaceBetween={0}
                 slidesPerView={1}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={(swiper) => console.log(swiper)}
 				pagination={{ 
                     clickable: true,
                     bulletClass: 'tour__pagination__item',
