@@ -58,7 +58,7 @@ At the time this is written, the image classifier model can classify 20 classes 
 [Marina Zaitseva](https://github.com/zaitsevam)
 
 ### User Experience Design
-[Vincent Oluwadamilare Akinyoyenu](https://github.com/OluwadamilareAkin)
+[Vincent Oluwadamilare Akinyoyenu](https://github.com/OluwadamilareAkin)\
 [Olayinka Florence Ojo](https://github.com/ojoflorence)
 
 ### Web Development
